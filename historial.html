@@ -18,6 +18,32 @@
 body{
   padding-top: 10px;
 }
+.listTarjetas{
+  margin: 3%;
+}
+.menuLat{
+  position: absolute;
+  z-index: 50;
+}
+.menuLatContent{
+ background-color: #26A4FF;
+}
+.btnMenu{
+  background-color: #333;
+  position: absolute;
+  z-index: 48;
+  position: fixed;
+  height: 10vh;
+  width: 10vh;
+  border-radius: 0em;
+}
+
+.navbar{
+  background-color: #26A4FF;
+}
+.glyMenu{
+  font-size: 3em;
+}
     </style>
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -29,9 +55,67 @@ body{
 
   <body>
 
+<div class="container-fluid menuLat ">
+
+  <div class="col-xs-10 col-sm-3 menuLatContent">
+    
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic ut assumenda, quidem! Quaerat obcaecati provident harum libero vel dolores quae, deserunt sint exercitationem et, optio mollitia, earum quo. Beatae, rem quisquam harum non vel accusantium porro facilis soluta minima temporibus officia veniam consectetur repellat, molestiae. Sint perferendis modi ullam maiores accusantium, vitae laborum nulla quo qui alias nesciunt nisi sequi illum, odio magnam ipsum non, porro assumenda dolorem minus molestiae. Ipsum modi, delectus beatae ad cupiditate asperiores assumenda accusamus iste magni quo quisquam dolores numquam porro distinctio maxime laborum dolorem ullam repellendus aliquid voluptatibus exercitationem sed et dignissimos sunt impedit!
+  
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic ut assumenda, quidem! Quaerat obcaecati provident harum libero vel dolores quae, deserunt sint exercitationem et, optio mollitia, earum quo. Beatae, rem quisquam harum non vel accusantium porro facilis soluta minima temporibus officia veniam consectetur repellat, molestiae. Sint perferendis modi ullam maiores accusantium, vitae laborum nulla quo qui alias nesciunt nisi sequi illum, odio magnam ipsum non, porro assumenda dolorem minus molestiae. Ipsum modi, delectus beatae ad cupiditate asperiores assumenda accusamus iste magni quo quisquam dolores numquam porro distinctio maxime laborum dolorem ullam repellendus aliquid voluptatibus exercitationem sed et dignissimos sunt impedit!
+
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic ut assumenda, quidem! Quaerat obcaecati provident harum libero vel dolores quae, deserunt sint exercitationem et, optio mollitia, earum quo. Beatae, rem quisquam harum non vel accusantium porro facilis soluta minima temporibus officia veniam consectetur repellat, molestiae. Sint perferendis modi ullam maiores accusantium, vitae laborum nulla quo qui alias nesciunt nisi sequi illum, odio magnam ipsum non, porro assumenda dolorem minus molestiae. Ipsum modi, delectus beatae ad cupiditate asperiores assumenda accusamus iste magni quo quisquam dolores numquam porro distinctio maxime laborum dolorem ullam repellendus aliquid voluptatibus exercitationem sed et dignissimos sunt impedit!
+
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic ut assumenda, quidem! Quaerat obcaecati provident harum libero vel dolores quae, deserunt sint exercitationem et, optio mollitia, earum quo. Beatae, rem quisquam harum non vel accusantium porro facilis soluta minima temporibus officia veniam consectetur repellat, molestiae. Sint perferendis modi ullam maiores accusantium, vitae laborum nulla quo qui alias nesciunt nisi sequi illum, odio magnam ipsum non, porro assumenda dolorem minus molestiae. Ipsum modi, delectus beatae ad cupiditate asperiores assumenda accusamus iste magni quo quisquam dolores numquam porro distinctio maxime laborum dolorem ullam repellendus aliquid voluptatibus exercitationem sed et dignissimos sunt impedit!
+
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic ut assumenda, quidem! Quaerat obcaecati provident harum libero vel dolores quae, deserunt sint exercitationem et, optio mollitia, earum quo. Beatae, rem quisquam harum non vel accusantium porro facilis soluta minima temporibus officia veniam consectetur repellat, molestiae. Sint perferendis modi ullam maiores accusantium, vitae laborum nulla quo qui alias nesciunt nisi sequi illum, odio magnam ipsum non, porro assumenda dolorem minus molestiae. Ipsum modi, delectus beatae ad cupiditate asperiores assumenda accusamus iste magni quo quisquam dolores numquam porro distinctio maxime laborum dolorem ullam repellendus aliquid voluptatibus exercitationem sed et dignissimos sunt impedit!
+
+  </div>
+  <a href="">
+    <div class="btnMenu">
+   <span class="glyphicon glyphicon-menu-hamburger glyMenu"></span>
+  </div>
+  </a>
+</div>
+
+<div class="navbar navbar-inverse navbar-fixed-top navbar-custom" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">APRENDIS</a>
+    </div>
+    <div class="collapse navbar-collapse">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="/teachers">Home</a></li>
+
+      </ul>
+
+        <ul class="nav navbar-nav navbar-right">
+        <li>sadasdas</li>
+        <li>sdass</li>
+        </ul>
+
+
+    
+    </div>
+    <!--/.nav-collapse -->
+  </div>
+</div>
+
+
+
+
+
+
+
   <div class="container-fluid">
 
-    <div class="container">
+<div class="col-xs-12 col-sm-6 col-sm-offset-3">
+    <div class="row listTarjetas">
       <a class="tarjetaHtml" href="login.html">
       <div class=" row well animated pulse tarjeta" >
           <div class="col-xs-4 col-sm-3">
@@ -176,7 +260,7 @@ body{
 
           </div>  
       </div>
-
+</div>
       
 
     </div>
