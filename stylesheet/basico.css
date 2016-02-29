@@ -11,10 +11,10 @@
 
     #loginBox{
       padding-top: 10vh;
-      height: 60vh;
       background-color: rgba(255,255,255,0.8);
       border-radius: 0em;
       margin-top: 10vh;
+       padding-bottom: 10vh;
     }
     .LoginText{
       color: #26A4FF;
@@ -37,12 +37,30 @@
       font-size: 1em;
     }
     .imgTarjeta{
-      border-width: 0.5vh;
-      border-color:  #26A4FF;
-      border-style: solid;
+          border-width: 0.5vh;
+    border-color: #26A4FF;
+    border-style: solid;
+    margin: auto;
+    margin-top: 7%;
     }
     .btn-login{
       background-color: #26A4FF;
       color:#FFF;
       border-radius: 0em;
     }
+    .tarjeta{
+      padding: 1%;
+      margin-bottom: 1vh;
+    }
+    .tarjetaHtml{
+      color: #333;
+    }
+    .textOver {
+   overflow: hidden;
+   text-overflow: ellipsis;
+   display: -webkit-box;
+   line-height: 16px;     /* fallback */
+   max-height: 32px;      /* fallback */
+   -webkit-line-clamp: 2; /* number of lines to show */
+   -webkit-box-orient: vertical;
+}
