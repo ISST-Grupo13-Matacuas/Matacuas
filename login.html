@@ -10,9 +10,54 @@
 
     <!-- Bootstrap core CSS -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="http://cdn.jsdelivr.net/animatecss/2.1.0/animate.min.css">
 
     <!-- Custom styles for this template -->
     <style>
+    @import url(https://fonts.googleapis.com/css?family=Rubik:400,300,400italic,500italic,500,700,700italic,300italic,900,900italic&subset=latin,latin-ext);
+
+    body {
+      font-family: 'Rubik', sans-serif;
+      color: #333333;
+      background-image: url("images/download.jpeg");
+      background-repeat:no-repeat;
+      background-size: cover;
+      background-attachment: fixed;
+    }
+
+    #loginBox{
+      padding-top: 10vh;
+      height: 60vh;
+      background-color: rgba(255,255,255,0.8);
+      border-radius: 0em;
+      margin-top: 10vh;
+    }
+    .LoginText{
+      color: #26A4FF;
+      font-weight: bold;
+    }
+    hr{
+      color: #26A4FF;
+      background-color: #26A4FF;
+      height: 1px;
+      border-radius: 2em;
+      padding-top: 0px;
+      margin: 0%;
+    }
+    .hrBar{
+      height: 1vh;
+    }
+    .tarjetaTitle{
+        color: #26A4FF;
+      font-weight: bold;
+      font-size: 1em;
+    }
+    .imgTarjeta{
+      border-width: 0.5vh;
+      border-color:  #26A4FF;
+      border-style: solid;
+    }
+
 
     </style>
 
@@ -25,7 +70,45 @@
 
   <body>
 
-  <div class="container-fluid">
+    <div class="container-fluid">
+      <div class="col-xs-10 col-xs-offset-1 well" id="loginBox" >
+        <div class="row"></div>
+        <div class="col-xs-11 col-xs-offset-1 LoginText"><h1 >LOG IN</h1></div>
+        <div class="col-xs-12 hrBar" ><hr></div>
+
+        
+        <div class="col-xs-12">
+          <div class="form-group LoginText">
+            <label for="usr">Name:</label>
+            <input type="text" class="form-control" id="usr">
+          </div>
+          <div class="form-group LoginText">
+            <label for="pwd">Password:</label>
+            <input type="password" class="form-control" id="pwd">
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+    <div class="container">
+      <div class=" row well">
+          <div class="col-xs-6 col-sm-3">
+            <img src="images/download.jpeg" alt="" class="img img-responsive imgTarjeta">
+          </div>
+          <div class="col-xs-6 col-sm-9">
+            <h2 class="tarjetaTitle">Título de mi tarjeta</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat nam illum quam voluptas consectetur quis maxime unde omnis dolorum, soluta in eaque dolores ducimus,</p>
+            <br>
+            <p><small>location Lorem ipsum dolor sit amet.</small></p>
+
+          </div>  
+      </div>
+      
+
+    </div>
+
 
 
   </div>
@@ -36,5 +119,5 @@
   <!-- Placed at the end of the document so the pages load faster -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
-  </body>
-  </html>
+</body>
+</html>
