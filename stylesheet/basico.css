@@ -3,7 +3,7 @@
     body {
       font-family: 'Rubik', sans-serif;
       color: #333333;
-      background-image: url("../images/download.jpeg");
+      background-image: url("images/download.jpeg");
       background-repeat:no-repeat;
       background-size: cover;
       background-attachment: fixed;
