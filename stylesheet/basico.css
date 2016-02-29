@@ -41,3 +41,8 @@
       border-color:  #26A4FF;
       border-style: solid;
     }
+    .btn-login{
+      background-color: #26A4FF;
+      color:#FFF;
+      border-radius: 0em;
+    }
