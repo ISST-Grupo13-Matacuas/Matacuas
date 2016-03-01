@@ -28,33 +28,49 @@
 
   <div class="container-fluid">
 
-       <div id="loginBox" class="col-xs-10 col-xs-offset-1 text-center" >
+    <div class="row">
+
+       <div  class="caja col-xs-8 col-xs-offset-2 text-center" >
        
-        <div class="row">
-          <h1 class="LoginText">Nueva queja</h1>
-      </div>
+                  <div class="row">
+                    <h1 class="LoginText">Nueva queja</h1>
+                </div>
 
-      <div class="row col-xs-10 col-xs-offset-1 ">
-        <p>Describa la infracción</p>
-      
-        <textarea class="form-control " rows="3">
+                <div class="row">
+                      <div class="col-xs-10 col-xs-offset-1">
+                         <p>Describa la infracción</p>
+                    
+                      <textarea class="form-control " rows="3">
 
-        </textarea>
-        <br>
+                      </textarea>
+                    </div>
+                </div>
 
-        <form enctype="multipart/form-data">
-          <input class="btnNQ" name="uploadedfile" type="file"/>
-          <input class="btnNQ" type = "submit" value="Subir imagen">
-        </form>
+                <div class="row">
+                    <div class="col-xs-10 col-xs-offset-1">
+                    <form enctype="multipart/form-data">
+                    <input class="btnNQ" name="uploadedfile" type="file"/>
+                    <input class="btnNQ" type = "submit" value="Subir imagen">
+                  </form>
+                    </div>
+                </div>
 
-      </div>
+                <div class="row">
+                    <div class="col-xs-10 col-xs-offset-1">
+                        <div class="wrapper">
+               
+                             <div id="mapa"></div>
+                
+                       </div>
+
+                    </div>
+                </div>
 
 
+              
+
+        </div>
     </div>
-
-
-  
-
 
   </div>
   <!-- /.container -->
@@ -64,5 +80,75 @@
   <!-- Placed at the end of the document so the pages load faster -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="https://maps.google.com/maps/api/js?sensor=true"></script>
+  <script type="text/javascript" src="js/gmaps.js"></script>
+  <script type="text/javascript" src="js/zepto.min.js"></script>
+  <script type="text/javascript">
+  
+    $(function() {
+      var map, distancia, lat , lng;
+      var latini, lngini;
+      var nmarcador = 0;
+      //localStorage.rutas= localStorage.rutas ||  "[]";
+      //var ruts=JSON.parse(localStorage.rutas);
+
+      function ponerMarcador(e){
+        
+        lat=e.latLng.lat();
+        lng=e.latLng.lng();
+        
+        if (nmarcador === 1){
+          return;
+        }
+        nmarcador++;
+        map.addMarker({lat:lat, lng:lng});
+
+        //ruts.push([lat,lng]);
+        //localStorage.rutas=JSON.stringify(ruts);
+
+      };
+
+
+      function geolocalizar(){
+
+        GMaps.geolocate({
+          success: function(position){
+            lat=position.coords.latitude;
+            lng=position.coords.longitude;
+            latini=lat;
+            lngini=lng;
+            
+            map=new GMaps({
+              el:'#mapa',
+              lat:lat,
+              lng:lng,
+              click: ponerMarcador,
+              tap: ponerMarcador
+
+            });
+            map.addMarker({lat:lat, lng:lng});
+            //for(var i=0;i<ruts.length;i++){
+            //  map.addMarker({lat:ruts[i][0], lng:ruts[i][1]});
+            //}
+          },
+          error: function(error){ alert("Error: " + error.message);},
+          not_supported: function(){alert("No soporta geolocacalización");}
+        });
+      };
+
+      $('#nuevo').on('click',function(){
+        geolocalizar();
+      });
+
+
+
+      geolocalizar();
+      //ruts.push([latini,lngini]);
+      //localStorage.rutas=JSON.stringify(ruts);
+
+    });
+
+  </script>
+
   </body>
   </html>

@@ -87,3 +87,36 @@
 
 }
 
+.caja{
+   margin-bottom: 20px;
+    padding: 30px 15px;
+    background: #fff;
+    background: rgba(255,255,255,0.9);
+    min-height: 540px;
+
+}
+
+div.wrapper{
+
+    border: 1px solid black;
+    padding: 2%;
+    margin: 2%;
+    width: 100%;
+    float: left;
+    height: 400px;
+    background-color: #E8FBFB;
+
+}
+
+#mapa{
+    display: block;
+    height: 100%;
+    width: 100%;
+    margin: 0%;
+    padding: 0%;
+    background: rgba(0,255,0,0.5);
+    max-width: 100%;
+    min-width: 20%;
+
+}
+
