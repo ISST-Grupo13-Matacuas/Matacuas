@@ -109,16 +109,21 @@ geolocate.events.register("locationfailed",this,function() {
     OpenLayers.Console.log('Location detection failed');
 });
 
-document.getElementById('locate').onclick = function() {
-    vector.removeAllFeatures();
+
+
+var geolocalizar = function(){
+   vector.removeAllFeatures();
     geolocate.deactivate();
     //console.log(geolocate);
     console.log("DAT CENTRO" + map.getCenter());
     geolocate.watch = false;
     firstGeolocation = true;
     geolocate.activate();
-  //  console.log(geolocate);
-//console.log("locate button");
+}
+//document.onload(geolocalizar());
+
+document.getElementById('locate').onclick = function() {
+    geolocalizar();
 };
 
 var createMarker = function(position){
@@ -132,7 +137,7 @@ var createMarker = function(position){
 
 };
 
+geolocalizar();
 
-
-$('#OpenLayers_Map_2_OpenLayers_ViewPort').css('position','ABSOLUTE')
+//$('#OpenLayers_Map_2_OpenLayers_ViewPort').css('position','ABSOLUTE')
 }
