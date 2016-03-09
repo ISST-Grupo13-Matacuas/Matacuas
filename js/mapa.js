@@ -122,9 +122,13 @@ var geolocalizar = function(){
 }
 //document.onload(geolocalizar());
 
+if (document.getElementById('locate')){
+
 document.getElementById('locate').onclick = function() {
     geolocalizar();
+
 };
+}
 
 var createMarker = function(position){
    //var position = map.getLonLatFromPixel(e.xy);
