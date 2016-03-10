@@ -7,7 +7,7 @@
       background-repeat:no-repeat;
       background-size: cover;
       background-attachment: fixed;
-  padding-top: 50px;
+  padding-top: 60px;
     }
 
     #loginBox{
@@ -137,3 +137,26 @@ div.wrapper{
 .navbar-inverse .navbar-brand{
     color: #333333;
 }
+
+.menuB{
+  height: 65px;
+  color: #333333;
+  padding-top: 2%;
+}
+a > p{
+  color: #333;
+}
+.glyM{
+  font-size: 1.6em;
+  color: #333;
+}
+.retos > p{
+  color: #333;
+}
+.gris{
+  color: #333333;
+}
+.cogGly{
+  font-size: 3em;
+}
+
