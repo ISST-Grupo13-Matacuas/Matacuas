@@ -7,10 +7,17 @@
       background-repeat:no-repeat;
       background-size: cover;
       background-attachment: fixed;
+  padding-top: 50px;
     }
 
     #loginBox{
       padding-top: 10vh;
+      background-color: rgba(255,255,255,0.8);
+      border-radius: 0em;
+      margin-top: 10vh;
+       padding-bottom: 10vh;
+    }
+      .Box{
       background-color: rgba(255,255,255,0.8);
       border-radius: 0em;
       margin-top: 10vh;
@@ -120,3 +127,13 @@ div.wrapper{
 
 }
 
+.navbar{
+  background-color: #26A4FF;
+  color: #333333;
+}
+.navbar > a{
+  color: #333333;
+}
+.navbar-inverse .navbar-brand{
+    color: #333333;
+}

@@ -11,13 +11,14 @@
     <!-- Bootstrap core CSS -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="http://cdn.jsdelivr.net/animatecss/2.1.0/animate.min.css">
+     <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" />
     <link rel="stylesheet" href="stylesheet/basico.css">
 
 
     <!-- Custom styles for this template -->
     <style>
    
-
+#map { height: 20vh; width: 100%;}
 
     </style>
 
@@ -29,46 +30,21 @@
   </head>
 
   <body>
-
-       <div class="navbar navbar-inverse navbar-fixed-top navbar-custom text-center">
+   <div class="navbar navbar-inverse navbar-fixed-top navbar-custom text-center">
 
           <a style="margin-left: 35%" class="navbar-brand" href="/">Matacuas</a>
 
     </div>
-
     <div class="container-fluid">
-      <div class="col-xs-10 col-xs-offset-1 well animated bounceInDown" id="loginBox" >
+      <div class="col-xs-10 col-xs-offset-1 well animated bounceInDown Box" >
         <div class="row"></div>
-        <div class="col-xs-11 col-xs-offset-1 LoginText"><h1 >LOG IN</h1></div>
+        <div class="col-xs-10 col-xs-offset-1 LoginText"><h1 >Notificar</h1></div>
         <div class="col-xs-12 hrBar" ><hr></div>
 
         
-        <div class="col-xs-12">
-          <div class="form-group LoginText">
-            <label for="usr">Name:</label>
-            <input type="text" class="form-control" id="usr">
-          </div>
-          <div class="form-group LoginText">
-            <label for="pwd">Password:</label>
-            <input type="password" class="form-control" id="pwd">
-          </div>
-          <div class="col-xs-12">
-            <button class="btn btn-block btn-login">
-              Log in
-            </button>
-          </div>
-          <div class="col-xs-12 text-center">
-            <br>
-            <p>
-            <a href="">Sign up</a>
-            </p>
-            <p>
-            <a href="">Forgot your password?</a>
-          </p>
-          </div>
-
-        </div>
-
+      <div class="col-xs-12" >
+        <div id="map"></div>
+      </div>
       </div>
 
     </div>
@@ -83,5 +59,45 @@
   <!-- Placed at the end of the document so the pages load faster -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+   <script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
+   <script>
+
+var map;
+var marker;
+
+function onLocationFound(e) {
+  console.log(e);
+    map.setView(new L.LatLng(e.latlng.lat, e.latlng.lng), 15);
+    marker.setLatLng([e.latlng.lat, e.latlng.lng]);
+}
+
+function onLocationError(e) {
+    alert("error: " + e.message);
+    map.setView(new L.LatLng(40.45, -3.69), 8);
+    marker.setLatLng([40.45, -3.69]);
+}
+
+function initmap() {
+    map = new L.Map('map');
+
+    var mapUrl = 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
+    var mapTile = new L.TileLayer(mapUrl, {
+        minZoom: 2,
+        maxZoom: 18
+    });
+    map.addLayer(mapTile);
+
+    marker = L.marker([40.45, -3.69]).addTo(map);
+
+    map.on('locationerror', onLocationError);
+    map.on('locationfound', onLocationFound);
+
+    map.locate();
+}
+
+initmap();
+
+
+   </script>
 </body>
 </html>
