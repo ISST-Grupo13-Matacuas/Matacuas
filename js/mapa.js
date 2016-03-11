@@ -4,6 +4,7 @@ var style = {
     fillOpacity: 0.1,
     strokeWidth: 0
 };
+console.log("creando");
 var map = new OpenLayers.Map('mapa');
 var layer = new OpenLayers.Layer.OSM( "Simple OSM Map");
   

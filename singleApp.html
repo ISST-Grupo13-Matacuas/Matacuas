@@ -11,6 +11,7 @@
     <!-- Bootstrap core CSS -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="http://cdn.jsdelivr.net/animatecss/2.1.0/animate.min.css">
+    <link rel="stylesheet" href="http://openlayers.org/en/v3.2.0/css/ol.css" type="text/css"> 
     <link rel="stylesheet" href="stylesheet/sidebar.css">
     <link rel="stylesheet" href="stylesheet/single.css">
 
@@ -80,11 +81,12 @@
               <li><a href="#contact">Contact</a></li>
             </ul>
           </div>
+
           <div class="main col-md-9 col-md-offset-3">
             
             <!--aqui el contenido-->
               <div id="payLoadSP">
-                <button onclick="principal(0)">adsa</button>
+              
               </div>
             <!--acaba el contenido --> 
           </div>
@@ -98,6 +100,12 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
   <script src="js/sidebar.js"></script>
-  <script src="js/main.js?v=8"></script>
+     <script type='text/javascript' src="js/OpenLayers.js"></script>
+ <script src="js/mapa.js"></script>
+
+  <script src="js/main.js?v=28"></script>
+  <script>
+     $( document ).ready(principal(0))
+  </script>
 </body>
 </html>
