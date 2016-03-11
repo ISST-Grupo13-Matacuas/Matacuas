@@ -24,7 +24,8 @@ function autenticate(){
 */
 
 function cardPrincipal(lugar, i, texto,img){
-	$('#listTarjetas').append(
+	var lugarb = '#'+lugar;
+	$(lugarb).append(
 	  '<a class="tarjetaHtml" onclick="historia('+i+')">'+
       '<div class=" row well animated pulse tarjeta" >'+
           '<div class="col-xs-4 col-sm-3">'+
@@ -44,7 +45,7 @@ function principal(tipe){
 
 	$.getJSON( "./jsons/all.json", function( json ) {
 		for ( var i in json){
-			cardPrincipal(listTarjetas, i, json[i].texto,json[i].imagen)
+			cardPrincipal('listTarjetas', i, json[i].texto,json[i].imagen)
 		}
 
  });
@@ -87,6 +88,168 @@ create_map();
 
 }
 
+function cardProfile(lugar){
+		var lugarb = '#'+lugar;
+	$(lugarb).append(
+     '<div class=" row well animated pulse tarjeta" >'+
+          '<div class="col-xs-4 col-sm-3 col-md-2">'+
+            '<img src="images/download.jpeg" alt="" class="img img-responsive imgTarjeta">'+
+          '</div>'+
+          '<div class="col-xs-6 col-sm-7">'+
+            '<h3 class="tarjetaTitle">Título de mi tarjeta</h3>'+
+            '<p><small>location Lorem ipsum dolor sit amet.</small></p>'+
+
+          '</div>'+  
+          '<div class="col-xs-2 positiveCard text-center">'+
+            '<span class="glyphicon glyphicon-thumbs-up"></span>'+
+
+          '</div>'+
+        '</div>');
+}
+
+function profile(){
+	$('#payLoadSP').html('<div class="row listTarjetasPerf">'+
+           '<div class=" row well animated pulse tarjeta">'+
+                '<div class="col-xs-4 col-xs-offset-4 box-img-perfil">'+
+              '<img src="https://randomuser.me/api/portraits/med/men/44.jpg" alt="" class="img img-responsive imgTarjeta img-circle img-perfil" style="position: absolute;">'+
+            '</div>'+
+            '<div class="col-xs-8" style="z-index: 100;">'+
+             '<br>'+
+             '<br>'+
+             '<br>'+
+             '<h4 class="nombrePerfil">@JuanitoTaxiCrazy</h4>'+
+           '</div>'+
+           '<div class="col-xs-4 text-center">'+
+            '<br>'+
+            '<h4>Karma:</h4>'+
+            '<p>+5</p>'+
+          '</div>'+
+          '<br>'+
+          '<div class="col-xs-12">'+
+            '<br>'+
+            '<hr  style="    height: 0.2vh;'+
+            'background-color: #26A4FF">'+
+          '</div>'+
+          '<div class="col-xs-12">'+
+            '<p class="textOver">Conduzco mi Taxi mientras escucho los partidos del equipo de mi barrio por la radio!</p>'+
+            '<p><small>Lepe, Españama</small></p>'+
+
+          '</div>'+  
+        '</div>'+
+
+        '<div class=" row well animated pulse tarjeta" >'+
+          '<div class="col-xs-4" ><button class="btn btn-block" style="background-color: #AAC">Todos</button></div>'+
+          '<div class="col-xs-4" ><button class="btn btn-block" style="background-color: #5C5">Positivos</button></div>'+
+          '<div class="col-xs-4" ><button class="btn btn-block" style="background-color: #C55">Negativos</button></div>'+
+        '</div>'+
+        '<div id="ProfileList"></div>'+
+
+'</div>');
+cardProfile('ProfileList');
+cardProfile('ProfileList');
+cardProfile('ProfileList');
+cardProfile('ProfileList');
+
+var bar = $('.sidebar');
+console.log(bar);
+if(bar.hasClass('sidebar-open')){
+	bar.removeClass('sidebar-open');
+	console.log("sacada");
+}
+}
+
+function newQuejad(){
+	      $('#payLoadSP').html('<div class="col-xs-10 col-xs-offset-1 well animated bounceInDown Box" >'+
+        '<div class="row"></div>'+
+        '<div class="col-xs-10 col-xs-offset-1 LoginText"><h1 >Notificar</h1></div>'+
+        '<div class="col-xs-12 hrBar" ><hr></div>'+
+
+        
+      '<div class="col-xs-12" >'+
+        '<div id="map"></div>'+
+      '</div>'+
+      '</div>');
+
+	      var map;
+var marker;
+initmap();
+
+}
+
+
+function onLocationFound(e) {
+  console.log(e);
+    map.setView(new L.LatLng(e.latlng.lat, e.latlng.lng), 15);
+    marker.setLatLng([e.latlng.lat, e.latlng.lng]);
+}
+
+function onLocationError(e) {
+    alert("error: " + e.message);
+    map.setView(new L.LatLng(40.45, -3.69), 8);
+    marker.setLatLng([40.45, -3.69]);
+}
+
+function initmap() {
+    map = new L.Map('map');
+
+    var mapUrl = 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
+    var mapTile = new L.TileLayer(mapUrl, {
+        minZoom: 2,
+        maxZoom: 18
+    });
+    map.addLayer(mapTile);
+
+    marker = L.marker([40.45, -3.69]).addTo(map);
+
+    map.on('locationerror', onLocationError);
+    map.on('locationfound', onLocationFound);
+
+    map.locate();
+}
+
+
+function newQueja(tipo){
+
+	      $('#payLoadSP').html(
+       '<div  class="caja col-xs-8 col-xs-offset-2 text-center" >'+
+        '<div class="row">'+
+          '<h1 class="LoginText">Nueva queja</h1>'+
+          '<div class="row">'+
+            '<div class="col-xs-10 col-xs-offset-1">'+
+              '<button class="btnNQ" id="locate">Locate me!</button>'+
+              '<div class="wrapper">'+
+               '<div id="mapa"></div>'+
+             '</div>'+
+           '</div>'+
+         '</div>'+
+       '</div>'+
+
+       '<div class="row">'+
+        '<div class="col-xs-10 col-xs-offset-1">'+
+         '<p>Describa la infracción</p>'+
+
+         '<textarea class="form-control " rows="3">'+
+
+         '</textarea>'+
+       '</div>'+
+     '</div>'+
+
+     '<div class="row">'+
+      '<div class="col-xs-10 col-xs-offset-1">'+
+        '<form enctype="multipart/form-data">'+
+         '<div class="form-group">'+
+          '<input id="file-3" type="file" multiple=true>'+
+        '</div>'+
+        '<div class="form-group">'+
+          '<button class="btn btn-primary">Submit</button>'+
+          '<button class="btn btn-default" type="reset">Reset</button>'+
+        '</div>'+
+      '</form>'+
+    '</div>'+
+  '</div>'+
+'</div>');
+
+}
 
 /*-----------------------
 --------MAPS------------

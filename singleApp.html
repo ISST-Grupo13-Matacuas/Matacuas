@@ -33,7 +33,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="/">Matacuas</a>
+          <a class="navbar-brand" onclick="principal()">Matacuas</a>
           <ul class="nav navbar-nav navbar-right navRight">
             <li><span class="glyphicon glyphicon-cog cogGly"></span>  </li>
           </ul>
@@ -48,20 +48,20 @@
 
       <div class="row">
        <div class="col-xs-4 text-center">
-        <a href="index.html">
+        <a onclick="newQueja(0)">
           <span class="
           glyphicon glyphicon-thumbs-down glyM"></span>
           <p>Negativa</p></a>
         </div>
         <div class="col-xs-4 text-center">
-          <a href="retos.html">
+          <a onclick="newQueja(1)">
             <span style="font-size:2.5em" class="
             glyphicon glyphicon-camera glyM"></span>
           </a>
         </div>
 
         <div class="col-xs-4 text-center">
-          <a href="principal.html">
+          <a onclick="newQuejad()">
             <span class="
             glyphicon glyphicon-thumbs-up glyM"></span>
             <p>Positiva</p></a>
@@ -75,10 +75,21 @@
       <div class="container">
         <div class="row">
           <div class="col-xs-7 col-sm-3 col-md-2 sidebar sidebar-left sidebar-animate sidebar-lg-show ">
+            <div class="menuHead">
+              <div class="row">
+                <div class="col-xs-8 col-xs-offset-2 col-md-12 col-md-offset-0" onclick="profile()">
+                    <img src="https://randomuser.me/api/portraits/med/men/44.jpg" alt="" class="img img-responsive imgTarjeta img-circle" >
+                </div>
+              </div>        
+            </div>
+
             <ul class="nav navbar-stacked">
-              <li class="active"><a href="#">Home</a></li>
-              <li><a href="#about">About</a></li>
-              <li><a href="#contact">Contact</a></li>
+              <li><br></li>
+               <li><br></li>
+                <li><br></li>
+                <li onclick="profile()"><a href="#">Perfil</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Contact</a></li>
             </ul>
           </div>
 
@@ -103,7 +114,7 @@
      <script type='text/javascript' src="js/OpenLayers.js"></script>
  <script src="js/mapa.js"></script>
 
-  <script src="js/main.js?v=28"></script>
+  <script src="js/main.js?v=36"></script>
   <script>
      $( document ).ready(principal(0))
   </script>
