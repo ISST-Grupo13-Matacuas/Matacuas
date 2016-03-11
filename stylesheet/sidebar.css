@@ -11,11 +11,6 @@
     margin-left: 15px;
 }
 
-.navbar .navbar-toggle.toggle-right {
-    float: right;
-    margin-right: 15px;
-}
-
 .navbar .navbar-toggle.toggle-sidebar, [data-toggle="sidebar"] {
     display: block;
 }
@@ -60,29 +55,9 @@
     transform: translate(0,0);
 }
 
-/*right sidebar is untested */
-.row .sidebar.sidebar-right.sidebar-xs-show {
-    right: 0;
-    -webkit-transform: translate(0,0);
-    -ms-transform: translate(0,0);
-    -o-transform: translate(0,0);
-    -moz-transform: translate(0,0);
-    transform: translate(0,0);
-}
-
 @media (min-width: 768px) {
     .row .sidebar.sidebar-left.sidebar-sm-show {
         left: 0;
-        -webkit-transform: translate(0,0);
-        -ms-transform: translate(0,0);
-        -o-transform: translate(0,0);
-        -moz-transform: translate(0,0);
-        transform: translate(0,0);
-    }
-
-    /*right sidebar is untested */
-    .row .sidebar.sidebar-right.sidebar-sm-show {
-        right: 0;
         -webkit-transform: translate(0,0);
         -ms-transform: translate(0,0);
         -o-transform: translate(0,0);
@@ -101,14 +76,6 @@
         transform: translate(0,0);
     }
 
-    .row .sidebar.sidebar-right.sidebar-md-show {
-        right: 0;
-        -webkit-transform: translate(0,0);
-        -ms-transform: translate(0,0);
-        -o-transform: translate(0,0);
-        -moz-transform: translate(0,0);
-        transform: translate(0,0);
-    }
 }
 
 @media (min-width: 1170px) {
@@ -121,14 +88,6 @@
         transform: translate(0,0);
     }
 
-    .row .sidebar.sidebar-right.sidebar-lg-show {
-        right: 0;
-        -webkit-transform: translate(0,0);
-        -moz-transform: translate(0,0);
-        -ms-transform: translate(0,0);
-        -o-transform: translate(0,0);
-        transform: translate(0,0);
-    }
 }
 
 /* animation class - optional: without it the sidebar would just pop in and out*/
@@ -156,18 +115,4 @@
         transform: translate(0,0);
     }
 
-.sidebar.sidebar-right {
-    -webkit-transform: translate(100%,0);
-    -moz-transform: translate(100%,0);
-    -ms-transform: translate(100%,0);
-    -o-transform: translate(100%,0);
-    transform: translate(100%,0);
-}
 
-    .sidebar.sidebar-right.sidebar-open {
-        -webkit-transform: translate(0,0);
-        -moz-transform: translate(0,0);
-        -ms-transform: translate(0,0);
-        -o-transform: translate(0,0);
-        transform: translate(0,0);
-    }
