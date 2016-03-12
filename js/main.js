@@ -261,7 +261,7 @@ function settings(){
                 '<div class="row">'+
                   '<div class="col-xs-6 col-sm-12">'+
                     '<img src="https://randomuser.me/api/portraits/med/men/44.jpg" alt="" class="img img-responsive imgTarjeta img-circle">' +
-                  '</div>'
+                  '</div>'+
                   '<div class="col-xs-6  col-sm-12">' +
                    ' <h2>change image</h2>'+
                   '</div>'+
