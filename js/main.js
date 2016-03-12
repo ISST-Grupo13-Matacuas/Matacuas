@@ -251,6 +251,12 @@ function newQueja(tipo){
 
 }
 
+function settings(){
+    $('#payLoadSP').html('meter codigo');
+
+
+
+}
 /*-----------------------
 --------MAPS------------
 ----------------------*/

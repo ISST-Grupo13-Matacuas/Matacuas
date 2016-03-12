@@ -12,6 +12,8 @@
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="http://cdn.jsdelivr.net/animatecss/2.1.0/animate.min.css">
     <link rel="stylesheet" href="http://openlayers.org/en/v3.2.0/css/ol.css" type="text/css"> 
+    <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.0/css/bootstrap-toggle.min.css" rel="stylesheet">
+
     <link rel="stylesheet" href="stylesheet/sidebar.css">
     <link rel="stylesheet" href="stylesheet/single.css">
 
@@ -35,7 +37,7 @@
           </button>
           <a class="navbar-brand" onclick="principal()">Matacuas</a>
           <ul class="nav navbar-nav navbar-right navRight">
-            <li><span class="glyphicon glyphicon-cog cogGly"></span>  </li>
+            <li onclick="settings()"><span class="glyphicon glyphicon-cog cogGly"></span>  </li>
           </ul>
         </div>
       </div>
@@ -113,9 +115,10 @@
   <script src="js/sidebar.js"></script>
      <script type='text/javascript' src="js/OpenLayers.js"></script>
         <script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
+        <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.0/js/bootstrap-toggle.min.js"></script>
  <script src="js/mapa.js"></script>
 
-  <script src="js/main.js?v=36"></script>
+  <script src="js/main.js?v=38"></script>
   <script>
      $( document ).ready(newQueja())
   </script>
