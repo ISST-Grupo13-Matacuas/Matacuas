@@ -56,6 +56,17 @@ hr{
   color:#FFF;
   border-radius: 0em;
 }
+     .btn-cancel{
+      background-color: #d9534f;
+      color:#FFF;
+      border-radius: 0em;
+    }
+       .btn-valid{
+      background-color: #51B948;
+      color:#FFF;
+      border-radius: 0em;
+    }
+    
 .tarjeta{
   padding: 1%;
   margin-bottom: 1vh;
