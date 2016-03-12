@@ -248,6 +248,8 @@ function newQueja(tipo){
     '</div>'+
   '</div>'+
 '</div>');
+create_map(1);
+
 
 }
 
