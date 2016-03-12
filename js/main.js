@@ -209,11 +209,15 @@ function initmap() {
 
 
 function newQueja(tipo){
+      var nombre = "Nueva queja";
+      if (tipo === 2){
+        nombre = "Buena acción"
+      }
 
 	      $('#payLoadSP').html(
-       '<div  class="caja col-xs-8 col-xs-offset-2 text-center" >'+
+       '<div  class="caja col-xs-8 col-xs-offset-2 text-center  well animated bounceInDown" >'+
         '<div class="row">'+
-          '<h1 class="LoginText">Nueva queja</h1>'+
+          '<h1 class="LoginText">'+ nombre +'</h1>'+
           '<div class="row">'+
             '<div class="col-xs-10 col-xs-offset-1">'+
               '<button class="btnNQ" id="locate">Locate me!</button>'+
