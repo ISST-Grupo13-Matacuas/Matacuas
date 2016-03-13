@@ -56,17 +56,23 @@ hr{
   color:#FFF;
   border-radius: 0em;
 }
-     .btn-cancel{
-      background-color: #d9534f;
-      color:#FFF;
-      border-radius: 0em;
-    }
-       .btn-valid{
-      background-color: #51B948;
-      color:#FFF;
-      border-radius: 0em;
-    }
-    
+.btn-cancel{
+  background-color: #d9534f;
+  color:#FFF;
+  border-radius: 0em;
+}
+.btn-valid{
+  background-color: #51B948;
+  color:#FFF;
+  border-radius: 0em;
+}
+.btn-gris{
+  background-color: #333333;
+  color:#FFF;
+  border-radius: 0em;
+}
+
+
 .tarjeta{
   padding: 1%;
   margin-bottom: 1vh;
@@ -225,27 +231,27 @@ a > p{
 }
 
 .listTarjetasPerf{
-      margin: 3%;
-      margin-top: 60px;
-      margin-bottom: 100px;
-    }
+  margin: 3%;
+  margin-top: 60px;
+  margin-bottom: 100px;
+}
 
 
-  .glyMenu{
-    font-size: 3em;
-  }
-  .positiveCard{
-    background-color: #5C5;
-    border-radius: 2em;
-    font-size: 1.2em;
-  }
-  .negativeCard{
-   background-color: #C55;
-   border-radius: 2em;
-   font-size: 1.2em;
- }
+.glyMenu{
+  font-size: 3em;
+}
+.positiveCard{
+  background-color: #5C5;
+  border-radius: 2em;
+  font-size: 1.2em;
+}
+.negativeCard{
+ background-color: #C55;
+ border-radius: 2em;
+ font-size: 1.2em;
+}
 
- .box-img-perfil{
+.box-img-perfil{
   margin-left: 40%;
   margin-top: -75px;
 }
