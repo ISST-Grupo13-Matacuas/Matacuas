@@ -98,10 +98,9 @@ closeSidebar()
 
 }
 
-function cardProfile(lugar){
+function cardProfile(lugar,tipo){
   var lugarb = '#'+lugar;
-  $(lugarb).append(
-   '<div class=" row well animated pulse tarjeta" >'+
+  var cardCode = '<div class=" row well animated pulse tarjeta" >'+
    '<div class="col-xs-4 col-sm-3 col-md-2">'+
    '<img src="images/download.jpeg" alt="" class="img img-responsive imgTarjeta">'+
    '</div>'+
@@ -109,15 +108,26 @@ function cardProfile(lugar){
    '<h3 class="tarjetaTitle">Título de mi tarjeta</h3>'+
    '<p><small>location Lorem ipsum dolor sit amet.</small></p>'+
 
-   '</div>'+  
-   '<div class="col-xs-2  text-center">'+
+   '</div>';
+   if(tipo < 1){
+    cardCode +=   '<div class="col-xs-2  text-center">'+
    '<div class="positiveCard"><span class="glyphicon glyphicon-thumbs-up"></span></div>'+  
     '</br>'+
   '<div class="toolsCard"><span class="glyphicon glyphicon-pencil"></span></div>'+  
    '</br>'+
   '<div class="deleteCard"><span class="glyphicon glyphicon-trash"></span></div>'+  
-   '</div>'+
-   '</div>');
+   '</div>';
+   } else{
+      cardCode +=   '<div class="col-xs-2  text-center">'+
+   '<div class="deleteCard"><span class="glyphicon glyphicon-exclamation-sign"></span></div>'+  
+    '</br>'+
+  '<div class="toolsCard"><span class="glyphicon glyphicon-save-file"></span></div>'+  
+   '</div>';
+   }
+
+    cardCode += '</div>';
+
+  $(lugarb).append(cardCode);
 
 }
 
@@ -159,10 +169,10 @@ function profile(){
    '<div id="ProfileList"></div>'+
 
    '</div>');
-cardProfile('ProfileList');
-cardProfile('ProfileList');
-cardProfile('ProfileList');
-cardProfile('ProfileList');
+cardProfile('ProfileList',0);
+cardProfile('ProfileList',0);
+cardProfile('ProfileList',0);
+cardProfile('ProfileList',0);
 closeSidebar()
 }
 
@@ -321,8 +331,8 @@ function notification() {
   $('#payLoadSP').html('<div class="row listTarjetasPerf">'+
     '<div id="ProfileList"></div>'+
     '</div>');
-  cardProfile('ProfileList');
-  cardProfile('ProfileList');
+  cardProfile('ProfileList',1);
+  cardProfile('ProfileList',1);
 
   closeSidebar()
 
