@@ -355,6 +355,25 @@ function settings(){
 
 
 }
+
+function notification() {
+  $('#payLoadSP').html('<div class="row listTarjetasPerf">'+
+          '<div id="ProfileList"></div>'+
+          '</div>');
+cardProfile('ProfileList');
+cardProfile('ProfileList');
+
+var bar = $('.sidebar');
+console.log(bar);
+if(bar.hasClass('sidebar-open')){
+  bar.removeClass('sidebar-open');
+  console.log("sacada");
+}
+
+}
+
+
+
 /*-----------------------
 --------MAPS------------
 ----------------------*/
