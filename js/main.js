@@ -110,9 +110,12 @@ function cardProfile(lugar){
    '<p><small>location Lorem ipsum dolor sit amet.</small></p>'+
 
    '</div>'+  
-   '<div class="col-xs-2 positiveCard text-center">'+
-   '<span class="glyphicon glyphicon-thumbs-up"></span>'+
-
+   '<div class="col-xs-2  text-center">'+
+   '<div class="positiveCard"><span class="glyphicon glyphicon-thumbs-up"></span></div>'+  
+    '</br>'+
+  '<div class="toolsCard"><span class="glyphicon glyphicon-pencil"></span></div>'+  
+   '</br>'+
+  '<div class="deleteCard"><span class="glyphicon glyphicon-trash"></span></div>'+  
    '</div>'+
    '</div>');
 
@@ -305,7 +308,7 @@ function settings(){
    '</div>'+
 
    '</div>'+
-   
+
 
    '</div>'+
    '</div>');

@@ -98,7 +98,7 @@ hr{
 }
 
 .btnNQ {
-  
+
   -webkit-box-shadow: 0px 1px 3px #666666;
   -moz-box-shadow: 0px 1px 3px #666666;
   box-shadow: 0px 1px 3px #666666;
@@ -242,6 +242,16 @@ a > p{
 }
 .positiveCard{
   background-color: #5C5;
+  border-radius: 2em;
+  font-size: 1.2em;
+}
+.toolsCard{
+   background-color: #CC5;
+  border-radius: 2em;
+  font-size: 1.2em;
+}
+.deleteCard{
+   background-color: #C55;
   border-radius: 2em;
   font-size: 1.2em;
 }
