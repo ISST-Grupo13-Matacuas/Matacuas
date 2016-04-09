@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <!DOCTYPE html>
   <html lang="en">
   <head>
@@ -38,9 +40,12 @@
             <span class="icon-bar"></span>
           </button>
           <a class="navbar-brand" onclick="principal()">Matacuas</a>
+          
+          <c:if test="${not empty user and user!=null}">
           <ul class="nav navbar-nav navbar-right navRight">
             <li onclick="settings()"><span class="glyphicon glyphicon-cog cogGly"></span>  </li>
           </ul>
+          </c:if>
         </div>
       </div>
 
@@ -48,6 +53,7 @@
 
     </div>
 
+<c:if test="${not empty user and user!=null}">
     <div class="navbar navbar-inverse navbar-fixed-bottom menuB" >
 
       <div class="row">
@@ -74,6 +80,7 @@
         </div>
 
       </div>
+      </c:if>
 
 
       <div class="container">
@@ -81,9 +88,11 @@
           <div class="col-xs-7 col-sm-3 col-md-2 sidebar sidebar-left sidebar-animate sidebar-lg-show ">
             <div class="menuHead">
               <div class="row">
+              <c:if test="${not empty user and user!=null}">
                 <div class="col-xs-8 col-xs-offset-2 col-md-12 col-md-offset-0" onclick="profile()">
                     <img src="https://randomuser.me/api/portraits/med/men/44.jpg" alt="" class="img img-responsive imgTarjeta img-circle" >
                 </div>
+                </c:if>
               </div>        
             </div>
 
@@ -91,9 +100,23 @@
               <li><br></li>
                <li><br></li>
                 <li><br></li>
-                <li onclick="profile()"><a href="#">Perfil</a></li>
-              <li onclick="notification()"><a href="#">Notificaciones <Span class="badge">2</Span></a></li>
+                	<c:if test="${not empty user and user!=null}">
+                		<li>
+						<c:out value="${user}"/>
+						</li> 
+					</c:if>
+					<li>
+					<a href="<c:url value="${url}"/>"><c:out value="${urlLinktext}"/></a>
+					</li>
+			<c:if test="${ not empty user and user!=null}">
+	              <li onclick="profile()"><a href="#">Perfil</a></li>
+	              <li onclick="notification()"><a href="#">Notificaciones <Span class="badge">2</Span></a></li>
+              </c:if>
               <li onclick="principal()"><a href="#">Entorno</a></li>
+              
+              
+              
+              
             </ul>
           </div>
 
