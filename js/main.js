@@ -52,6 +52,7 @@ function principal(tipe){
 	$('#payLoadSP').html('<div class="row listTarjetas" id="listTarjetas"></div>');
 
 	$.getJSON( "./jsons/all.json", function( json ) {
+
 		for ( var i in json){
 			cardPrincipal('listTarjetas', i, json[i].texto,json[i].imagen)
 		}
