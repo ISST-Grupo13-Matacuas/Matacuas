@@ -12,6 +12,16 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 		<servlet-name>Isst_grupo13_matacuas</servlet-name>
 		<url-pattern>/matacuas</url-pattern>
 	</servlet-mapping>
+	<servlet>
+	   
+		<servlet-name>PruebaBDServlet</servlet-name>
+		<servlet-class>isst.grupo13.matacuas.pruebaBD.PruebaBDServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	    <load-on-startup>1</load-on-startup>
+		<servlet-name>PruebaBDServlet</servlet-name>
+		<url-pattern>/prueba</url-pattern>
+	</servlet-mapping>
 	<welcome-file-list>
 		<welcome-file>index.html</welcome-file>
 	</welcome-file-list>

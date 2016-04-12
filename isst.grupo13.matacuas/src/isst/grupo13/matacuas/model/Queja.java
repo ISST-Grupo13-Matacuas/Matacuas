@@ -1,20 +1,26 @@
 package isst.grupo13.matacuas.model;
 
 import java.io.Serializable;
+
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
 
 /**
  * @author Carlos Gomez Sanchez
  *
  */
+@SequenceGenerator(name="seq",initialValue=1)
 
 @Entity
 public class Queja implements Serializable {
 	
 	private static final long serialVersionUID = 01L;
 	
-	@Id
+	@Id @GeneratedValue(strategy = GenerationType.SEQUENCE, generator="seq")
+	private Long id;
 	private String usuario; //Usuario que pone la queja
 	private String matricula;  //Matricula del coche infractor
 	private String lugar; //Nombre del lugar, calle, lugares cercanos...
@@ -40,6 +46,18 @@ public class Queja implements Serializable {
 	
 	
 	
+	public Long getId() {
+		return id;
+	}
+
+
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+
+
 	public String getUsuario() {
 		return usuario;
 	}
@@ -119,6 +137,16 @@ public class Queja implements Serializable {
 
 	public void setEstado(int estado) {
 		this.estado = estado;
+	}
+
+
+
+	@Override
+	public String toString() {
+		return "Queja [usuario=" + usuario + ", matricula=" + matricula
+				+ ", lugar=" + lugar + ", descripcion=" + descripcion
+				+ ", lat=" + lat + ", lng=" + lng + ", imagen=" + imagen
+				+ ", estado=" + estado + "]";
 	}
 
 

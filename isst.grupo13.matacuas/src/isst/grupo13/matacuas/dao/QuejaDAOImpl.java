@@ -72,7 +72,7 @@ public class QuejaDAOImpl implements QuejaDAO {
 	@Override
 	public List<Queja> readUsuario(String usuario) {
 		EntityManager em = EMFService.get().createEntityManager();
-		Query q = em.createQuery("select t from Queja q where q.usuario = :usuario");
+		Query q = em.createQuery("select q from Queja q where q.usuario = :usuario");
 		q.setParameter("usuario", usuario);
 		List<Queja> quejas = q.getResultList();
 		em.close();
@@ -85,7 +85,7 @@ public class QuejaDAOImpl implements QuejaDAO {
 	@Override
 	public List<Queja> readMatricula(String matricula) {
 		EntityManager em = EMFService.get().createEntityManager();
-		Query q = em.createQuery("select t from Queja q where q.matricula = :matricula");
+		Query q = em.createQuery("select q from Queja q where q.matricula = :matricula");
 		q.setParameter("matricula", matricula);
 		List<Queja> quejas = q.getResultList();
 		em.close();
@@ -98,7 +98,7 @@ public class QuejaDAOImpl implements QuejaDAO {
 	@Override
 	public List<Queja> readEstado(int estado) {
 		EntityManager em = EMFService.get().createEntityManager();
-		Query q = em.createQuery("select t from Queja q where q.estado = :estado");
+		Query q = em.createQuery("select q from Queja q where q.estado = :estado");
 		q.setParameter("estado", estado);
 		List<Queja> quejas = q.getResultList();
 		em.close();
@@ -124,7 +124,7 @@ public class QuejaDAOImpl implements QuejaDAO {
 		EntityManager em = EMFService.get().createEntityManager();
 		
 		try{
-			Queja busq = em.find(Queja.class, queja.getUsuario());
+			Queja busq = em.find(Queja.class, queja.getId());
 			em.remove(busq);
 			
 		}
