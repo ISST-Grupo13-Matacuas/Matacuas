@@ -53,20 +53,20 @@
 
       <div class="row">
        <div class="col-xs-4 text-center">
-        <a onclick="newQueja(0)">
+        <a href="/newQueja?tipo=1">
           <span class="
           glyphicon glyphicon-thumbs-down glyM"></span>
           <p>Negativa</p></a>
         </div>
         <div class="col-xs-4 text-center">
-          <a onclick="newQueja(1)">
+          <a href="/newQueja?tipo=1">
             <span style="font-size:2.5em" class="
             glyphicon glyphicon-camera glyM"></span>
           </a>
         </div>
 
         <div class="col-xs-4 text-center">
-          <a onclick="newQueja(2)">
+          <a href="/newQueja?tipo=2">
             <span class="
             glyphicon glyphicon-thumbs-up glyM"></span>
             <p>Positiva</p></a>
