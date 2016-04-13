@@ -39,24 +39,82 @@
    
    <div class="row">
    <div class="col-xs-10 col-xs-offset-1">
-   <button class="btn-login btn" id="locate">Locate me!</button>
+   <button class="btn-login btn" id="locate">Localízame!</button>
    <div class="wrapper">
    <div id="mapa"></div>
    </div>
    </div>
    </div>
-   </div>
-
+ 
+ <!--  
    <div class="row">
    <div class="col-xs-10 col-xs-offset-1">
-   <p>Describa la infracción</p>
-
-   <textarea class="form-control " rows="3">
-
-   </textarea>
+   		<p id="lat">Latitud</p>
+   		<p id="lng">Longitud</p>
+   
    </div>
    </div>
-
+   -->
+   
+   
+   
+ 
+   
+   <form  role="form" action="/newQueja" method="post" acceptcharset="utf-8">
+                <div class="col-xs-10 col-xs-offset-1"">
+                    <!--  <div class="well well-sm"><strong><span class="glyphicon glyphicon-asterisk"></span>Obligatorio</strong></div>-->
+                    <div class="form-group">
+                        <label>Lugar</label>
+                        <div class="input-group">
+                            <input type="text" class="form-control" name="lugar" id="lugar" placeholder="Lugar del incidente" required>
+                            <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
+                        </div>
+                        
+                    </div>
+                    <div class="form-group">
+                        <label>Matrícula</label>
+                        <div class="input-group">
+                            <input type="text" class="form-control" name="matricula" id="matricula" placeholder="Matrícula del infractor" maxLength="7" required>
+                            <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
+                        </div>
+                        
+                    </div>
+                    
+                    
+                    <div class="form-group">
+                        <label>Descripción</label>
+                        <div class="input-group">
+                            <textarea name="descripcion" id="descripcion" class="form-control" rows="5" required placeholder="Descripción del incidente"></textarea>
+                            <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
+                        </div>
+                        
+                    </div>
+                     <div class="form-group">
+                        <label>Imagen</label>
+                        <div class="input-group">
+                            <input type="file" id="imagen" name="imagen" />
+                           
+                        </div>
+                        
+                    </div>
+                    <div class="form-group hidden">
+                        
+                        <div class="input-group">
+                            <input type="text" class="form-control" name="latitud" id="latitud"  required>
+                        </div>
+                        
+                    </div>
+                    <div class="form-group hidden">
+                        
+                        <div class="input-group">
+                            <input type="text" class="form-control" name="longitud" id="longitud"  required>
+                        </div>
+                        
+                    </div>
+                    <input type="submit" name="submit" id="submit" value="Poner queja" class="btn  btn-login">
+                </div>
+            </form>
+<!--  
    <div class="row">
    <div class="col-xs-10 col-xs-offset-1">
    <form enctype="multipart/form-data">
@@ -70,6 +128,8 @@
    </form>
    </div>
    </div>
+   -->
+   
    </div>
 
 </div>

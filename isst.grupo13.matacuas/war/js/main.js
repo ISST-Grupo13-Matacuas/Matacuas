@@ -489,6 +489,8 @@ function create_map(tarea){
 		geolocate.deactivate();
     //console.log(geolocate);
     console.log("DAT CENTRO" + map.getCenter());
+    $('#longitud').html(map.getCenter().lon);
+    $('#latitud').html(map.getCenter().lat);
     geolocate.watch = false;
     firstGeolocation = true;
     geolocate.activate();

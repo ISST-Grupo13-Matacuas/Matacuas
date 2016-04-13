@@ -1,5 +1,8 @@
 package isst.grupo13.matacuas;
 
+import isst.grupo13.matacuas.dao.QuejaDAO;
+import isst.grupo13.matacuas.dao.QuejaDAOImpl;
+
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -44,6 +47,23 @@ public class NuevaQuejaServlet extends HttpServlet {
 		} catch (ServletException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+		}
+	}
+	
+	public void doPost(HttpServletRequest req, HttpServletResponse resp)
+			throws IOException {
+		
+		
+		String usuario = (String) req.getSession().getAttribute("usuario");
+		String lugar = req.getParameter("lugar");
+		String matricula = req.getParameter("matricula");
+		String descripcion = req.getParameter("descripcion");
+		String lat =  req.getParameter("latitud");
+		String lng = req.getParameter("longitud");
+		
+		if(lugar!= null && matricula!= null && descripcion != null && usuario!= "" && lat!=null && lng != null){
+			QuejaDAO dao = QuejaDAOImpl.getInstance();
+			//Queja queja = dao.create()
 		}
 	}
 }
