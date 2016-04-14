@@ -9,8 +9,13 @@
               			<c:if test="${not empty quejas }">
               				<c:forEach items="${quejas}" var="queja">
 								
-								<a class="tarjetaHtml" onclick="">
-									   <div class=" row well animated pulse tarjeta" >
+								<a class="tarjetaHtml" href="/verQueja?id=${queja.id }"   >
+										<c:if test="${queja.tipo==1 }" >
+									   <div class=" row well animated pulse tarjeta" style="border: solid 0.5vh #C55;" >
+									   </c:if>
+									   <c:if test="${queja.tipo== 2}">
+									   <div class=" row well animated pulse tarjeta" style="border: solid 0.5vh #5C5;" >
+									   </c:if>
 									   <div class="col-xs-4 col-sm-3">
 									   <img src="/images/car.jpg" alt="" class="img img-responsive imgTarjeta">
 									   </div>

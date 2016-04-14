@@ -19,10 +19,14 @@ public class PruebaBDServlet extends HttpServlet {
 		QuejaDAO dao = QuejaDAOImpl.getInstance();
 		List<Queja> quejas = dao.read();
 		if (quejas.size() == 0){
-			Queja queja1 =  dao.create("charlygs94@gmail.com", "7952HWT", "Calle Murillo", "Choque con otro vehiculo", 40.401450, -3.784832, "car.jpg", 1);
-			Queja queja2 =  dao.create("charlygs94@gmail.com", "4675DVD", "Príncipe Pío", "Se ha saltado un semáforo", 40.421111, -3.720870, "car.jpg", 1);
+			Queja queja1 =  dao.create("charlygs94@gmail.com", "7952HWT", "Calle Murillo", "Choque con otro vehiculo", 40.401450, -3.784832, "car.jpg", 1,1);
+			Queja queja2 =  dao.create("charlygs94@gmail.com", "4675DVD", "Príncipe Pío", "Se ha saltado un semáforo", 40.421111, -3.720870, "car.jpg", 1,2);
 		}
-		
+		/*
+		List<Queja> quejasMalas = dao.read();
+		for(Queja quejaMala:quejasMalas){
+			dao.delete(quejaMala);
+		}*/
 		//dao.delete(queja1);
 		//dao.delete(queja2);
 	

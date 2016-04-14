@@ -8,7 +8,7 @@ public interface QuejaDAO {
 	
 	//Crea una nueva queja y la guarda en la BD
 	public Queja create(String usuario, String matricula, String lugar, String descripcion, double lat, double lng,
-			String imagen, int estado);
+			String imagen, int estado, int tipo);
 	
 	//Saca todas las quejas almacenadas
 	public List<Queja> read();

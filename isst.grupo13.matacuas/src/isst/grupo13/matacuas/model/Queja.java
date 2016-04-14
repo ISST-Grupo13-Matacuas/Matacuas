@@ -29,10 +29,11 @@ public class Queja implements Serializable {
 	private double lng; //Longitud
 	private String imagen; //Imagen si ha podido hacerla, si no por defecto
 	private int estado; //Para moderadores, reclamaciones
+	private int tipo; //Buena o mala accion
 	
 	
 	public Queja(String usuario, String matricula, String lugar, String descripcion, double lat, double lng,
-			String imagen, int estado) {
+			String imagen, int estado, int tipo) {
 		super();
 		this.usuario = usuario;
 		this.matricula = matricula;
@@ -42,10 +43,23 @@ public class Queja implements Serializable {
 		this.lng = lng;
 		this.imagen = imagen;
 		this.estado = estado;
+		this.tipo=tipo;
 	}
 	
 	
 	
+	public int getTipo() {
+		return tipo;
+	}
+
+
+
+	public void setTipo(int tipo) {
+		this.tipo = tipo;
+	}
+
+
+
 	public Long getId() {
 		return id;
 	}
@@ -143,11 +157,14 @@ public class Queja implements Serializable {
 
 	@Override
 	public String toString() {
-		return "Queja [usuario=" + usuario + ", matricula=" + matricula
-				+ ", lugar=" + lugar + ", descripcion=" + descripcion
-				+ ", lat=" + lat + ", lng=" + lng + ", imagen=" + imagen
-				+ ", estado=" + estado + "]";
+		return "Queja [id=" + id + ", usuario=" + usuario + ", matricula="
+				+ matricula + ", lugar=" + lugar + ", descripcion="
+				+ descripcion + ", lat=" + lat + ", lng=" + lng + ", imagen="
+				+ imagen + ", estado=" + estado + ", tipo=" + tipo + "]";
 	}
+
+
+
 
 
 
@@ -167,6 +184,11 @@ public class Queja implements Serializable {
 			return false;
 		if (estado != other.estado)
 			return false;
+		if (id == null) {
+			if (other.id != null)
+				return false;
+		} else if (!id.equals(other.id))
+			return false;
 		if (imagen == null) {
 			if (other.imagen != null)
 				return false;
@@ -181,8 +203,23 @@ public class Queja implements Serializable {
 				return false;
 		} else if (!lugar.equals(other.lugar))
 			return false;
+		if (matricula == null) {
+			if (other.matricula != null)
+				return false;
+		} else if (!matricula.equals(other.matricula))
+			return false;
+		if (tipo != other.tipo)
+			return false;
+		if (usuario == null) {
+			if (other.usuario != null)
+				return false;
+		} else if (!usuario.equals(other.usuario))
+			return false;
 		return true;
 	}
+
+
+
 	
 	
 	

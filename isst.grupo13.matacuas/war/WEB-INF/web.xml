@@ -30,6 +30,14 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 		<servlet-name>NuevaQuejaServlet</servlet-name>
 		<url-pattern>/newQueja</url-pattern>
 	</servlet-mapping>
+	<servlet>
+		<servlet-name>VerQuejaServlet</servlet-name>
+		<servlet-class>isst.grupo13.matacuas.VerQuejaServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>VerQuejaServlet</servlet-name>
+		<url-pattern>/verQueja</url-pattern>
+	</servlet-mapping>
 	
 	<welcome-file-list>
 		<welcome-file>index.html</welcome-file>

@@ -63,51 +63,58 @@
    <form  role="form" action="/newQueja" method="post" acceptcharset="utf-8">
                 <div class="col-xs-10 col-xs-offset-1"">
                     <!--  <div class="well well-sm"><strong><span class="glyphicon glyphicon-asterisk"></span>Obligatorio</strong></div>-->
-                    <div class="form-group">
+                   
                         <label>Lugar</label>
                         <div class="input-group">
                             <input type="text" class="form-control" name="lugar" id="lugar" placeholder="Lugar del incidente" required>
                             <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
-                        </div>
+                       
                         
                     </div>
-                    <div class="form-group">
+                    
                         <label>Matrícula</label>
                         <div class="input-group">
                             <input type="text" class="form-control" name="matricula" id="matricula" placeholder="Matrícula del infractor" maxLength="7" required>
                             <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
                         </div>
                         
-                    </div>
                     
                     
-                    <div class="form-group">
+                    
+                    
                         <label>Descripción</label>
                         <div class="input-group">
                             <textarea name="descripcion" id="descripcion" class="form-control" rows="5" required placeholder="Descripción del incidente"></textarea>
                             <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
-                        </div>
+                        
                         
                     </div>
-                     <div class="form-group">
+                     
                         <label>Imagen</label>
                         <div class="input-group">
                             <input type="file" id="imagen" name="imagen" />
                            
+                       
+                        
+                    </div>
+                    <div class="form-group hidden">
+                        
+                        <div class="input-group">
+                            <input type="hidden" class="form-control" name="latitud" id="latitud"  required>
+                        </div>
+                        
+                    </div>
+                    <div class="form-group ">
+                        
+                        <div class="input-group">
+                            <input type="hidden" class="form-control" name="longitud" id="longitud"  required>
                         </div>
                         
                     </div>
                     <div class="form-group hidden">
                         
                         <div class="input-group">
-                            <input type="text" class="form-control" name="latitud" id="latitud"  required>
-                        </div>
-                        
-                    </div>
-                    <div class="form-group hidden">
-                        
-                        <div class="input-group">
-                            <input type="text" class="form-control" name="longitud" id="longitud"  required>
+                            <input type="hidden" class="form-control" name="tipo" id="tipo"  value="${tipoQueja }">
                         </div>
                         
                     </div>
