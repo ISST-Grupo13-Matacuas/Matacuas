@@ -1,7 +1,10 @@
 package isst.grupo13.matacuas.pruebaBD;
 import isst.grupo13.matacuas.dao.QuejaDAO;
 import isst.grupo13.matacuas.dao.QuejaDAOImpl;
+import isst.grupo13.matacuas.dao.UsuarioDAO;
+import isst.grupo13.matacuas.dao.UsuarioDAOImp;
 import isst.grupo13.matacuas.model.Queja;
+import isst.grupo13.matacuas.model.Usuario;
 
 import java.io.IOException;
 import java.util.List;
@@ -17,10 +20,20 @@ public class PruebaBDServlet extends HttpServlet {
 		
 		resp.getWriter().println("<h1>Prueba de base de datos</h1>");
 		QuejaDAO dao = QuejaDAOImpl.getInstance();
+		UsuarioDAO daoUser = UsuarioDAOImp.getInstance();
+		List<Usuario> usuarios = daoUser.read();
+		
 		List<Queja> quejas = dao.read();
-		if (quejas.size() == 0){
+		if (quejas.size() == 0  ){
 			Queja queja1 =  dao.create("charlygs94@gmail.com", "7952HWT", "Calle Murillo", "Choque con otro vehiculo", 40.401450, -3.784832, "car.jpg", 1,1);
 			Queja queja2 =  dao.create("charlygs94@gmail.com", "4675DVD", "Príncipe Pío", "Se ha saltado un semáforo", 40.421111, -3.720870, "car.jpg", 1,2);
+			
+		}
+		
+		if (usuarios.size() == 0){
+			Usuario usuario1 = daoUser.create("charlygs94@gmail.com", "6784HWT", "gscharly",0);
+			Usuario moderador = daoUser.create("g.carreto@gmail.com", "8594FBH", "g.carrata",1);
+			
 		}
 		/*
 		List<Queja> quejasMalas = dao.read();
@@ -31,11 +44,18 @@ public class PruebaBDServlet extends HttpServlet {
 		//dao.delete(queja2);
 	
 		
-		resp.getWriter().println("Base entera:");
+		resp.getWriter().println("Base Quejas:");
 		resp.getWriter().println("<br>");
 		//resp.getWriter().println(queja1);
 		for(Queja queja:dao.read()){
 			resp.getWriter().println(queja.getId() + " " + queja);
+			resp.getWriter().println("<br>");
+		}
+		
+		resp.getWriter().println("Base Usuarios:");
+		resp.getWriter().println("<br>");
+		for(Usuario usuario:daoUser.read()){
+			resp.getWriter().println(usuario.getId() + " " + usuario);
 			resp.getWriter().println("<br>");
 		}
 		

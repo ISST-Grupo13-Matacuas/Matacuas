@@ -5,22 +5,25 @@ import java.util.List;
 import isst.grupo13.matacuas.model.Usuario;
 
 public interface UsuarioDAO {
-	public Usuario create(String usuario, String matricula, String nick);
+	public Usuario create(String usuario, String matricula, String nick, int tipo);
 	
-	//Saca todas las quejas almacenadas
+	//Saca todas los usuarios almacenados
 	public List<Usuario> read();
 	
-	//Saca todas las quejas que ha puesto un usuario
+	//Busca un usuario por su email 
 	public List<Usuario> readUsuario(String usuario);
 	
-	//Saca todas las quejas asociadas a una matricula
+	//Busca un usuario por su matricula
 	public List<Usuario> readMatricula(String matricula);
 	
+	//Busca un usuario por su nick
 	public List<Usuario> nick(String nick);
 	
-	//Actualiza una queja (estado)
+	//Actualiza un usuario (nick,matricula)
 	public void update(Usuario usuario);
 	
-	//Borra una queja
+	//Borra un usuario
 	public void delete(Usuario usuario);
+	
+
 }

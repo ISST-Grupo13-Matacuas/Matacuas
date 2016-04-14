@@ -1,6 +1,7 @@
 package isst.grupo13.matacuas.model;
 
 import java.io.Serializable;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -16,22 +17,34 @@ public class Usuario implements Serializable{
 	@Id @GeneratedValue(strategy = GenerationType.SEQUENCE, generator="seq")
 	private Long id;
 	private String usuario; //Correo del usuario
-	private String matricula;  //Matricula del coche infractor
+	private String matricula;  //Matricula del coche del usuario
 	private String nick; //Apodo del usuario
+	private int tipo; //Moderador o no
 	
 		
-	public Usuario(String usuario, String matricula, String nick) {
+	public Usuario(String usuario, String matricula, String nick, int tipo) {
 		super();
-		this.id = id;
+		
 		this.usuario = usuario;
 		this.matricula = matricula;
 		this.nick = nick;
+		this.tipo=tipo;
 	}
 	
-	@Override
-	public String toString() {
-		return "Usuario [id=" + id + ", usuario=" + usuario + ", matricula=" + matricula + ", nick=" + nick + "]";
+	
+	
+	public int getTipo() {
+		return tipo;
 	}
+
+
+
+	public void setTipo(int tipo) {
+		this.tipo = tipo;
+	}
+
+
+
 	public Long getId() {
 		return id;
 	}
@@ -56,16 +69,17 @@ public class Usuario implements Serializable{
 	public void setNick(String nick) {
 		this.nick = nick;
 	}
+
+
+
 	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + ((id == null) ? 0 : id.hashCode());
-		result = prime * result + ((matricula == null) ? 0 : matricula.hashCode());
-		result = prime * result + ((nick == null) ? 0 : nick.hashCode());
-		result = prime * result + ((usuario == null) ? 0 : usuario.hashCode());
-		return result;
+	public String toString() {
+		return "Usuario [id=" + id + ", usuario=" + usuario + ", matricula="
+				+ matricula + ", nick=" + nick + ", tipo=" + tipo + "]";
 	}
+
+
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -90,6 +104,8 @@ public class Usuario implements Serializable{
 				return false;
 		} else if (!nick.equals(other.nick))
 			return false;
+		if (tipo != other.tipo)
+			return false;
 		if (usuario == null) {
 			if (other.usuario != null)
 				return false;
@@ -97,6 +113,7 @@ public class Usuario implements Serializable{
 			return false;
 		return true;
 	}
+	
 	
 
 }

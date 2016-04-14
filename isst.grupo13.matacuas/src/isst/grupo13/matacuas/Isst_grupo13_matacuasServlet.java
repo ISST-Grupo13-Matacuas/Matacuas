@@ -2,7 +2,10 @@ package isst.grupo13.matacuas;
 
 import isst.grupo13.matacuas.dao.QuejaDAO;
 import isst.grupo13.matacuas.dao.QuejaDAOImpl;
+import isst.grupo13.matacuas.dao.UsuarioDAO;
+import isst.grupo13.matacuas.dao.UsuarioDAOImp;
 import isst.grupo13.matacuas.model.Queja;
+import isst.grupo13.matacuas.model.Usuario;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -30,29 +33,32 @@ public class Isst_grupo13_matacuasServlet extends HttpServlet {
 			user = req.getUserPrincipal().getName();
 			url = userService.createLogoutURL(req.getRequestURI());
 			urlLinktext = "Logout";
-			//resp.getWriter().println( "<p>Hola " + req.getUserPrincipal().getName() + "</p>");
+			
 			
 		}
-		//resp.getWriter().println( "<p>Pulsa <a href=\"" + url + "\">" + urlLinktext + "</a>.</p>" );
+		
 		
 		QuejaDAO dao = QuejaDAOImpl.getInstance();
+		UsuarioDAO daoUsuario = UsuarioDAOImp.getInstance();
 		List<Queja> quejas = dao.read();
 		
 		req.getSession().setAttribute("user", user);
 		req.getSession().setAttribute("url", url);
 		req.getSession().setAttribute("urlLinktext", urlLinktext);
-		req.getSession().setAttribute("quejas", new ArrayList<Queja>(quejas));
-		/*if (user == null || user == ""){
-			RequestDispatcher view = req.getRequestDispatcher("Login.jsp");
-			try {
-				view.forward(req, resp);
-			} catch (ServletException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		}*/
 		
-		//else{
+		if(user!=""){
+			List<Usuario> usuarios = daoUsuario.readUsuario(user);
+			if(usuarios.size() == 0){
+				Usuario usuario = daoUsuario.create(user, "", "", 0);
+				req.getSession().setAttribute("usuarioBD", usuario);
+			}
+			else{
+				req.getSession().setAttribute("usuarioBD", usuarios.get(0));
+			}
+		}
+		
+		req.getSession().setAttribute("quejas", new ArrayList<Queja>(quejas));
+		
 			RequestDispatcher view = req.getRequestDispatcher("SingleApp.jsp");
 			try {
 				view.forward(req, resp);
@@ -60,7 +66,7 @@ public class Isst_grupo13_matacuasServlet extends HttpServlet {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-		//}
+		
 		
 		
 		

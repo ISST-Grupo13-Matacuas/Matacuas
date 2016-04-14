@@ -11,13 +11,28 @@ import isst.grupo13.matacuas.model.Usuario;
 import isst.grupo13.matacuas.model.Usuario;
 
 public class UsuarioDAOImp implements UsuarioDAO{
+	
+	//Patrón Singleton
+		private static UsuarioDAOImp instance;
+		
+		private UsuarioDAOImp() {
+			// TODO Auto-generated constructor stub
+		}
+		
+		public static UsuarioDAOImp getInstance(){
+			if (instance == null){
+				instance = new UsuarioDAOImp();
+				
+			}
+			return instance;
+		}
 
 	@Override
-	public Usuario create(String usuario, String matricula, String nick) {
+	public Usuario create(String usuario, String matricula, String nick, int tipo) {
 		Usuario usr = null;
 		EntityManager em = EMFService.get().createEntityManager();
-		usr = new Usuario(usuario, matricula, nick);
-		em.persist(usuario);
+		usr = new Usuario(usuario, matricula, nick, tipo);
+		em.persist(usr);
 		em.close();
 		
 		return usr;
@@ -85,5 +100,6 @@ public class UsuarioDAOImp implements UsuarioDAO{
 		}
 		
 	}
+	
 
 }

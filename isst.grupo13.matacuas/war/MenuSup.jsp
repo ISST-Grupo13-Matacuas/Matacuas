@@ -104,7 +104,7 @@
 					<a href="<c:url value="${url}"/>"><c:out value="${urlLinktext}"/></a>
 					</li>
 			<c:if test="${ not empty user and user!=null}">
-	              <li onclick="profile()"><a href="#">Perfil</a></li>
+	              <li ><a href="/perfil">Perfil</a></li>
 	              <li onclick="notification()"><a href="#">Notificaciones <Span class="badge">2</Span></a></li>
               </c:if>
               <li><a href="/matacuas">Entorno</a></li>
