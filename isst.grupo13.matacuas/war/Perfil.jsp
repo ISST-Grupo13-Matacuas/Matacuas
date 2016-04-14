@@ -19,8 +19,8 @@
    <br>
    <br>
    <c:if test="${ empty usuarioBD.nick }">
-   <h4 class="nombrePerfil"><c:out value="${usuarioBD.usuario }"/></h4>
-  		<a href="">¡Elige un nickname!</a> 
+   <h4 class="nombrePerfil text-center"><c:out value="${usuarioBD.usuario }"/></h4>
+  		<a href="/ajustes">¡Elige un nickname!</a> 
    </c:if>
    <h4 class="nombrePerfil"><c:out value="${usuarioBD.nick }"/></h4>
    </div>
@@ -31,12 +31,12 @@
    <br>
    <div class="col-xs-12">
    <br>
-   <hr  style="    height: 0.2vh;
+   <hr  style="height: 0.2vh;
    background-color: #26A4FF">
    </div>
   <div class="col-xs-12">
    <c:if test="${empty usuarioBD.matricula }">
-   	<a href="">¡Registra tu matrícula!</a>
+   	<a href="/ajustes">¡Registra tu matrícula!</a>
    </c:if>
    <p><c:out value="${usuarioBD.matricula }"/></p>
    

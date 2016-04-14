@@ -25,5 +25,7 @@ public interface UsuarioDAO {
 	//Borra un usuario
 	public void delete(Usuario usuario);
 	
+	public Usuario readUsuarioId(Long id);
+	
 
 }

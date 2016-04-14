@@ -47,6 +47,14 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 		<servlet-name>PerfilServlet</servlet-name>
 		<url-pattern>/perfil</url-pattern>
 	</servlet-mapping>
+	<servlet>
+		<servlet-name>AjustesServlet</servlet-name>
+		<servlet-class>isst.grupo13.matacuas.AjustesServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>AjustesServlet</servlet-name>
+		<url-pattern>/ajustes</url-pattern>
+	</servlet-mapping>
 	
 	<welcome-file-list>
 		<welcome-file>index.html</welcome-file>

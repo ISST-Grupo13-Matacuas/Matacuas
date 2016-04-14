@@ -101,5 +101,12 @@ public class UsuarioDAOImp implements UsuarioDAO{
 		
 	}
 	
+	public Usuario readUsuarioId(Long id){
+		EntityManager em = EMFService.get().createEntityManager();
+		Usuario usuario = em.find(Usuario.class, id);
+		em.close();
+		return usuario;
+	}
+	
 
 }
