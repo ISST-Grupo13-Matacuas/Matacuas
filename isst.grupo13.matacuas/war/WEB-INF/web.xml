@@ -55,6 +55,14 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 		<servlet-name>AjustesServlet</servlet-name>
 		<url-pattern>/ajustes</url-pattern>
 	</servlet-mapping>
+	<servlet>
+		<servlet-name>NotificacionesServlet</servlet-name>
+		<servlet-class>isst.grupo13.matacuas.NotificacionesServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>NotificacionesServlet</servlet-name>
+		<url-pattern>/notificaciones</url-pattern>
+	</servlet-mapping>
 	
 	<welcome-file-list>
 		<welcome-file>index.html</welcome-file>

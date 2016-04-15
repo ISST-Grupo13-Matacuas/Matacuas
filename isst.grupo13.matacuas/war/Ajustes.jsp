@@ -5,6 +5,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <%@ include file="MenuSup.jsp" %>
 
+<c:if test="${not empty  user && user!= null && not empty usuarioBD }">
+
 <div class="row listTarjetasPerf">
 
 
@@ -75,5 +77,5 @@
    </div>
    </div>
 
-
+</c:if>
 <%@ include file="MenuInf.jsp" %>

@@ -105,7 +105,14 @@
 					</li>
 			<c:if test="${ not empty user and user!=null}">
 	              <li ><a href="/perfil">Perfil</a></li>
-	              <li onclick="notification()"><a href="#">Notificaciones <Span class="badge">2</Span></a></li>
+	              <li><a href="/notificaciones">Notificaciones
+	              	<c:if test="${not empty quejasMatricula and quejasMatricula != null and notificaciones > 0 }">
+	              	 <Span class="badge">
+	              		<c:out value="${notificaciones }" />
+	              		</Span>
+	              	</c:if>
+	              
+	              </a></li>
               </c:if>
               <li><a href="/matacuas">Entorno</a></li>
               

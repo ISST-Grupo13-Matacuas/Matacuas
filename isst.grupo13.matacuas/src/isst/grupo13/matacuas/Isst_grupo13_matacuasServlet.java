@@ -48,14 +48,22 @@ public class Isst_grupo13_matacuasServlet extends HttpServlet {
 		
 		if(user!=""){
 			List<Usuario> usuarios = daoUsuario.readUsuario(user);
+			Usuario usuario = null;
 			if(usuarios.size() == 0){
-				Usuario usuario = daoUsuario.create(user, "", "", 0);
+				usuario = daoUsuario.create(user, "", "", 0);
 				req.getSession().setAttribute("usuarioBD", usuario);
 			}
 			else{
-				req.getSession().setAttribute("usuarioBD", usuarios.get(0));
+				usuario = usuarios.get(0);
+				req.getSession().setAttribute("usuarioBD", usuario);
 			}
+			String matricula = usuario.getMatricula();
+			List<Queja> quejasMatricula = dao.readMatricula(matricula);
+			int longitud = quejasMatricula.size();
+			req.getSession().setAttribute("quejasMatricula", new ArrayList<Queja>(quejasMatricula));
+			req.getSession().setAttribute("notificaciones", longitud);
 		}
+		
 		
 		req.getSession().setAttribute("quejas", new ArrayList<Queja>(quejas));
 		
