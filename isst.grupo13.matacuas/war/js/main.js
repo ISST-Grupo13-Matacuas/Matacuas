@@ -370,7 +370,7 @@ function notification() {
 /*-----------------------
 --------MAPS------------
 ----------------------*/
-function create_map(tarea){
+function create_map(tarea, position){
 	var style = {
 		fillColor: '#000',
 		fillOpacity: 0.1,
@@ -396,6 +396,7 @@ function create_map(tarea){
 	map.events.register("click", map, function(e) {
       //var position = this.events.getMousePosition(e);
       var position = map.getLonLatFromPixel(e.xy);
+      
       vector.removeAllFeatures();
       /*var size = new OpenLayers.Size(25,25);
    var offset = new OpenLayers.Pixel(-(size.w/2), -size.h);
@@ -403,7 +404,8 @@ function create_map(tarea){
    var markerslayer = map.getLayer('Markers');
    markerslayer.clearMarkers();
    markerslayer.addMarker(new OpenLayers.Marker(position,icon));*/
-   createMarker(position);
+   
+      createMarker(position);
 
  });
 
@@ -473,6 +475,11 @@ function create_map(tarea){
         map.zoomToExtent(vector.getDataExtent());
         pulsate(circle);
         createMarker(map.getCenter());
+        var longitud = map.getCenter().lon;
+        var latitud = map.getCenter().lat;
+        document.getElementById("longitud").value=''+longitud;
+        document.getElementById("latitud").value=''+latitud;
+        console.log("Punto: " + map.getCenter());
         firstGeolocation = false;
         this.bind = true;
       }
@@ -492,8 +499,8 @@ function create_map(tarea){
     var longitud = map.getCenter().lon;
     var latitud = map.getCenter().lat;
     
-    document.getElementById("longitud").value=''+longitud;
-    document.getElementById("latitud").value=''+latitud;
+  //  document.getElementById("longitud").value=''+longitud;
+   // document.getElementById("latitud").value=''+latitud;
    // $('#longitud').html(map.getCenter().lon);
    // $('#latitud').html(map.getCenter().lat);
     geolocate.watch = false;
@@ -512,6 +519,7 @@ if (document.getElementById('locate')){
 
 var createMarker = function(position){
    //var position = map.getLonLatFromPixel(e.xy);
+	console.log(position);
    var size = new OpenLayers.Size(25,25);
    var offset = new OpenLayers.Pixel(-(size.w/2), -size.h);
    var icon = new OpenLayers.Icon('images/mark.png', size, offset);   
@@ -525,5 +533,17 @@ var createMarker = function(position){
 
    geolocalizar();
  }
+ if (position){
+	 console.log("Posición: " + position);
+	 console.log("Longitud: " + position.lon);
+	 console.log("Latitud: " + position.lat);
+	/* var proj = new OpenLayers.Projection("EPSG:4326");
+	 var point = new OpenLayers.LonLat(position.lon, position.lat);
+	 point.transform(proj, map.getProjectionObject());
+	 console.log("Point: " + point);*/
+
+	 createMarker(position);
+ }
+ 
 //$('#OpenLayers_Map_2_OpenLayers_ViewPort').css('position','ABSOLUTE')
 }

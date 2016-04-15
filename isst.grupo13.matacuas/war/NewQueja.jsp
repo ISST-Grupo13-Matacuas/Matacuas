@@ -160,7 +160,7 @@
 
   <script src="js/main.js?v=38"></script>
   <script>
-     $( document ).ready(create_map(1))
+     $( document ).ready(create_map(1,0))
   </script>
 </body>
 </html>

@@ -14,7 +14,7 @@
 	
 	    	<div id="ProfileList">
 	    	
-	    			<a class="tarjetaHtml" href="">
+	    			<a class="tarjetaHtml" href="/verQueja?id=${queja.id }">
 	    				<c:if test="${queja.tipo==1 }" >
 				   			<div class=" row well animated pulse tarjeta"  style="border: solid 0.5vh #C55;">
 				   		</c:if>

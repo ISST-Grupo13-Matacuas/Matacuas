@@ -4,11 +4,13 @@
 package isst.grupo13.matacuas.dao;
 
 import isst.grupo13.matacuas.model.Queja;
+import isst.grupo13.matacuas.model.Usuario;
 
 import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
+
 import isst.grupo13.matacuas.dao.EMFService;
 
 
@@ -133,6 +135,13 @@ public class QuejaDAOImpl implements QuejaDAO {
 			em.close();
 		}
 
+	}
+	
+	public Queja readQuejaId(Long id){
+		EntityManager em = EMFService.get().createEntityManager();
+		Queja queja = em.find(Queja.class, id);
+		em.close();
+		return queja;
 	}
 
 }

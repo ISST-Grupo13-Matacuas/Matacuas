@@ -54,6 +54,7 @@
    <c:if test="${not empty quejasUsuario }">
    
    			<c:forEach items="${quejasUsuario}" var="queja">
+   			<a class="tarjetaHtml" href="/verQueja?id=${queja.id }">
    			 <c:if test="${queja.tipo==1 }" >
 		          <div class=" row well animated pulse tarjeta" style="border: solid 0.5vh #C55;" >
 		           </c:if>
@@ -71,7 +72,8 @@
 				   <p><small>Vehículo con matrícula <c:out value="${queja.matricula }"/></small></p>
 				   <p><small><c:out value="${queja.descripcion }" /></small></p>
 				
-				   </div>  
+				   </div>
+				   </a>  
 				   
 				   </div>
 		   

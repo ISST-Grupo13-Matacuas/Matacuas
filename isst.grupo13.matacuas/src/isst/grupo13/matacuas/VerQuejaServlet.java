@@ -20,11 +20,20 @@ public class VerQuejaServlet extends HttpServlet {
 		Long id = Long.parseLong(req.getParameter("id"));
 		
 		//Queja queja =  req.getSession().getAttribute("queja");
-		Queja queja1 = (Queja) req.getAttribute("queja");
+		//Queja queja1 = (Queja) req.getAttribute("queja");
 		//resp.getWriter().println(queja);
-		resp.getWriter().println(queja1);
+		//resp.getWriter().println(queja1);
 		QuejaDAO dao = QuejaDAOImpl.getInstance();
-		//Queja queja = dao.find(Queja.class, id);
+		Queja queja = dao.readQuejaId(id);
+		req.setAttribute("quejaAVer", queja);
+		RequestDispatcher view = req.getRequestDispatcher("Queja.jsp");
+		try {
+			view.forward(req, resp);
+		} catch (ServletException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	
 		
 	}
 	

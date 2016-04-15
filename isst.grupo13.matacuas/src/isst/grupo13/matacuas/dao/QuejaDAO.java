@@ -3,6 +3,7 @@ package isst.grupo13.matacuas.dao;
 import java.util.List;
 
 import isst.grupo13.matacuas.model.Queja;
+import isst.grupo13.matacuas.model.Usuario;
 
 public interface QuejaDAO {
 	
@@ -27,7 +28,7 @@ public interface QuejaDAO {
 	
 	//Borra una queja
 	public void delete(Queja queja);
-	
-	
+	//Buscar una queja por su id
+	public Queja readQuejaId(Long id);
 
 }
