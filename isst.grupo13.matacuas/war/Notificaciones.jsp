@@ -29,6 +29,11 @@
 				   				<p class="textOver"><c:out value="${queja.descripcion }"/></small></p>
 				
 				   		</div>  
+				   		<div class="col-xs-2  text-center">
+				   		
+				   		<div class="toolsCard"><a href="/reclamar?id=${queja.id }"><span class="glyphicon glyphicon-pencil"></span></div></a>
+				   		
+				   		</div>
 				  		 </div>
 				   </a>
 	    	

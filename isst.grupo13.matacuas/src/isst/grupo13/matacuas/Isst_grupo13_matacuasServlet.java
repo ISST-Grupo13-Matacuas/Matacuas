@@ -58,10 +58,12 @@ public class Isst_grupo13_matacuasServlet extends HttpServlet {
 				req.getSession().setAttribute("usuarioBD", usuario);
 			}
 			String matricula = usuario.getMatricula();
+			int tipo = usuario.getTipo();
 			List<Queja> quejasMatricula = dao.readMatricula(matricula);
 			int longitud = quejasMatricula.size();
 			req.getSession().setAttribute("quejasMatricula", new ArrayList<Queja>(quejasMatricula));
 			req.getSession().setAttribute("notificaciones", longitud);
+			req.getSession().setAttribute("tipoUsuario", tipo);
 		}
 		
 		

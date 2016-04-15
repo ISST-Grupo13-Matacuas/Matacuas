@@ -7,10 +7,14 @@ import isst.grupo13.matacuas.model.Queja;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.*;
+
+import com.google.appengine.api.blobstore.BlobKey;
+import com.google.appengine.api.blobstore.BlobstoreServiceFactory;
 
 
 
@@ -44,13 +48,23 @@ public class NuevaQuejaServlet extends HttpServlet {
 		String lugar = req.getParameter("lugar");
 		String matricula = req.getParameter("matricula");
 		String descripcion = req.getParameter("descripcion");
+		//if (req.getParameter("latitud") == null || req.getParameter("latitud") == ""){
 		double lat =  Double.parseDouble(req.getParameter("latitud"));
 		double lng =Double.parseDouble(req.getParameter("longitud"));
 		int tipo = Integer.parseInt(req.getParameter("tipo"));
+		//Map<String, List<BlobKey>> blobs = BlobstoreServiceFactory.getBlobstoreService().getUploads(req);
+		//List<BlobKey> blobKeys = blobs.get("imagen");
+		//String imagen = null;
+		/*if ( blobKeys == null || blobKeys.isEmpty() || blobKeys .get(0) == null ) {
+			imagen = "";
+		}
+		else{
+			imagen = blobKeys.get(0).getKeyString();
+		}*/
 		
 		if(lugar!= null && matricula!= null && descripcion != null && usuario!= "" ){
 			QuejaDAO dao = QuejaDAOImpl.getInstance();
-			Queja queja = dao.create(usuario, matricula, lugar, descripcion, lat, lng, "", 1,tipo);
+			Queja queja = dao.create(usuario, matricula, lugar, descripcion, lat, lng,"" , 1,tipo);
 			List<Queja> quejas = dao.read();
 			
 			req.getSession().setAttribute("quejas", new ArrayList<Queja>(quejas));
