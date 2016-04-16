@@ -49,8 +49,12 @@ public class NuevaQuejaServlet extends HttpServlet {
 		String matricula = req.getParameter("matricula");
 		String descripcion = req.getParameter("descripcion");
 		//if (req.getParameter("latitud") == null || req.getParameter("latitud") == ""){
+		
 		double lat =  Double.parseDouble(req.getParameter("latitud"));
 		double lng =Double.parseDouble(req.getParameter("longitud"));
+		
+		
+		
 		int tipo = Integer.parseInt(req.getParameter("tipo"));
 		//Map<String, List<BlobKey>> blobs = BlobstoreServiceFactory.getBlobstoreService().getUploads(req);
 		//List<BlobKey> blobKeys = blobs.get("imagen");

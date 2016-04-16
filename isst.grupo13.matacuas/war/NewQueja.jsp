@@ -61,7 +61,7 @@
    
  
    
-   <form  role="form" action="/newQueja" method="post" acceptcharset="utf-8" enctype = "multipart/form-data">
+   <form  role="form" action="/newQueja" method="post" acceptcharset="utf-8" >
                 <div class="col-xs-10 col-xs-offset-1"">
                     <!--  <div class="well well-sm"><strong><span class="glyphicon glyphicon-asterisk"></span>Obligatorio</strong></div>-->
                    

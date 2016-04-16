@@ -1,9 +1,12 @@
 package isst.grupo13.matacuas.pruebaBD;
 import isst.grupo13.matacuas.dao.QuejaDAO;
 import isst.grupo13.matacuas.dao.QuejaDAOImpl;
+import isst.grupo13.matacuas.dao.ReclamacionDAO;
+import isst.grupo13.matacuas.dao.ReclamacionDAOImpl;
 import isst.grupo13.matacuas.dao.UsuarioDAO;
 import isst.grupo13.matacuas.dao.UsuarioDAOImp;
 import isst.grupo13.matacuas.model.Queja;
+import isst.grupo13.matacuas.model.Reclamacion;
 import isst.grupo13.matacuas.model.Usuario;
 
 import java.io.IOException;
@@ -21,6 +24,7 @@ public class PruebaBDServlet extends HttpServlet {
 		resp.getWriter().println("<h1>Prueba de base de datos</h1>");
 		QuejaDAO dao = QuejaDAOImpl.getInstance();
 		UsuarioDAO daoUser = UsuarioDAOImp.getInstance();
+		ReclamacionDAO daoRecl = ReclamacionDAOImpl.getInstance();
 		List<Usuario> usuarios = daoUser.read();
 		
 		List<Queja> quejas = dao.read();
@@ -35,6 +39,15 @@ public class PruebaBDServlet extends HttpServlet {
 			Usuario moderador = daoUser.create("g.carreto@gmail.com", "8594FBH", "g.carrata",1);
 			
 		}
+		
+		/*Queja quejaPrueba = dao.readUsuario("charlygs94@gmail.com").get(0);
+		Reclamacion recl = daoRecl.create("Yo no pude ser.", "No he pasado por  ahi nunca.", quejaPrueba.getId());
+		//recl.setQueja(quejaPrueba);
+		//daoRecl.update(recl);
+		resp.getWriter().println("Base Reclamaciones:");
+		resp.getWriter().println(recl);
+		resp.getWriter().println("<br>");*/
+		
 		/*
 		List<Queja> quejasMalas = dao.read();
 		for(Queja quejaMala:quejasMalas){
