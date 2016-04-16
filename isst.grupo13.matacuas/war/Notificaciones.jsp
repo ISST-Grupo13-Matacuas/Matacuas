@@ -30,9 +30,9 @@
 				
 				   		</div>  
 				   		<div class="col-xs-2  text-center">
-				   		
+				   		<c:if test="${queja.tipo==1 }" >
 				   		<div class="toolsCard"><a href="/reclamar?id=${queja.id }"><span class="glyphicon glyphicon-pencil"></span></div></a>
-				   		
+				   		</c:if>
 				   		</div>
 				  		 </div>
 				   </a>
