@@ -19,9 +19,9 @@
 				<label>Razón de su reclamación</label>
 				<br>
 				<select id="razon" name="razon">
-					<option value="1">No es mi matrícula</option>
-					<option value="2">No estaba allí</option>		
-					<option value="3">No soy yo</option>				
+					<option value="No es mi matrícula">No es mi matrícula</option>
+					<option value="No estaba allí">No estaba allí</option>		
+					<option value="No soy yo">No soy yo</option>				
 				</select>
 				<br>
 				<br>

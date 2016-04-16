@@ -71,6 +71,14 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 		<servlet-name>ReclamarServlet</servlet-name>
 		<url-pattern>/reclamar</url-pattern>
 	</servlet-mapping>
+	<servlet>
+		<servlet-name>ModerarServlet</servlet-name>
+		<servlet-class>isst.grupo13.matacuas.ModerarServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ModerarServlet</servlet-name>
+		<url-pattern>/moderar</url-pattern>
+	</servlet-mapping>
 	
 	<welcome-file-list>
 		<welcome-file>index.html</welcome-file>
