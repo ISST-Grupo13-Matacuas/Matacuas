@@ -11,29 +11,39 @@
 
 <div class="caja col-xs-8 col-xs-offset-2 text-center  well animated bounceInDown" style="border: solid 0.5vh #C55;">
 	<div class="row">
-		<h1 class="LoginText">Nueva Queja</h1>
+		<h1 class="LoginText">Nueva Reclamación</h1>
 
-		<form role="form" action="/newReclamacion" method="post" acceptcharset="utf-8" enctype="multipart/form-data">
+		<form role="form" action="/reclamar" method="post" acceptcharset="utf-8" >
 			<div class="col-xs-10 col-xs-offset-1"">
 				
 				<label>Razón de su reclamación</label>
-				<select id="razonReclamacion" name="razonReclamacion">
+				<br>
+				<select id="razon" name="razon">
 					<option value="1">No es mi matrícula</option>
 					<option value="2">No estaba allí</option>		
 					<option value="3">No soy yo</option>				
 				</select>
-				
+				<br>
+				<br>
+				<br>
 				<label>Descripción</label>
 				<div class="input-group">
 					<textarea name="descripcion" id="descripcion" class="form-control"
 						rows="5" required placeholder="Descripción del incidente"></textarea>
 					<span class="input-group-addon"><span
 						class="glyphicon glyphicon-asterisk"></span></span>
-			</div>
+				</div>
+				<div class="form-group hidden">
+                        
+                        <div class="input-group">
+                            <input type="hidden" class="form-control" name="id" id="id"  value="${id }">
+                        </div>
+                        
+                    </div>
 				
 
 
-				<input type="submit" name="submit" id="submit" value="Poner queja"
+				<input type="submit" name="submit" id="submit" value="Reclamar"
 					class="btn  btn-login">
 			</div>
 		</form>

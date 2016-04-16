@@ -65,6 +65,13 @@ public class PruebaBDServlet extends HttpServlet {
 			resp.getWriter().println("<br>");
 		}
 		
+		resp.getWriter().println("Base Reclamaciones:");
+		resp.getWriter().println("<br>");
+		for(Reclamacion recl:daoRecl.read()){
+			resp.getWriter().println(recl.getId() + " " + recl);
+			resp.getWriter().println("<br>");
+		}
+		
 		resp.getWriter().println("Base Usuarios:");
 		resp.getWriter().println("<br>");
 		for(Usuario usuario:daoUser.read()){

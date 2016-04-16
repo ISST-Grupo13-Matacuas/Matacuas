@@ -3,7 +3,10 @@ package isst.grupo13.matacuas;
 
 import isst.grupo13.matacuas.dao.QuejaDAO;
 import isst.grupo13.matacuas.dao.QuejaDAOImpl;
+import isst.grupo13.matacuas.dao.ReclamacionDAO;
+import isst.grupo13.matacuas.dao.ReclamacionDAOImpl;
 import isst.grupo13.matacuas.model.Queja;
+import isst.grupo13.matacuas.model.Reclamacion;
 
 import java.io.IOException;
 
@@ -37,11 +40,15 @@ public class ReclamarServlet extends HttpServlet {
 			throws IOException {
 		Long id = Long.parseLong(req.getParameter("id"));
 		String razon = req.getParameter("razon");
-		
+		String descripcion = req.getParameter("descripcion");
+		ReclamacionDAO daoRecl = ReclamacionDAOImpl.getInstance();
 		QuejaDAO dao = QuejaDAOImpl.getInstance();
 		Queja queja = dao.readQuejaId(id);
 		queja.setEstado(2);
 		dao.update(queja);
+		Reclamacion reclamacion = daoRecl.create(razon, descripcion, id);
+	
+		
 		resp.sendRedirect("/matacuas");
 		
 	}
