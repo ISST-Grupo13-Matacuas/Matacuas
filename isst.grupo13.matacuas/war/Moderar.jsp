@@ -10,16 +10,24 @@
 	<c:forEach items="${reclamaciones}" var="reclamacion">
 	
 	<div class=" row well animated pulse tarjeta"  >
-					
-						 <div class="col-xs-8 col-sm-9">
+					<a href="#terminarReclamacionReject" >
+					<div class="col-xs-2 col-sm-3 text-center" style="background-color: rgb(204, 85, 85); font-size: 3em; color: #333;position: relative; height: 100%; border-radius: 2em 2em 2em 0em">
+					<br>
+					<span class="glyphicon glyphicon-remove"></span>
+					 </div>
+					  </a>
+						 <div class="col-xs-8 col-sm-6 text-center">
 					  <h2 class="tarjetaTitle"><a href="/verQueja?id=${reclamacion.idQueja }" >Queja reclamada</a> </h2>
 					  <p class="textOver">Razón: <c:out value="${reclamacion.razon}"/></p>
 				   <p class="textOver"><c:out value="${reclamacion.descripcion }"/></small></p>
 									
 					   </div>  
-					   <div class="col-xs-4 col-sm-3">
-						 
-						 </div>
+					   <a href="#terminarReclamacionAcept" >
+					   	<div class="col-xs-2 col-sm-3 text-center" style="background-color: rgb(85, 204, 85); font-size: 3em; color: #333; position: relative; height: 100%;border-radius: 2em 0em 2em 2em">
+					   	<br>
+					<span class="glyphicon glyphicon-ok"></span>
+					 </div>
+					 </a>
 	</c:forEach>
 	
 	</div>
