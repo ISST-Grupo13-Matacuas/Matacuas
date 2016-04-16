@@ -50,8 +50,14 @@ public class NuevaQuejaServlet extends HttpServlet {
 		String descripcion = req.getParameter("descripcion");
 		//if (req.getParameter("latitud") == null || req.getParameter("latitud") == ""){
 		
-		double lat =  Double.parseDouble(req.getParameter("latitud"));
-		double lng =Double.parseDouble(req.getParameter("longitud"));
+		double lat = 0.0;
+		double lng = 0.0;
+		if (req.getParameter("latitud") != null && req.getParameter("latitud") != "" && req.getParameter("longitud")!= null && req.getParameter("longitud") != ""){
+			lat =  Double.parseDouble(req.getParameter("latitud"));
+			lng =Double.parseDouble(req.getParameter("longitud"));
+		}
+		
+		
 		
 		
 		
