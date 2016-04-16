@@ -22,12 +22,13 @@ public class NotificacionesServlet extends HttpServlet {
 	public void doGet(HttpServletRequest req, HttpServletResponse resp)
 			throws IOException {
 		
-		/*Usuario usuarioBD = (Usuario) req.getSession().getAttribute("usuarioBD");
+		Usuario usuarioBD = (Usuario) req.getSession().getAttribute("usuarioBD");
 		String matricula = usuarioBD.getMatricula();
 		QuejaDAO dao = QuejaDAOImpl.getInstance();
 		List<Queja> quejasMatricula = dao.readMatricula(matricula);
 		int longitud = quejasMatricula.size();
-		req.setAttribute("quejasMatricula", quejasMatricula);*/
+		req.getSession().setAttribute("notificaciones", longitud);
+		req.getSession().setAttribute("quejasMatricula", new ArrayList<Queja>(quejasMatricula));
 		
 		RequestDispatcher view = req.getRequestDispatcher("Notificaciones.jsp");
 		try {

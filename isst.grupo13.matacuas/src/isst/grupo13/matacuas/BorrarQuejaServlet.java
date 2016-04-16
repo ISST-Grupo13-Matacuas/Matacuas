@@ -32,7 +32,7 @@ public class BorrarQuejaServlet extends HttpServlet{
 			dao.delete(queja);
 		}
 		
-		resp.sendRedirect("/matacuas");		
+		resp.sendRedirect("/notificaciones");
 				
 		
 	}
