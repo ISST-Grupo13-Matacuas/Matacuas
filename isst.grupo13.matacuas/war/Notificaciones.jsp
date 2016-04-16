@@ -29,12 +29,27 @@
 				   				<p class="textOver"><c:out value="${queja.descripcion }"/></small></p>
 				
 				   		</div>  
-				   		<div class="col-xs-2  text-center">
+				   		<div class="col-xs-10  text-center">
 				   		<c:if test="${queja.tipo==1 and queja.estado==1 }" >
 				   		<div class="toolsCard"><a href="/reclamar?id=${queja.id }"><span class="glyphicon glyphicon-pencil"></span></div></a>
 				   		</c:if>
 				   		<c:if test="${queja.tipo==1 and queja.estado ==2 }">
 				   			<p>Pendiente de decisión</p>
+				   		</c:if>
+				   		<c:if test="${queja.tipo==1 and queja.estado ==3 }">
+				   			<p>Reclamación rechazada</p>
+				   		</c:if>
+				   		<c:if test="${queja.tipo==1 and queja.estado ==4 }">
+				   		
+				   		
+				   		<form  role="form" action="/borrarQueja?id=${queja.id}" method="post" acceptcharset="utf-8" >
+						 <input type="submit" name="submit" id="submit" value="reclamación aceptada puedes borrar la reclamación del sistema pulsando aqui" >
+								
+						
+						</input>
+					</form>
+					
+				   		
 				   		</c:if>
 				   		</div>
 				  		 </div>

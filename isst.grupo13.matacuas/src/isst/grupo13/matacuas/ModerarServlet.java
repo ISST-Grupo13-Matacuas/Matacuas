@@ -21,7 +21,7 @@ public class ModerarServlet extends HttpServlet {
 		QuejaDAO dao = QuejaDAOImpl.getInstance();
 		ReclamacionDAO daoRecl = ReclamacionDAOImpl.getInstance();
 		List<Reclamacion> reclamaciones = daoRecl.read();
-		List<Queja> quejasReclamadas = dao.readEstado(2); //Deberían de ser lo mismo
+		List<Queja> quejasReclamadas = dao.readEstado(2); //Deberï¿½an de ser lo mismo
 		req.setAttribute("reclamaciones", reclamaciones);
 		req.setAttribute("quejasReclamadas", quejasReclamadas);
 		RequestDispatcher view = req.getRequestDispatcher("Moderar.jsp");
@@ -31,6 +31,44 @@ public class ModerarServlet extends HttpServlet {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
+	}
+	
+	public void doPost(HttpServletRequest req, HttpServletResponse resp)
+			throws IOException {
+		
+		Long id = Long.parseLong(req.getParameter("id"));
+		int result = Integer.parseInt(req.getParameter("result"));
+		
+		if(id != null){
+			
+			QuejaDAO dao = QuejaDAOImpl.getInstance();
+			ReclamacionDAO daoRecl = ReclamacionDAOImpl.getInstance();
+			Queja queja = dao.readQuejaId(id);
+			Reclamacion reclamacion = daoRecl.readQueja(id);
+			
+
+			queja.setEstado(result);
+			dao.update(queja);
+			daoRecl.delete(reclamacion);
+			
+		
+			
+		}else{
+
+		}
+		
+		RequestDispatcher view = req.getRequestDispatcher("Moderar.jsp");
+		
+		try {
+			view.forward(req, resp);
+		} catch (ServletException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		
+		
+		}
+		
 		
 	}
 

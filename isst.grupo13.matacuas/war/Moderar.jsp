@@ -11,7 +11,7 @@
 	
 	<div class=" row well animated pulse tarjeta"  >
 
-					<form  role="form" action="/moderar?result=0&id=${reclamacion.idQueja}" method="post" acceptcharset="utf-8" >
+					<form  role="form" action="/moderar?result=3&id=${reclamacion.idQueja}" method="post" acceptcharset="utf-8" >
 						<button type="submit" name="submit" id="submit" class="col-xs-2 col-sm-3 text-center" style="background-color: rgb(204, 85, 85); font-size: 3em; color: #333;position: relative; height: 100%; border-radius: 2em 2em 2em 0em">
 							<br>
 							<span class="glyphicon glyphicon-remove"></span>
@@ -23,7 +23,7 @@
 				   <p class="textOver"><c:out value="${reclamacion.descripcion }"/></small></p>
 									
 					   </div>  
-					<form  role="form" action="/moderar?result=1&id=${reclamacion.idQueja}" method="post" acceptcharset="utf-8" >
+					<form  role="form" action="/moderar?result=4&id=${reclamacion.idQueja}" method="post" acceptcharset="utf-8" >
 						 <button type="submit" name="submit" id="submit"  class="col-xs-2 col-sm-3 text-center" style="background-color: rgb(85, 204, 85); font-size: 3em; color: #333; position: relative; height: 100%;border-radius: 2em 0em 2em 2em">
 							<br>
 							<span class="glyphicon glyphicon-ok"></span>
