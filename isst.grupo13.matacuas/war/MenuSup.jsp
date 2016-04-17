@@ -120,6 +120,7 @@
               	
               </c:if>
               <li><a href="/matacuas">Entorno</a></li>
+              <li><a href="/mapa">Mapa</a></li>
               
               
               

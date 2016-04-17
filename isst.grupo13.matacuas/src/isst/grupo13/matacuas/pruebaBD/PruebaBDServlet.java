@@ -31,6 +31,7 @@ public class PruebaBDServlet extends HttpServlet {
 		if (quejas.size() == 0  ){
 			Queja queja1 =  dao.create("charlygs94@gmail.com", "7952HWT", "Calle Murillo", "Choque con otro vehiculo", 4924504.28315, -421356.21759, "car.jpg", 1,1);
 			Queja queja2 =  dao.create("charlygs94@gmail.com", "4675DVD", "Príncipe Pío", "Ha hecho un ceda al paso correctamente", 4927313.34394, -414204.57813, "car.jpg", 1,2);
+			Queja queja3 =  dao.create("charlygs94@gmail.com", "4675DVD", "Complutense", "Ha evitado un accidente", 4931584, -414897, "car.jpg", 1,2);
 			
 		}
 		

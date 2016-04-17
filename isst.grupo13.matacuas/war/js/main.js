@@ -370,7 +370,7 @@ function notification() {
 /*-----------------------
 --------MAPS------------
 ----------------------*/
-function create_map(tarea, position){
+function create_map(tarea, position, coordenadas){
 	var style = {
 		fillColor: '#000',
 		fillOpacity: 0.1,
@@ -390,24 +390,19 @@ function create_map(tarea, position){
 		new OpenLayers.LonLat(-3.704,40.416).transform(
 			new OpenLayers.Projection("EPSG:4326"),
 			map.getProjectionObject()
-			), 12
+			), 11
 		);
 
-	map.events.register("click", map, function(e) {
+/*	map.events.register("click", map, function(e) {
       //var position = this.events.getMousePosition(e);
       var position = map.getLonLatFromPixel(e.xy);
       
       vector.removeAllFeatures();
-      /*var size = new OpenLayers.Size(25,25);
-   var offset = new OpenLayers.Pixel(-(size.w/2), -size.h);
-   var icon = new OpenLayers.Icon('images/mark.png', size, offset);   
-   var markerslayer = map.getLayer('Markers');
-   markerslayer.clearMarkers();
-   markerslayer.addMarker(new OpenLayers.Marker(position,icon));*/
+      
    
       createMarker(position);
 
- });
+ });*/
 
 	var pulsate = function(feature) {
 		var point = feature.geometry.getCentroid(),
@@ -519,15 +514,19 @@ if (document.getElementById('locate')){
 
 var createMarker = function(position){
    //var position = map.getLonLatFromPixel(e.xy);
-	console.log(position);
+	console.log("Creando marcador en: " + position);
    var size = new OpenLayers.Size(25,25);
    var offset = new OpenLayers.Pixel(-(size.w/2), -size.h);
    var icon = new OpenLayers.Icon('images/mark.png', size, offset);   
    var markerslayer = map.getLayer('Markers');
-   markerslayer.clearMarkers();
-   markerslayer.addMarker(new OpenLayers.Marker(position,icon));
+   //markerslayer.clearMarkers();
+    markerslayer.addMarker(new OpenLayers.Marker(position,icon));
+   
+  
 
  };
+ 
+ 
 
  if (tarea){
 
@@ -544,6 +543,37 @@ var createMarker = function(position){
 
 	 createMarker(position);
  }
+ if (coordenadas){
+	 //console.log("Ola ke ase " + coordenadas);
+	 var size = new OpenLayers.Size(25,25);
+	 var offset = new OpenLayers.Pixel(-(size.w/2), -size.h);
+	 var icon = new OpenLayers.Icon('images/mark.png', size, offset);   
+	 var markerslayer = map.getLayer('Markers');
+	 var position = {lat:0, lon:0};
+	  
+	 
+	 for (var i = 0; i<coordenadas.length; i++){
+		 position.lat = coordenadas[i].lat;
+		 position.lon = coordenadas[i].lng;
+		 var marker = new OpenLayers.Marker(new OpenLayers.LonLat(position.lon, position.lat), icon.clone());
+		 markerslayer.addMarker(marker);
+		 
+		 
+		 //console.log(position);
+		 //createMarker(position,i);
+	 }
+	 
+	   
+	  // var marker = new OpenLayers.Marker(new OpenLayers.LonLat(-414204.57813,4927313.34394), icon.clone());
+	  // markerslayer.addMarker(marker);
+	  // var marker = new OpenLayers.Marker(new OpenLayers.LonLat(-414897,4931584), icon.clone());
+	  // markerslayer.addMarker(marker);
+ }
+ 
+ 
  
 //$('#OpenLayers_Map_2_OpenLayers_ViewPort').css('position','ABSOLUTE')
 }
+
+
+
