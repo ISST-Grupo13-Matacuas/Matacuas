@@ -23,7 +23,5 @@ public class Coordenada {
 	public void setLng(double lng) {
 		this.lng = lng;
 	}
-	
-	
 
 }
