@@ -39,7 +39,7 @@ public class ModerarServlet extends HttpServlet {
 		
 		Long id = Long.parseLong(req.getParameter("id"));
 		int result = Integer.parseInt(req.getParameter("result"));
-		
+
 		if(id != null){
 			
 			QuejaDAO dao = QuejaDAOImpl.getInstance();

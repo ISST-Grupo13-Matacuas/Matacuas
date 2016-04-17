@@ -23,7 +23,7 @@ import isst.grupo13.matacuas.dao.EMFService;
 public class QuejaDAOImpl implements QuejaDAO {
 	
 	
-	//Patrón Singleton
+	//Patrï¿½n Singleton
 	private static QuejaDAOImpl instance;
 	
 	private QuejaDAOImpl() {
@@ -142,6 +142,25 @@ public class QuejaDAOImpl implements QuejaDAO {
 		Queja queja = em.find(Queja.class, id);
 		em.close();
 		return queja;
+	}
+
+	@Override
+	public List<Queja> readQuejaMatriculaTipo(String matricula, int tipo) {
+		EntityManager em = EMFService.get().createEntityManager();
+		//Query q = em.createQuery("select q from Queja q where q.tipo = :tipo and q.matricula = :matricula");
+		//q.setParameter("tipo", tipo);
+		
+		Query q = em.createQuery("select q from Queja q where q.matricula = :matricula and q.tipo = :tipo");
+		//Query q = em.createQuery("select q from Queja q where q.tipo = :tipo");
+		//q.setParameter("tipo", tipo).setParameter("matricula", matricula);
+		//q.setParameter("tipo", 0);
+		System.out.println(tipo);
+		q.setParameter("matricula", matricula).setParameter("tipo", tipo);
+		List<Queja> quejas = q.getResultList();
+		System.out.println("quejas");
+		System.out.println(quejas);
+		em.close();
+		return quejas;
 	}
 
 }
