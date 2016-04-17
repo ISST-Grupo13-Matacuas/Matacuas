@@ -73,7 +73,7 @@
 <br>
 <hr>
 <br>
-<a href="">Volver a la app</a>
+<a href="/">Volver a la app</a>
       
       <br>
       <br>
