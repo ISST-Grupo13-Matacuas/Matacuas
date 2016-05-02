@@ -19,7 +19,7 @@
 		<p><c:out value="${quejaAVer.descripcion }"/></p>
 		<p>Matrícula: <c:out value="${quejaAVer.matricula }"/></p>
 		<c:choose>
-			<c:when test="${quejaAVer.imagen.value != ''}">
+			<c:when test="${quejaAVer.imagen.value != null}">
 				<img class="img img-responsive img-rounded imgTarjeta" src="${quejaAVer.imagen.value}" alt=""></div>
 			</c:when>
 			<c:otherwise>

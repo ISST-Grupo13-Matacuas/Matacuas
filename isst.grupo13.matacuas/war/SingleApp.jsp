@@ -18,14 +18,14 @@
 									   </c:if>
 									   <div class="col-xs-4 col-sm-3">
 									   <c:choose>
-											<c:when test="${queja.imagen.value != ''}">
+											<c:when test="${queja.imagen.value != null }">
 												<img class="img img-responsive img-rounded imgTarjeta" src="${queja.imagen.value}" alt=""></div>
 											</c:when>
 											<c:otherwise>
 												<img class="img img-responsive img-rounded imgTarjeta" src="/images/car.jpg" alt=""></div>
 											</c:otherwise>
 										</c:choose>
-									   </div>
+									   
 									   <div class="col-xs-8 col-sm-9">
 									   <h2 class="tarjetaTitle"><c:out value="${queja.lugar}"/> </h2>
 									   <p class="textOver"><c:out value="${queja.descripcion }"/></small></p>
