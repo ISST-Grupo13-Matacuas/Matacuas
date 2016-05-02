@@ -36,11 +36,7 @@
           </button>
           <a class="navbar-brand" href="/matacuas">Matacuas</a>
           
-          <c:if test="${not empty user and user!=null}">
-          <ul class="nav navbar-nav navbar-right navRight">
-            <li ><a href="/ajustes"><span class="glyphicon glyphicon-cog cogGly"></span> </a> </li>
-          </ul>
-          </c:if>
+          
         </div>
       </div>
 

@@ -24,6 +24,9 @@
    </c:if>
    <h4 class="nombrePerfil"><c:out value="${usuarioBD.nick }"/></h4>
    </div>
+   <ul class="nav navbar-nav navbar-right navRight">
+            <li ><a href="/ajustes"><span class="glyphicon glyphicon-cog cogGly"></span> </a> </li>
+          </ul>
    <div class="col-xs-4 text-center">
    <br>
    

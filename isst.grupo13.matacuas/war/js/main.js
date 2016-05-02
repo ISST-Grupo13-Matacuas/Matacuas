@@ -386,13 +386,22 @@ function create_map(tarea, position, coordenadas){
 	markers.id = "Markers";
 	map.addLayer(markers);
 
-	map.setCenter(
-		new OpenLayers.LonLat(-3.704,40.416).transform(
-			new OpenLayers.Projection("EPSG:4326"),
-			map.getProjectionObject()
-			), 11
-		);
-
+	
+	if (position){
+		map.setCenter(
+				new OpenLayers.LonLat(position.lon,position.lat),15);
+	}
+	
+	else{
+		map.setCenter(
+				new OpenLayers.LonLat(-3.704,40.416).transform(
+					new OpenLayers.Projection("EPSG:4326"),
+					map.getProjectionObject()
+					), 11
+				);
+	}
+	
+	
 /*	map.events.register("click", map, function(e) {
       //var position = this.events.getMousePosition(e);
       var position = map.getLonLatFromPixel(e.xy);
