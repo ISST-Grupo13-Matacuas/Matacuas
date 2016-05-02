@@ -17,7 +17,14 @@
 									   <div class=" row well animated pulse tarjeta" style="border: solid 0.5vh #5C5;" >
 									   </c:if>
 									   <div class="col-xs-4 col-sm-3">
-									   <img src="/images/car.jpg" alt="" class="img img-responsive imgTarjeta">
+									   <c:choose>
+											<c:when test="${queja.imagen.value != ''}">
+												<img class="img img-responsive img-rounded imgTarjeta" src="${queja.imagen.value}" alt=""></div>
+											</c:when>
+											<c:otherwise>
+												<img class="img img-responsive img-rounded imgTarjeta" src="/images/car.jpg" alt=""></div>
+											</c:otherwise>
+										</c:choose>
 									   </div>
 									   <div class="col-xs-8 col-sm-9">
 									   <h2 class="tarjetaTitle"><c:out value="${queja.lugar}"/> </h2>

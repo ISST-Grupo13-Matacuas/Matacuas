@@ -11,6 +11,8 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
 
+import com.google.appengine.api.datastore.Text;
+
 import isst.grupo13.matacuas.dao.EMFService;
 
 
@@ -45,7 +47,7 @@ public class QuejaDAOImpl implements QuejaDAO {
 	 */
 	@Override
 	public Queja create(String usuario, String matricula, String lugar,
-			String descripcion, double lat, double lng, String imagen,
+			String descripcion, double lat, double lng, Text imagen,
 			int estado, int tipo) {
 		Queja queja = null;
 		EntityManager em = EMFService.get().createEntityManager();

@@ -18,7 +18,14 @@
 
 		<p><c:out value="${quejaAVer.descripcion }"/></p>
 		<p>Matrícula: <c:out value="${quejaAVer.matricula }"/></p>
-		<img class="img img-responsive img-rounded imgTarjeta" src="images/car.jpg" alt=""></div>
+		<c:choose>
+			<c:when test="${quejaAVer.imagen.value != ''}">
+				<img class="img img-responsive img-rounded imgTarjeta" src="${quejaAVer.imagen.value}" alt=""></div>
+			</c:when>
+			<c:otherwise>
+				<img class="img img-responsive img-rounded imgTarjeta" src="/images/car.jpg" alt=""></div>
+			</c:otherwise>
+		</c:choose>
 		</div>
 		</div>
 		<div class="col-xs-12 col-sm-6">

@@ -94,6 +94,7 @@
                         <label>Imagen</label>
                         <div class="input-group">
                             <input type="file" id="imagen" name="imagen" />
+                            <input type="hidden" id="imagenurl" name = "imagenurl"/>
                            
                        
                         
@@ -162,6 +163,16 @@
   <script src="js/main.js?v=38"></script>
   <script>
      $( document ).ready(create_map(1,0))
+     document.getElementById('imagen').addEventListener('change', function(){
+        var file = this.files[0];
+        var reader = new FileReader();
+         reader.onload = function(){
+          //console.log(reader.result);
+          document.getElementById('imagenurl').value=reader.result;
+          console.log(document.getElementById('imagenurl').value);
+        };
+        reader.readAsDataURL(file);
+      }, false);
   </script>
 </body>
 </html>

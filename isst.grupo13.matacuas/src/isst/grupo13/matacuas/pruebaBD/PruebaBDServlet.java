@@ -29,15 +29,15 @@ public class PruebaBDServlet extends HttpServlet {
 		
 		List<Queja> quejas = dao.read();
 		if (quejas.size() == 0  ){
-			Queja queja1 =  dao.create("charlygs94@gmail.com", "7952HWT", "Calle Murillo", "Choque con otro vehiculo", 4924504.28315, -421356.21759, "car.jpg", 1,1);
-			Queja queja2 =  dao.create("charlygs94@gmail.com", "4675DVD", "Príncipe Pío", "Ha hecho un ceda al paso correctamente", 4927313.34394, -414204.57813, "car.jpg", 1,2);
-			Queja queja3 =  dao.create("charlygs94@gmail.com", "4675DVD", "Complutense", "Ha evitado un accidente", 4931584, -414897, "car.jpg", 1,2);
+			Queja queja1 =  dao.create("charlygs94@gmail.com", "7952HWT", "Calle Murillo", "Choque con otro vehiculo", 4924504.28315, -421356.21759, null, 1,1);
+			Queja queja2 =  dao.create("charlygs94@gmail.com", "4675DVD", "Príncipe Pío", "Ha hecho un ceda al paso correctamente", 4927313.34394, -414204.57813, null, 1,2);
+			Queja queja3 =  dao.create("charlygs94@gmail.com", "4675DVD", "Complutense", "Ha evitado un accidente", 4931584, -414897, null, 1,2);
 			
 		}
 		
 		if (usuarios.size() == 0){
 			Usuario usuario1 = daoUser.create("charlygs94@gmail.com", "6784HWT", "gscharly",0);
-			Usuario moderador = daoUser.create("g.carreto@gmail.com", "8594FBH", "g.carrata",1);
+			Usuario moderador = daoUser.create("g.carreto@gmail.com", "8594FBH", "g.carreto",1);
 			
 		}
 		

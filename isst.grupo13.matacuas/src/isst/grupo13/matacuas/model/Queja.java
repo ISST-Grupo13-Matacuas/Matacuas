@@ -7,6 +7,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
+import com.google.appengine.api.datastore.Text;
 
 /**
  * @author Carlos Gomez Sanchez
@@ -27,13 +28,13 @@ public class Queja implements Serializable {
 	private String descripcion; //Descripción del incidente
 	private double lat; //Latitud
 	private double lng; //Longitud
-	private String imagen; //Imagen si ha podido hacerla, si no por defecto
+	private Text imagen; //Imagen si ha podido hacerla, si no por defecto
 	private int estado; //Para moderadores, reclamaciones
 	private int tipo; //Buena o mala accion
 	
 	
 	public Queja(String usuario, String matricula, String lugar, String descripcion, double lat, double lng,
-			String imagen, int estado, int tipo) {
+			Text imagen, int estado, int tipo) {
 		super();
 		this.usuario = usuario;
 		this.matricula = matricula;
@@ -134,12 +135,12 @@ public class Queja implements Serializable {
 	}
 
 
-	public String getImagen() {
+	public Text getImagen() {
 		return imagen;
 	}
 
 
-	public void setImagen(String imagen) {
+	public void setImagen(Text imagen) {
 		this.imagen = imagen;
 	}
 
