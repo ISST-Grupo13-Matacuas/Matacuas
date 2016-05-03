@@ -52,6 +52,12 @@ public class NuevaQuejaServlet extends HttpServlet {
 		String descripcion = req.getParameter("descripcion");
 		Text imagen = null;
 		imagen = new Text(req.getParameter("imagenurl"));
+		System.out.println(imagen.getValue());
+		
+		if(imagen.toString()== ""){
+			System.out.println("imagen nula");
+			imagen = new Text("/images/"+ ((int) java.lang.Math.ceil(java.lang.Math.random() * 5)) + ".jpg");
+		}
 		System.out.println(imagen);
 		//if (req.getParameter("latitud") == null || req.getParameter("latitud") == ""){
 		

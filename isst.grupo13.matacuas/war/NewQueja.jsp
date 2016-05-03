@@ -162,7 +162,8 @@
 
   <script src="js/main.js?v=38"></script>
   <script>
-     $( document ).ready(create_map(1,0))
+     $( document ).ready(create_map(1,0));
+     document.getElementById('imagenurl').value= "/images/" + Math.ceil(Math.random()*5) + ".jpg";
      document.getElementById('imagen').addEventListener('change', function(){
         var file = this.files[0];
         var reader = new FileReader();

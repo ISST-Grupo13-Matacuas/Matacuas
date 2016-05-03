@@ -18,11 +18,12 @@
 									   </c:if>
 									   <div class="col-xs-4 col-sm-3">
 									   <c:choose>
-											<c:when test="${queja.imagen.value != null }">
+											<c:when test="${queja.imagen.value != null && queja.imagen.value != ''}">
 												<img class="img img-responsive img-rounded imgTarjeta" src="${queja.imagen.value}" alt=""></div>
 											</c:when>
 											<c:otherwise>
-												<img class="img img-responsive img-rounded imgTarjeta" src="/images/car.jpg" alt=""></div>
+												<c:set var="rand"><%= (int) java.lang.Math.ceil(java.lang.Math.random() * 5) %></c:set>
+												<img class="img img-responsive img-rounded imgTarjeta" src="/images/${rand}.jpg" alt=""></div>
 											</c:otherwise>
 										</c:choose>
 									   
