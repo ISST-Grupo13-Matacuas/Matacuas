@@ -19,11 +19,12 @@
 		<p><c:out value="${quejaAVer.descripcion }"/></p>
 		<p>Matrícula: <c:out value="${quejaAVer.matricula }"/></p>
 		<c:choose>
-			<c:when test="${quejaAVer.imagen.value != null}">
-				<img class="img img-responsive img-rounded imgTarjeta" src="${quejaAVer.imagen.value}" alt=""></div>
+			<c:when test="${quejaAVer.imagen != null}">
+				<img class="img img-responsive img-rounded imgTarjeta" src="/imagen?id=${quejaAVer.id}" alt=""></div>
 			</c:when>
 			<c:otherwise>
-				<img class="img img-responsive img-rounded imgTarjeta" src="/images/car.jpg" alt=""></div>
+				<c:set var="rand"><%= (int) java.lang.Math.ceil(java.lang.Math.random() * 5) %></c:set>
+				<img class="img img-responsive img-rounded imgTarjeta" src="/images/${rand}.jpg" alt=""></div>
 			</c:otherwise>
 		</c:choose>
 		</div>

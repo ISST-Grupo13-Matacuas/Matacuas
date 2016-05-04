@@ -13,6 +13,14 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 		<url-pattern>/matacuas</url-pattern>
 	</servlet-mapping>
 	<servlet>
+		<servlet-name>ImagenServlet</servlet-name>
+		<servlet-class>isst.grupo13.matacuas.ImagenServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ImagenServlet</servlet-name>
+		<url-pattern>/imagen</url-pattern>
+	</servlet-mapping>
+	<servlet>
 	   
 		<servlet-name>PruebaBDServlet</servlet-name>
 		<servlet-class>isst.grupo13.matacuas.pruebaBD.PruebaBDServlet</servlet-class>

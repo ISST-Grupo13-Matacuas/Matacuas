@@ -22,8 +22,16 @@
 							<div class=" row well animated pulse tarjeta" style="border: solid 0.5vh #5C5;" >
 						</c:if>
 				   			<div class="col-xs-4 col-sm-3">
-				  		 	<img src="/images/car.jpg" alt="" class="img img-responsive imgTarjeta">
-				  		</div>
+				  		 	<c:choose>
+								<c:when test="${queja.imagen != null}">
+									<img class="img img-responsive img-rounded imgTarjeta" src="/imagen?id=${queja.id}" alt=""></div>
+								</c:when>
+								<c:otherwise>
+									<c:set var="rand"><%= (int) java.lang.Math.ceil(java.lang.Math.random() * 5) %></c:set>
+									<img class="img img-responsive img-rounded imgTarjeta" src="/images/${rand}.jpg" alt=""></div>
+								</c:otherwise>
+							</c:choose>
+				  		
 				  		 <div class="col-xs-8 col-sm-9">
 				  			 	<h2 class="tarjetaTitle"><c:out value="${queja.lugar }"/></h2>
 				   				<p class="textOver"><c:out value="${queja.descripcion }"/></small></p>

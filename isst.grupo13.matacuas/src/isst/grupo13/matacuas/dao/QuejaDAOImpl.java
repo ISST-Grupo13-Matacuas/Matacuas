@@ -47,7 +47,7 @@ public class QuejaDAOImpl implements QuejaDAO {
 	 */
 	@Override
 	public Queja create(String usuario, String matricula, String lugar,
-			String descripcion, double lat, double lng, Text imagen,
+			String descripcion, double lat, double lng, String imagen,
 			int estado, int tipo) {
 		Queja queja = null;
 		EntityManager em = EMFService.get().createEntityManager();

@@ -50,15 +50,15 @@ public class NuevaQuejaServlet extends HttpServlet {
 		String lugar = req.getParameter("lugar");
 		String matricula = req.getParameter("matricula");
 		String descripcion = req.getParameter("descripcion");
-		Text imagen = null;
-		imagen = new Text(req.getParameter("imagenurl"));
-		System.out.println(imagen.getValue());
+		//Text imagen = null;
+		//imagen = new Text(req.getParameter("imagenurl"));
+		//System.out.println(imagen.getValue());
 		
-		if(imagen.toString()== ""){
+		/*if(imagen.toString()== ""){
 			System.out.println("imagen nula");
 			imagen = new Text("/images/"+ ((int) java.lang.Math.ceil(java.lang.Math.random() * 5)) + ".jpg");
-		}
-		System.out.println(imagen);
+		}*/
+		//System.out.println(imagen);
 		//if (req.getParameter("latitud") == null || req.getParameter("latitud") == ""){
 		
 		double lat = 0.0;
@@ -73,7 +73,7 @@ public class NuevaQuejaServlet extends HttpServlet {
 		
 		
 		int tipo = Integer.parseInt(req.getParameter("tipo"));
-		/*Map<String, List<BlobKey>> blobs = BlobstoreServiceFactory.getBlobstoreService().getUploads(req);
+		Map<String, List<BlobKey>> blobs = BlobstoreServiceFactory.getBlobstoreService().getUploads(req);
 		List<BlobKey> blobKeys = blobs.get("imagen");
 		System.out.println(blobs.get("imagen"));
 		String imagen = "";
@@ -83,7 +83,7 @@ public class NuevaQuejaServlet extends HttpServlet {
 		else{
 			imagen = blobKeys.get(0).getKeyString();
 			System.out.println(imagen);
-		}*/
+		}
 		
 		if(lugar!= null && matricula!= null && descripcion != null && usuario!= "" ){
 			QuejaDAO dao = QuejaDAOImpl.getInstance();

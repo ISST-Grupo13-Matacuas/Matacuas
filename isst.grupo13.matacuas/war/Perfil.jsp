@@ -66,11 +66,11 @@
 		         </c:if>
 				   <div class="col-xs-4 col-sm-3 col-md-2" >
 				  <c:choose>
-					<c:when test="${queja.imagen.value != null}">
-						<img class="img img-responsive img-rounded imgTarjeta" src="${queja.imagen.value}" alt=""></div>
+					<c:when test="${queja.imagen != null}">
+						<img class="img img-responsive img-rounded imgTarjeta" src="/imagen?id=${queja.id }" alt=""></div>
 					</c:when>
 					<c:otherwise>
-						<img class="img img-responsive img-rounded imgTarjeta" src="/images/car.jpg" alt=""></div>
+						<img class="img img-responsive img-rounded imgTarjeta" src="/images/4.jpg" alt=""></div>
 					</c:otherwise>
 				</c:choose>
 				   

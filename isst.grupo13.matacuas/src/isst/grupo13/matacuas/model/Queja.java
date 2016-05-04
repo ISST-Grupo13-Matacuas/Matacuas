@@ -28,13 +28,13 @@ public class Queja implements Serializable {
 	private String descripcion; //Descripción del incidente
 	private double lat; //Latitud
 	private double lng; //Longitud
-	private Text imagen; //Imagen si ha podido hacerla, si no por defecto
+	private String imagen; //Imagen si ha podido hacerla, si no por defecto
 	private int estado; //Para moderadores, reclamaciones
 	private int tipo; //Buena o mala accion
 	
 	
 	public Queja(String usuario, String matricula, String lugar, String descripcion, double lat, double lng,
-			Text imagen, int estado, int tipo) {
+			String imagen, int estado, int tipo) {
 		super();
 		this.usuario = usuario;
 		this.matricula = matricula;
@@ -135,12 +135,12 @@ public class Queja implements Serializable {
 	}
 
 
-	public Text getImagen() {
+	public String getImagen() {
 		return imagen;
 	}
 
 
-	public void setImagen(Text imagen) {
+	public void setImagen(String imagen) {
 		this.imagen = imagen;
 	}
 

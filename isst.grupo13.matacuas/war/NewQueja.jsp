@@ -2,7 +2,11 @@
     pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
-
+<%@page import="com.google.appengine.api.blobstore.BlobstoreServiceFactory" %>
+<%@page import="com.google.appengine.api.blobstore.BlobstoreService" %>
+<%
+BlobstoreService blobstoreService = BlobstoreServiceFactory.getBlobstoreService();
+%>
 <!DOCTYPE html>
 
 <%@ include file="MenuSup.jsp" %>
@@ -61,7 +65,7 @@
    
  
    
-   <form  role="form" action="/newQueja" method="post" acceptcharset="utf-8" >
+   <form  role="form" action="<%=blobstoreService.createUploadUrl("/newQueja") %>" method="post" acceptcharset="utf-8" enctype="multipart/form-data">
                 <div class="col-xs-10 col-xs-offset-1"">
                     <!--  <div class="well well-sm"><strong><span class="glyphicon glyphicon-asterisk"></span>Obligatorio</strong></div>-->
                    
