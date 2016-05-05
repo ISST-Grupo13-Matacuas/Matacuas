@@ -135,11 +135,11 @@ hr{
 
 div.wrapper{
 
-  border: 1px solid black;
+ /* border: 1px solid black;
   padding: 2%;
-  margin: 2%;
+  margin: 2%;*/
   width: 100%;
-  float: left;
+  /*float: left;*/
   height: 30vh;
   background-color: #E8FBFB;
 

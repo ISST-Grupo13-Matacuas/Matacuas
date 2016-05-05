@@ -1,4 +1,4 @@
-</div>
+</div><!-- div de payload -->
             <!--acaba el contenido --> 
           </div>
         </div>
