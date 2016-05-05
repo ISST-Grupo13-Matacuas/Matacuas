@@ -192,8 +192,10 @@ div.wrapper{
   color: #333333;
   padding-top: 0.5%;
   z-index: 5000;
-  bottom: 0px;
+  /*bottom: 0px;*/
   /*position: absolute;*/
+  top: calc(100vh - 65px);
+    position: fixed;
 }
 a > p{
   color: #333;
