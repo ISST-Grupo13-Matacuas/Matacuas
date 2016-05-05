@@ -8,7 +8,8 @@
   background-size: cover;
   background-attachment: fixed;
   padding-top: 50px;
-  overflow: hidden
+  /*overflow: hidden*/
+    padding-bottom: 100px;
 }
 
 #loginBox{
@@ -191,7 +192,8 @@ div.wrapper{
   color: #333333;
   padding-top: 0.5%;
   z-index: 5000;
-  position: absolute;
+  bottom: 0px;
+  /*position: absolute;*/
 }
 a > p{
   color: #333;

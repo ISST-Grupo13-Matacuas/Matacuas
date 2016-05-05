@@ -11,7 +11,7 @@ BlobstoreService blobstoreService = BlobstoreServiceFactory.getBlobstoreService(
 
 <%@ include file="MenuSup.jsp" %>
  <div class="main col-md-10 col-md-offset-2">
-            
+              <div class="row">
             <!--aqui el contenido-->
               <div id="payLoadSP">
 	<c:if test="${not empty tipoQueja and (tipoQueja ==1 or tipoQueja==2) }">
@@ -50,6 +50,7 @@ BlobstoreService blobstoreService = BlobstoreServiceFactory.getBlobstoreService(
    <button class="btn-login btn" id="locate">Localízame!</button>
    <div class="wrapper">
    <div id="mapa"></div>
+   </div>
    </div>
    </div>
    </div>

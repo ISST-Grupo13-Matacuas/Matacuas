@@ -77,16 +77,18 @@
       <div class="container-fluid">
         <div class="row">
           <div class="col-xs-7 col-sm-3 col-md-2 sidebar sidebar-left sidebar-animate sidebar-lg-show nopad" id="sidLeft">
-            <div class="menuHead">
+            <c:if test="${not empty user and user!=null}">
+             <div class="menuHead">
               <div class="row">
-              <c:if test="${not empty user and user!=null}">
+             
                 <div class="col-xs-8 col-xs-offset-2 col-md-12 col-md-offset-0" onclick="profile()">
                     <img src="https://randomuser.me/api/portraits/med/men/44.jpg" alt="" class="img img-responsive imgMenPro img-circle" >
                 </div>
-                </c:if>
-              </div>        
+               
+              </div>  
+                   
             </div>
-
+ </c:if> 
             <ul class="nav navbar-stacked">
               <li><br></li>
                <li><br></li>
