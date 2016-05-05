@@ -10,7 +10,10 @@ BlobstoreService blobstoreService = BlobstoreServiceFactory.getBlobstoreService(
 <!DOCTYPE html>
 
 <%@ include file="MenuSup.jsp" %>
-
+ <div class="main col-md-10 col-md-offset-2">
+            
+            <!--aqui el contenido-->
+              <div id="payLoadSP">
 	<c:if test="${not empty tipoQueja and (tipoQueja ==1 or tipoQueja==2) }">
 	
 	

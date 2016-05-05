@@ -7,7 +7,7 @@
   background-repeat:no-repeat;
   background-size: cover;
   background-attachment: fixed;
-  padding-top: 60px;
+  padding-top: 50px;
 }
 
 #loginBox{
@@ -48,9 +48,17 @@ hr{
   border-color: #26A4FF;
   border-style: solid;
   margin: auto;
-  margin-top: 7%;
-  
+  margin-top: 7%; 
 }
+
+.imgMenPro{
+  border-width: 0.5vh;
+  border-color: rgba(59,65,97,1);
+  border-style: solid;
+  margin: auto;
+  margin-top: 7%;
+}
+
 .btn-login{
   background-color: #26A4FF;
   color:#FFF;
@@ -136,13 +144,14 @@ div.wrapper{
 }
 
 #wrapperMapa{
-	 border: 1px solid black;
+ /*border: 1px solid black;
   padding: 2%;
   margin: 2%;
   width: 100%;
   float: left;
   height: 70vh;
-  background-color: #E8FBFB;
+  background-color: #E8FBFB;*/
+  height: calc(100vh - 115px);
 }
 
 #mapa{
@@ -157,21 +166,31 @@ div.wrapper{
 
 }
 
+#sidLeft > .nav {
+	padding-left: 50px;	
+}
+#sidLeft > .nav >li>a{
+	color: #FFF;
+	font-size: 1.2em;
+}
+
 .navbar{
-  background-color: #26A4FF;
+  background-color: #629D9D;
   color: #333333;
 }
 .navbar > a{
-  color: #333333;
+  color: #ECECEC;
 }
 .navbar-inverse .navbar-brand{
-  color: #333333;
+  color: #ECECEC
 }
 
 .menuB{
   height: 65px;
   color: #333333;
   padding-top: 0.5%;
+  z-index: 5000;
+  position: absolute;
 }
 a > p{
   color: #333;
@@ -236,8 +255,14 @@ a > p{
 
 .menuHead{
   height: 15vh;
-  background-color: #333;
-
+    background-color: rgba(59, 65, 97, 0.58);
+    border-style: solid;
+    border-width: 0 1vh 0 0;
+    border-color: rgba(59,65,97,1);
+}
+#sidLeft{
+	    background-color: rgba(106, 185, 185, 0.74);
+	        z-index: 4000;
 }
 
 .listTarjetasPerf{
@@ -287,6 +312,18 @@ a > p{
     margin-left: 30%;
     margin-top: -65px;
   }
+  #sidLeft{
+  	background-color: rgba(106, 185, 185, 1);
+  }
+  #sidLeft > .nav {
+  	padding-left: 5px;
+  }
 }
 
 #map { height: 20vh; width: 100%;}
+
+.nopad{
+  padding-left: 0px;
+  padding-right: 0px;
+  }
+  

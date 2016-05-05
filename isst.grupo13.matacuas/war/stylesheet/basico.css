@@ -7,7 +7,7 @@
       background-repeat:no-repeat;
       background-size: cover;
       background-attachment: fixed;
-  padding-top: 60px;
+  padding-top: 50px;
     }
 
     #loginBox{
@@ -143,6 +143,7 @@ div.wrapper{
 .navbar{
   background-color: #26A4FF;
   color: #333333;
+  margin-bottom: 0px;
 }
 .navbar > a{
   color: #333333;
@@ -191,3 +192,5 @@ a > p{
        padding-top: 2%;
     }
   }
+  
+

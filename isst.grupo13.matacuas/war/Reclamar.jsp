@@ -8,7 +8,10 @@
 <!DOCTYPE html>
 
 <%@ include file="MenuSup.jsp"%>
-
+ <div class="main col-md-10 col-md-offset-2">
+            
+            <!--aqui el contenido-->
+              <div id="payLoadSP">
 <div class="caja col-xs-8 col-xs-offset-2 text-center  well animated bounceInDown" style="border: solid 0.5vh #C55;">
 	<div class="row">
 		<h1 class="LoginText">Nueva Reclamación</h1>

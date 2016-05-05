@@ -5,7 +5,10 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <%@ include file="MenuSup.jsp" %>
 
-
+        <div class="main col-md-10 col-md-offset-2 nopad">
+            
+            <!--aqui el contenido-->
+              <div id="payLoadSP">
 <c:if test="${not empty quejas and not empty coordenadas }">
               				<c:forEach items="${coordenadas}" var="coord">
               					<p class="latitudes hidden"><c:out value="${coord.lat }"/></p>

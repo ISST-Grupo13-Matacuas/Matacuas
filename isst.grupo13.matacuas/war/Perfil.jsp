@@ -5,12 +5,17 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <%@ include file="MenuSup.jsp" %>
 
+ <div class="main col-md-10 col-md-offset-2">
+            
+            <!--aqui el contenido-->
+              <div id="payLoadSP">
+              
 <c:if test="${not empty  user && user!= null && not empty usuarioBD }" >
 
 
 
 <div class="row listTarjetasPerf">
-   <div class=" row well animated pulse tarjeta">
+   <div class=" row well   tarjeta">
    <div class="col-xs-4 col-xs-offset-4 box-img-perfil">
    <img src="https://randomuser.me/api/portraits/med/men/44.jpg" alt="" class="img img-responsive imgTarjeta img-circle img-perfil" style="position: absolute;">
    </div>
@@ -47,7 +52,7 @@
    </div>  
    </div>
 
-   <div class=" row well animated pulse tarjeta" >
+   <div class=" row well   tarjeta" >
    <div class="col-xs-4" ><button class="btn btn-block" style="background-color: #AAC">Todos</button></div>
    <div class="col-xs-4" ><button class="btn btn-block" style="background-color: #5C5">Positivos</button></div>
    <div class="col-xs-4" ><button class="btn btn-block" style="background-color: #C55">Negativos</button></div>
@@ -59,10 +64,10 @@
    			<c:forEach items="${quejasUsuario}" var="queja">
    			<a class="tarjetaHtml" href="/verQueja?id=${queja.id }">
    			 <c:if test="${queja.tipo==1 }" >
-		          <div class=" row well animated pulse tarjeta" style="border: solid 0.5vh #C55;" >
+		          <div class=" row well   tarjeta" style="border: solid 0.5vh #C55;" >
 		           </c:if>
 		           <c:if test="${queja.tipo==2 }" >
-		          <div class=" row well animated pulse tarjeta" style="border: solid 0.5vh #5C5;" >
+		          <div class=" row well   tarjeta" style="border: solid 0.5vh #5C5;" >
 		         </c:if>
 				   <div class="col-xs-4 col-sm-3 col-md-2" >
 				  <c:choose>

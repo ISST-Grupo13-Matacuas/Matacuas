@@ -5,6 +5,11 @@
 <!DOCTYPE html>
 
 <%@ include file="MenuSup.jsp" %>
+ <div class="main col-md-10 col-md-offset-2">
+            
+            <!--aqui el contenido-->
+              <div id="payLoadSP">
+              
 <div class="row listTarjetas" id="listTarjetas">
               			<c:if test="${not empty quejas }">
               				<c:forEach items="${quejas}" var="queja">
