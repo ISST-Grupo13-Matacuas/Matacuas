@@ -45,6 +45,13 @@
 								<c:out value="${queja.descripcion }" />
 								</small>
 							</p>
+							<c:if test="${not empty user and not empty usuarioBD and  usuarioBD.tipo == 1 }">
+							<form method="post" action="/borrarQueja">
+								<input type="text" name="id" class="hidden" value="${queja.id }"/>
+								<input class ="btn btn-cancel" type="submit" value="Borrar queja"/>
+							
+							</form>
+							</c:if>
 				
 						</div>
 					</div>
