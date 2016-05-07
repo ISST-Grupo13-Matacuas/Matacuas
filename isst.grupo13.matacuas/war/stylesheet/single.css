@@ -60,6 +60,8 @@ hr{
   border-style: solid;
   margin: auto;
   margin-top: 7%;
+  width: 14vh;
+  height: 14vh;
 }
 
 .btn-login{
@@ -260,7 +262,11 @@ a > p{
 }
 
 .menuHead{
-  height: 15vh;
+  height: 18vh;
+  background-color: rgba(59, 65, 97, 0.58);
+ border-style: solid;
+ border-width: 0 1vh 0 0;
+ border-color: rgba(59,65,97,1);
     
     
     
