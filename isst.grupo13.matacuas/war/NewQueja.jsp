@@ -128,14 +128,8 @@ BlobstoreService blobstoreService = BlobstoreServiceFactory.getBlobstoreService(
     <div id="payLoadSP">
     	<div class="row" id="">
 			<c:if test="${not empty tipoQueja and (tipoQueja ==1 or tipoQueja==2) }">
-				<c:if test="${tipoQueja == 1 }">
-					<div  class="caja col-xs-12  col-sm-12 col-sm-offset-0 text-center  well animated bounceInDown nopad" style="border: solid 1vh #C55;padding-top: 0%;min-height: calc(100vh - 115px);">
+					<div  class="caja col-xs-12  col-sm-12 col-sm-offset-0 text-center  well animated bounceInDown nopad" style="border: solid 1vh <c:if test="${tipoQueja == 1 }">#C55</c:if><c:if test="${tipoQueja == 2 }">#5C5</c:if>;padding-top: 0%;min-height: calc(100vh - 115px);">
    						<div class="row">
-				</c:if>
-				<c:if test="${tipoQueja == 2 }">
-				<div  class="caja col-xs-12  col-sm-12 col-sm-offset-0 text-center  well animated bounceInDown nopad" style="border: solid 1vh #5C5;padding-top: 0%;min-height: calc(100vh - 115px);">
-  			 			<div class="row">
-   				</c:if>
    				
    							<div class="col-xs-12 col-xs-offset-0">
 							 	<div class="wrapper">
