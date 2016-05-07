@@ -36,8 +36,8 @@ public class PruebaBDServlet extends HttpServlet {
 		}
 		
 		if (usuarios.size() == 0){
-			Usuario usuario1 = daoUser.create("charlygs94@gmail.com", "6784HWT", "gscharly",0);
-			Usuario moderador = daoUser.create("g.carreto@gmail.com", "8594FBH", "g.carreto",1);
+			Usuario usuario1 = daoUser.create("charlygs94@gmail.com", "6784HWT", "gscharly",0,"");
+			Usuario moderador = daoUser.create("g.carreto@gmail.com", "8594FBH", "g.carreto",1,"");
 			
 		}
 		

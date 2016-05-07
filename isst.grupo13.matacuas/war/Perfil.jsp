@@ -17,7 +17,16 @@
 <div class="row listTarjetasPerf">
    <div class=" row well   tarjeta">
    <div class="col-xs-4 col-xs-offset-4 box-img-perfil">
-   <img src="https://randomuser.me/api/portraits/med/men/44.jpg" alt="" class="img img-responsive imgTarjeta img-circle img-perfil" style="position: absolute;">
+    <c:choose>
+			<c:when test="${usuarioBD.imagen != '' }">
+				<img src="/imagenUsuario" alt="" class="img img-responsive imgTarjeta img-circle img-perfil" style="position: absolute;">
+			 </c:when>
+			<c:otherwise>
+				<img src="https://randomuser.me/api/portraits/med/men/44.jpg" alt="" class="img img-responsive imgTarjeta img-circle img-perfil" style="position: absolute;" >
+			</c:otherwise>
+		</c:choose>
+   
+   
    </div>
    <div class="col-xs-8" style="z-index: 100;">
    <br>

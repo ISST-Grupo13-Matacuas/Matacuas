@@ -20,15 +20,17 @@ public class Usuario implements Serializable{
 	private String matricula;  //Matricula del coche del usuario
 	private String nick; //Apodo del usuario
 	private int tipo; //Moderador o no
+	private String imagen;
 	
 		
-	public Usuario(String usuario, String matricula, String nick, int tipo) {
+	public Usuario(String usuario, String matricula, String nick, int tipo,String imagen) {
 		super();
 		
 		this.usuario = usuario;
 		this.matricula = matricula;
 		this.nick = nick;
 		this.tipo=tipo;
+		this.imagen = imagen;
 	}
 	
 	
@@ -72,11 +74,25 @@ public class Usuario implements Serializable{
 
 
 
+	public String getImagen() {
+		return imagen;
+	}
+
+
+
+	public void setImagen(String imagen) {
+		this.imagen = imagen;
+	}
+
+
+
 	@Override
 	public String toString() {
 		return "Usuario [id=" + id + ", usuario=" + usuario + ", matricula="
-				+ matricula + ", nick=" + nick + ", tipo=" + tipo + "]";
+				+ matricula + ", nick=" + nick + ", tipo=" + tipo + ", imagen="
+				+ imagen + "]";
 	}
+
 
 
 
@@ -89,10 +105,10 @@ public class Usuario implements Serializable{
 		if (getClass() != obj.getClass())
 			return false;
 		Usuario other = (Usuario) obj;
-		if (id == null) {
-			if (other.id != null)
+		if (imagen == null) {
+			if (other.imagen != null)
 				return false;
-		} else if (!id.equals(other.id))
+		} else if (!imagen.equals(other.imagen))
 			return false;
 		if (matricula == null) {
 			if (other.matricula != null)
@@ -113,6 +129,10 @@ public class Usuario implements Serializable{
 			return false;
 		return true;
 	}
+
+
+
+	
 	
 	
 

@@ -5,7 +5,7 @@ import java.util.List;
 import isst.grupo13.matacuas.model.Usuario;
 
 public interface UsuarioDAO {
-	public Usuario create(String usuario, String matricula, String nick, int tipo);
+	public Usuario create(String usuario, String matricula, String nick, int tipo,String imagen);
 	
 	//Saca todas los usuarios almacenados
 	public List<Usuario> read();
@@ -13,11 +13,15 @@ public interface UsuarioDAO {
 	//Busca un usuario por su email 
 	public List<Usuario> readUsuario(String usuario);
 	
+	public Usuario readUnUsuario(String usuario);
+	
 	//Busca un usuario por su matricula
 	public List<Usuario> readMatricula(String matricula);
 	
 	//Busca un usuario por su nick
 	public List<Usuario> nick(String nick);
+	
+	public Usuario readNick(String nick);
 	
 	//Actualiza un usuario (nick,matricula)
 	public void update(Usuario usuario);

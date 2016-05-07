@@ -28,10 +28,10 @@ public class UsuarioDAOImp implements UsuarioDAO{
 		}
 
 	@Override
-	public Usuario create(String usuario, String matricula, String nick, int tipo) {
+	public Usuario create(String usuario, String matricula, String nick, int tipo,String imagen) {
 		Usuario usr = null;
 		EntityManager em = EMFService.get().createEntityManager();
-		usr = new Usuario(usuario, matricula, nick, tipo);
+		usr = new Usuario(usuario, matricula, nick, tipo,imagen);
 		em.persist(usr);
 		em.close();
 		
@@ -45,6 +45,21 @@ public class UsuarioDAOImp implements UsuarioDAO{
 		List<Usuario> res = q.getResultList();
 		em.close();
 		return res;
+	}
+	
+	@Override
+	public Usuario readUnUsuario(String usuario) {
+		EntityManager em = EMFService.get().createEntityManager();
+		Query q = em.createQuery("select q from Usuario q where q.usuario = :usuario");
+		q.setParameter("usuario", usuario);
+		Usuario unUsuario = new Usuario("", "", "", 0, "");
+		try{
+			unUsuario = (Usuario) q.getResultList().get(0);
+		}finally{		
+			em.close();
+		}
+		
+		return unUsuario;
 	}
 
 	@Override
@@ -75,6 +90,16 @@ public class UsuarioDAOImp implements UsuarioDAO{
 		List<Usuario> usuarios = q.getResultList();
 		em.close();
 		return usuarios;
+	}
+	
+	@Override
+	public Usuario readNick(String nick){
+		EntityManager em = EMFService.get().createEntityManager();
+		Query q = em.createQuery("select q from Usuario q where q.nick = :nick");
+		q.setParameter("nick", nick);
+		Usuario usuario = (Usuario) q.getResultList().get(0);
+		em.close();
+		return usuario;
 	}
 
 	@Override
