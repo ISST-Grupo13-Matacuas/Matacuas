@@ -9,13 +9,14 @@
 
 	<!--aqui el contenido-->
 	<div id="payLoadSP">
-	
-		<div class="row text-center" id="btnBar">
+	<div class="row">
+	<div class="col-xs-12 col-md-10" id="btnBar">
+		<div class="row text-center" id="btnBarI">
 		<a href="#"><div class="col-xs-6 SBtn btn" id="quejasBtn">Quejas</div></a> 
 		<a href="#"><div class="col-xs-6 SBtn btn" id="felicitacionesBtn">Felicitaciones</div></a> 
 		
 		</div>
-
+</div>
 		<div class="row listTarjetas" id="listTarjetas">
 			<c:if test="${not empty quejas }">
 				<c:forEach items="${quejas}" var="queja">
@@ -61,7 +62,7 @@
 
 				</c:forEach>
 			</c:if>
-
+</div>
 	</div> <!-- div de row Lista tarjetas -->
 
 <%@ include file="MenuInf.jsp"%>

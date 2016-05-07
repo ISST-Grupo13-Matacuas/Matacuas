@@ -233,12 +233,11 @@ a > p{
 }
 
 #btnBar{
-	width: 100%;
 	position: fixed;
 	z-index: 3;
 	    top: 50px;
 }
-#btnBar>a{
+#btnBarI>a{
 color: #333;
 }
 .SBtn{
