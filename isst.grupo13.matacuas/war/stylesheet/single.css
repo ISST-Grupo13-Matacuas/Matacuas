@@ -223,6 +223,27 @@ a > p{
  margin-left: 90%;
 
 }
+
+#btnBar{
+	width: 100%;
+	position: fixed;
+	z-index: 3;
+	    top: 50px;
+}
+#btnBar>a{
+color: #333;
+}
+.SBtn{
+	border-radius: 0px;
+	height: 30px;
+}
+#quejasBtn{
+	background-color: #C55;
+}
+#felicitacionesBtn{
+	background-color: #5C5;
+}
+
 @media(max-width: 1100px){
   .menuB{
    padding-top: 1%;
@@ -238,6 +259,7 @@ a > p{
 
 .listTarjetas{
   margin: 3%;
+  margin-top:45px;
 }
 .menuLat{
   position: absolute;

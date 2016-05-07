@@ -9,20 +9,20 @@
 
 	<!--aqui el contenido-->
 	<div id="payLoadSP">
+	
+		<div class="row text-center" id="btnBar">
+		<a href="#"><div class="col-xs-6 SBtn btn" id="quejasBtn">Quejas</div></a> 
+		<a href="#"><div class="col-xs-6 SBtn btn" id="felicitacionesBtn">Felicitaciones</div></a> 
+		
+		</div>
 
 		<div class="row listTarjetas" id="listTarjetas">
 			<c:if test="${not empty quejas }">
 				<c:forEach items="${quejas}" var="queja">
 
 					<a class="tarjetaHtml" href="/verQueja?id=${queja.id }"> 
-						<c:if test="${queja.tipo==1 }">
 							<div class=" row well animated pulse tarjeta"
-								style="border: solid 0.5vh #C55;">
-						</c:if>
-						 <c:if test="${queja.tipo== 2}">
-							<div class=" row well animated pulse tarjeta"
-								style="border: solid 0.5vh #5C5;">
-						</c:if>
+								style="border: solid 0.5vh <c:if test="${queja.tipo==1 }">#C55</c:if><c:if test="${queja.tipo==2 }">#5C5</c:if>;">
 						<div class="col-xs-4 col-sm-3">
 							<c:choose>
 								<c:when test="${queja.imagen != null && queja.imagen != ''}">
