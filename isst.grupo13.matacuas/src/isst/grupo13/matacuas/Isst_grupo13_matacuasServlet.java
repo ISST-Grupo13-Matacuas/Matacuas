@@ -50,7 +50,7 @@ public class Isst_grupo13_matacuasServlet extends HttpServlet {
 			List<Usuario> usuarios = daoUsuario.readUsuario(user);
 			Usuario usuario = null;
 			if(usuarios.size() == 0){
-				usuario = daoUsuario.create(user, "", "", 0);
+				usuario = daoUsuario.create(user, "", "", 0,"");
 				req.getSession().setAttribute("usuarioBD", usuario);
 			}
 			else{

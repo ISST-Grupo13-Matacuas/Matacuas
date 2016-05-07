@@ -81,8 +81,22 @@
              <div class="menuHead">
               <div class="row">
              
-                <div class="col-xs-8 col-xs-offset-2 col-md-12 col-md-offset-0" onclick="profile()">
-                    <img src="https://randomuser.me/api/portraits/med/men/44.jpg" alt="" class="img img-responsive imgMenPro img-circle" >
+                <div class="col-xs-8 col-xs-offset-2 col-md-12 col-md-offset-0">
+                
+                
+                <c:choose>
+								<c:when test="${usuarioBD.imagen != ''}">
+									<img src="/imagenUsuario" alt="" class="img img-responsive imgMenPro img-circle" >
+								 </c:when>
+								<c:otherwise>
+									<img src="https://randomuser.me/api/portraits/med/men/44.jpg" alt="" class="img img-responsive imgMenPro img-circle" >
+								</c:otherwise>
+							</c:choose>
+                		
+                		 
+                		
+                		
+                   
                 </div>
                
               </div>  
@@ -95,7 +109,8 @@
                 <li><br></li>
                 	<c:if test="${not empty user and user!=null}">
                 		<li>
-						 <li ><a href="/perfil"><c:out value="${user}"/></a></li>
+						 <li style="color: #FFF;
+font-size: 1.2em;"><c:out value="${user}"/></li>
 						</li> 
 					</c:if>
 					<li>
