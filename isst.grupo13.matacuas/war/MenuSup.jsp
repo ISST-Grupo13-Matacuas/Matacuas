@@ -39,9 +39,6 @@
           
         </div>
       </div>
-
-
-
     </div>
 
 <c:if test="${not empty user and user!=null}">
@@ -66,12 +63,12 @@
             <span class="
             glyphicon glyphicon-thumbs-up glyM"></span>
             <p>Positiva</p></a>
-          </div>
+         </div>
 
         </div>
 
       </div>
-      </c:if>
+</c:if>
 
 
       <div class="container-fluid">
@@ -81,10 +78,10 @@
              <div class="menuHead">
               <div class="row">
              
-                <div class="col-xs-8 col-xs-offset-2 col-md-12 col-md-offset-0">
+                 <div class="col-xs-8 col-xs-offset-2 col-md-12 col-md-offset-0">
                 
                 
-                <c:choose>
+                		<c:choose>
 								<c:when test="${usuarioBD.imagen != ''}">
 									<img src="/imagenUsuario" alt="" class="img img-responsive imgMenPro img-circle" >
 								 </c:when>
@@ -92,26 +89,18 @@
 									<img src="https://randomuser.me/api/portraits/med/men/44.jpg" alt="" class="img img-responsive imgMenPro img-circle" >
 								</c:otherwise>
 							</c:choose>
-                		
-                		 
-                		
-                		
-                   
-                </div>
+		         </div>
                
               </div>  
                    
             </div>
- </c:if> 
+			 </c:if> 
             <ul class="nav navbar-stacked">
               <li><br></li>
                <li><br></li>
                 <li><br></li>
                 	<c:if test="${not empty user and user!=null}">
-                		<li>
-						 <li style="color: #FFF;
-font-size: 1.2em;"><c:out value="${user}"/></li>
-						</li> 
+						 <li style="color: #FFF;font-size: 1.2em;"><c:out value="${user}"/></li>
 					</c:if>
 					<li>
 					<a href="<c:url value="${url}"/>"><c:out value="${urlLinktext}"/></a>
@@ -125,12 +114,11 @@ font-size: 1.2em;"><c:out value="${user}"/></li>
 	              		</Span>
 	              	</c:if>
 	              
-	              </a></li>
+	              </a>
+	              </li>
               </c:if>
               <c:if test="${not empty user and user!= null and tipoUsuario == 1  }">
-              	<li><a href="/moderar">Moderar</a></li>
-              	
-              	
+              	<li><a href="/moderar">Moderar</a></li>             	
               </c:if>
               <li><a href="/matacuas">Entorno</a></li>
               <li><a href="/mapa">Mapa</a></li>

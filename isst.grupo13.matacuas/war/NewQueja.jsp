@@ -11,116 +11,6 @@ BlobstoreService blobstoreService = BlobstoreServiceFactory.getBlobstoreService(
 
 <%@ include file="MenuSup.jsp" %>
 
-<!-- 
- <div class="main col-md-10 col-md-offset-2">
-              <div class="row">
-            <!--aqui el contenido-->
-              <!-- <div id="payLoadSP">
-	<c:if test="${not empty tipoQueja and (tipoQueja ==1 or tipoQueja==2) }">
-	
-	
-	
-	<c:if test="${tipoQueja == 1 }">
-<div  class="caja col-xs-12  col-sm-12 col-sm-offset-0 text-center  well animated bounceInDown" style="border: solid 0.5vh #C55;padding-top: 0%;height: calc(100vh - 115px);">
-   <div class="row">
-   		</c:if>
-
-   		
-   		
-   		<c:if test="${tipoQueja == 2 }">
-   			
-   			<div  class="caja col-xs-8 col-xs-offset-2 text-center  well animated bounceInDown" style="border: solid 0.5vh #5C5;">
-  			 <div class="row">
-   				 <h1 class="LoginText">
-   			
-   				Buena acción
-   				</h1>
-   			
-   		</c:if>
-   				  
-   
-   <div class="row">
-   <div class="col-xs-12 col-xs-offset-0">
-  
-   <div class="wrapper">
-   <div id="mapa"></div>
-   </div>
-   </div>
-   </div>
-      <c:if test="${tipoQueja == 1 }">
-       <button class="btn-login btn" id="locate">Localízame!</button>
-   <h1 class="LoginText">Nueva Queja</h1>
-   		</c:if>
-   		
-   </div>
-   
-   <form  role="form" action="<%=blobstoreService.createUploadUrl("/newQueja") %>" method="post" acceptcharset="utf-8" enctype="multipart/form-data">
-                <div class="col-xs-10 col-xs-offset-1"> -->
-                    <!--  <div class="well well-sm"><strong><span class="glyphicon glyphicon-asterisk"></span>Obligatorio</strong></div>-->
-                   
-                     <!--    <label>Lugar</label>
-                        <div class="input-group">
-                            <input type="text" class="form-control" name="lugar" id="lugar" placeholder="Lugar del incidente" required>
-                            <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
-                       
-                        
-                    </div>
-                    
-                        <label>Matrícula</label>
-                        <div class="input-group">
-                            <input type="text" class="form-control" name="matricula" id="matricula" placeholder="Matrícula del infractor" maxLength="7" required>
-                            <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
-                        </div>
-                        
-                    
-                    
-                    
-                    
-                        <label>Descripción</label>
-                        <div class="input-group">
-                            <textarea name="descripcion" id="descripcion" class="form-control" rows="5" required placeholder="Descripción del incidente"></textarea>
-                            <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
-                        
-                        
-                    </div>
-                     
-                        <label>Imagen</label>
-                        <div class="input-group">
-                            <input type="file" id="imagen" name="imagen" />
-                            <input type="hidden" id="imagenurl" name = "imagenurl"/>
-                           
-                       
-                        
-                    </div>
-                    <div class="form-group hidden">
-                        
-                        <div class="input-group">
-                            <input type="hidden" class="form-control" name="latitud" id="latitud"  required>
-                        </div>
-                        
-                    </div>
-                    <div class="form-group ">
-                        
-                        <div class="input-group">
-                            <input type="hidden" class="form-control" name="longitud" id="longitud"  required>
-                        </div>
-                        
-                    </div>
-                    <div class="form-group hidden">
-                        
-                        <div class="input-group">
-                            <input type="hidden" class="form-control" name="tipo" id="tipo"  value="${tipoQueja }">
-                        </div>
-                        
-                    </div>
-                    <input type="submit" name="submit" id="submit" value="Poner queja" class="btn  btn-login">
-                </div>
-            </form>
-   
-   </div>
-</div>
-</c:if> -->
-
 <!--  limpio -->
 
  <div class="main col-md-10 col-md-offset-2">
@@ -128,14 +18,8 @@ BlobstoreService blobstoreService = BlobstoreServiceFactory.getBlobstoreService(
     <div id="payLoadSP">
     	<div class="row" id="">
 			<c:if test="${not empty tipoQueja and (tipoQueja ==1 or tipoQueja==2) }">
-				<c:if test="${tipoQueja == 1 }">
-					<div  class="caja col-xs-12  col-sm-12 col-sm-offset-0 text-center  well animated bounceInDown nopad" style="border: solid 1vh #C55;padding-top: 0%;min-height: calc(100vh - 115px);">
+					<div  class="caja col-xs-12 text-center  well animated bounceInDown nopad" style="border: solid 1vh <c:if test="${tipoQueja == 1 }">#C55</c:if><c:if test="${tipoQueja == 2 }">#5C5</c:if>;padding-top: 0%;min-height: calc(100vh - 115px);">
    						<div class="row">
-				</c:if>
-				<c:if test="${tipoQueja == 2 }">
-				<div  class="caja col-xs-12  col-sm-12 col-sm-offset-0 text-center  well animated bounceInDown nopad" style="border: solid 1vh #5C5;padding-top: 0%;min-height: calc(100vh - 115px);">
-  			 			<div class="row">
-   				</c:if>
    				
    							<div class="col-xs-12 col-xs-offset-0">
 							 	<div class="wrapper">
@@ -149,83 +33,72 @@ BlobstoreService blobstoreService = BlobstoreServiceFactory.getBlobstoreService(
 							</div>
 							
 							<div class="col-xs-12 text-center">
-							  <c:if test="${tipoQueja == 1 }">
-								 <h1 class="LoginText">Nueva Queja</h1>
-							  </c:if>
-							  <c:if test="${tipoQueja == 2 }">
-								 <h1 class="LoginText"> Buena acción </h1>
-							  </c:if>
-							  
-							     				 			
-							</div>
-							
-							
-							
+								 <h1 class="LoginText">	  <c:if test="${tipoQueja == 1 }">Nueva Queja </c:if><c:if test="${tipoQueja == 2}">Buena acción </c:if></h1>
+ 							</div>
+													
 							<div class="col-xs-12">
 							 	<form  role="form" action="<%=blobstoreService.createUploadUrl("/newQueja") %>" method="post" acceptcharset="utf-8" enctype="multipart/form-data">
 							 		<div class="row">
 							 			<!-- SDASAD -->
 							 			 <div class="col-xs-10 col-xs-offset-1">
 							 			 
-							 			 <div class="row">
-							 			 
-                    						<!--  <div class="well well-sm"><strong><span class="glyphicon glyphicon-asterisk"></span>Obligatorio</strong></div>-->
-                   							 <div class="col-xs-12 col-sm-6">
-	                  							<label>Lugar</label>
-	                        					<div class="input-group">
-						                            <input type="text" class="form-control" name="lugar" id="lugar" placeholder="Lugar del incidente" required>
-						                            <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
-		                						 </div>
-	                    
-	                        					<label>Matrícula</label>
-						                        <div class="input-group">
-						                            <input type="text" class="form-control" name="matricula" id="matricula" placeholder="Matrícula del infractor" maxLength="7" required>
-						                            <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
-						                        </div>
-						                        
-						                        <label>Imagen</label>
-						                        <div class="input-group">
-						                            <input type="file" id="imagen" name="imagen" />
-						                            <input type="hidden" id="imagenurl" name = "imagenurl"/>
-						                    	</div>
-						                    
-						                    </div>	
-											 <div class="col-xs-12 col-sm-6">
-						                        <label>Descripción</label>
-						                        <div class="input-group">
-						                            <textarea name="descripcion" id="descripcion" class="form-control" rows="5" required placeholder="Descripción del incidente"></textarea>
-						                            <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>  
-						                    	</div>
-	                     
-							                    <div class="form-group hidden">
-							                        
+								 			 <div class="row">
+								 			 
+	                    						<!--  <div class="well well-sm"><strong><span class="glyphicon glyphicon-asterisk"></span>Obligatorio</strong></div>-->
+	                   							 <div class="col-xs-12 col-sm-6">
+		                  							<label>Lugar</label>
+		                        					<div class="input-group">
+							                            <input type="text" class="form-control" name="lugar" id="lugar" placeholder="Lugar del incidente" required>
+							                            <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
+			                						 </div>
+		                    
+		                        					<label>Matrícula</label>
 							                        <div class="input-group">
-							                            <input type="hidden" class="form-control" name="latitud" id="latitud"  required>
+							                            <input type="text" class="form-control" name="matricula" id="matricula" placeholder="Matrícula del infractor" maxLength="7" required>
+							                            <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
 							                        </div>
 							                        
-							                    </div>
-							                    <div class="form-group ">
-							                        
+							                        <label>Imagen</label>
 							                        <div class="input-group">
-							                            <input type="hidden" class="form-control" name="longitud" id="longitud"  required>
-							                        </div>
-							                        
-							                    </div>
-							                    <div class="form-group hidden">
-							                        
-							                        <div class="input-group">
-							                            <input type="hidden" class="form-control" name="tipo" id="tipo"  value="${tipoQueja }">
-							                        </div>
-							                        
-							                    </div>
+							                            <input type="file" id="imagen" name="imagen" />
+							                            <input type="hidden" id="imagenurl" name = "imagenurl"/>
+							                    	</div>
 							                    
-							                    </div>
-							                    <div class="col-xs-12">
-							                    <input type="submit" name="submit" id="submit" value="Poner queja" class="btn  btn-login">
-						                    
-						                    
-						                    
-						                    </div>
+							                    </div>	
+												 	<div class="col-xs-12 col-sm-6">
+								                        <label>Descripción</label>
+								                        <div class="input-group">
+								                            <textarea name="descripcion" id="descripcion" class="form-control" rows="5" required placeholder="Descripción del incidente"></textarea>
+								                            <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>  
+								                    	</div>
+			                     
+									                    <div class="form-group hidden">
+									                        
+									                        <div class="input-group">
+									                            <input type="hidden" class="form-control" name="latitud" id="latitud"  required>
+									                        </div>
+									                        
+									                    </div>
+									                    <div class="form-group ">
+									                        
+									                        <div class="input-group">
+									                            <input type="hidden" class="form-control" name="longitud" id="longitud"  required>
+									                        </div>
+									                        
+									                    </div>
+									                    <div class="form-group hidden">
+								                        
+								                        <div class="input-group">
+								                            <input type="hidden" class="form-control" name="tipo" id="tipo"  value="${tipoQueja }">
+								                        </div>
+								                        
+								                    </div>
+								                    
+								                    </div>
+								                    <div class="col-xs-12">
+								                    	<input type="submit" name="submit" id="submit" value="Poner queja" class="btn  btn-login">
+							                    	</div>
+							                    	
 						                    </div>
 						                </div>
 						 				<!-- ZXZCXZCZX-->	 		
@@ -235,23 +108,12 @@ BlobstoreService blobstoreService = BlobstoreServiceFactory.getBlobstoreService(
    		 				</div> 
    		  			</div> 
 			</c:if>
-
-
-
-
-
-	
-              		
         </div> 
-              		
-<!-- avcaba limpio -->
-
-
-</div> <!-- -div payload -->
+	</div> <!-- -div payload -->
             <!--acaba el contenido --> 
-          </div>
-        </div>
-      </div>
+</div>
+</div>
+</div>
       <!-- /.container -->
 
   <!-- Bootstrap core JavaScript

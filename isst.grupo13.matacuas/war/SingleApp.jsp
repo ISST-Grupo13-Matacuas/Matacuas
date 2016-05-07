@@ -13,48 +13,44 @@
 		<div class="row listTarjetas" id="listTarjetas">
 			<c:if test="${not empty quejas }">
 				<c:forEach items="${quejas}" var="queja">
-
 					<a class="tarjetaHtml" href="/verQueja?id=${queja.id }"> 
-						<c:if test="${queja.tipo==1 }">
-							<div class=" row well animated pulse tarjeta"
-								style="border: solid 0.5vh #C55;">
-						</c:if>
-						 <c:if test="${queja.tipo== 2}">
-							<div class=" row well animated pulse tarjeta"
-								style="border: solid 0.5vh #5C5;">
-						</c:if>
-						<div class="col-xs-4 col-sm-3">
-							<c:choose>
-								<c:when test="${queja.imagen != null && queja.imagen != ''}">
-									<img class="img img-responsive img-rounded imgTarjeta"
-										src="/imagen?id=${queja.id} " alt="">
-								 </c:when>
-								<c:otherwise>
-									<c:set var="rand"><%= (int) java.lang.Math.ceil(java.lang.Math.random() * 5) %></c:set>
+						<div class=" row well animated pulse tarjeta" style="border: solid 0.5vh 	<c:if test="${queja.tipo==1 }">#C55;</c:if> <c:if test="${queja.tipo== 2}">#5C5</c:if>">
+							<div class="col-xs-4 col-sm-3">
+								<c:choose>
+									<c:when test="${queja.imagen != null && queja.imagen != ''}">
 										<img class="img img-responsive img-rounded imgTarjeta"
-											src="/images/${rand}.jpg" alt="">
-								</c:otherwise>
-							</c:choose>
-						</div>
+											src="/imagen?id=${queja.id} " alt="">
+									 </c:when>
+									<c:otherwise>
+										<c:set var="rand"><%= (int) java.lang.Math.ceil(java.lang.Math.random() * 5) %></c:set>
+											<img class="img img-responsive img-rounded imgTarjeta"
+												src="/images/${rand}.jpg" alt="">
+									</c:otherwise>
+								</c:choose>
+							</div>
 
-						<div class="col-xs-8 col-sm-9">
-							<h2 class="tarjetaTitle">
-								<c:out value="${queja.lugar}" />
-							</h2>
-							<p class="textOver">
-								<c:out value="${queja.descripcion }" />
-								</small>
-							</p>
-				
+							<div class="col-xs-8 col-sm-9">
+								<h2 class="tarjetaTitle">
+									<c:out value="${queja.lugar}" />
+								</h2>
+								<p class="textOver">
+									<c:out value="${queja.descripcion }" />
+									</small>
+								</p>
+								<c:if test="${not empty user and not empty usuarioBD and  usuarioBD.tipo == 1 }">
+							<form method="post" action="/borrarQueja">
+								<input type="text" name="id" class="hidden" value="${queja.id }"/>
+								<input class ="btn btn-cancel" type="submit" value="Borrar queja"/>
+							
+							</form>
+							</c:if>
+							
+					
+							</div>
 						</div>
-					</div>
 					</a>
-
-
-
 				</c:forEach>
 			</c:if>
-
-	</div> <!-- div de row Lista tarjetas -->
-
+		</div> <!-- div de row Lista tarjetas -->
+<!-- faltarian dos divs que van en menuInf -->
 <%@ include file="MenuInf.jsp"%>
