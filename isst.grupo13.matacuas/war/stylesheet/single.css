@@ -9,8 +9,11 @@
   background-attachment: fixed;
   padding-top: 50px;
   /*overflow: hidden*/
-    padding-bottom: 100px;
+    /*padding-bottom: 50px;*/
     overflow-x: hidden;
+}
+#payLoadSP{
+	margin-bottom: 60px;
 }
 
 #loginBox{
@@ -52,6 +55,12 @@ hr{
   border-style: solid;
   margin: auto;
   margin-top: 7%; 
+}
+.imgDetalle{
+  border-width: 0.5vh;
+  border-color: #26A4FF;
+  border-style: solid;
+  margin: auto;
 }
 
 .imgMenPro{
@@ -103,10 +112,9 @@ hr{
  -webkit-box-orient: vertical;
 }
 .historia{
-  padding: 2%;
-  margin: 2%;
-  background-color: rgba(255,255,255,0.8);
-  margin-bottom: 100px;
+ margin: 0 0 2% 0;
+ background-color: rgba(255,255,255,0.8);
+ height: calc(100vh - 115px);
 
 }
 
