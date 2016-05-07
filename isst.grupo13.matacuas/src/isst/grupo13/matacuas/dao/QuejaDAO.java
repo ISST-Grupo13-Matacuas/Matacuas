@@ -27,6 +27,15 @@ public interface QuejaDAO {
 	//Devuelve las quejas o felicitaciones segun se pase el tipo y por matricula
 	public List<Queja> readQuejaMatriculaTipo(String matricula, int tipo);
 	
+	//Devuelve las quejas según lugar
+	public List<Queja> readLugar(String lugar);
+	
+	//Busca en la descripcion
+	public List<Queja> readDescripcion(String descripcion);
+	
+	//Busca según sea buena o mala
+	public List<Queja> readTipo(int tipo);
+	
 	//Actualiza una queja (estado)
 	public void update(Queja queja);
 	

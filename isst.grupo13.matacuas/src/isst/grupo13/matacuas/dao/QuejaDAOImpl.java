@@ -6,6 +6,7 @@ package isst.grupo13.matacuas.dao;
 import isst.grupo13.matacuas.model.Queja;
 import isst.grupo13.matacuas.model.Usuario;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -161,6 +162,39 @@ public class QuejaDAOImpl implements QuejaDAO {
 		List<Queja> quejas = q.getResultList();
 		System.out.println("quejas");
 		System.out.println(quejas);
+		em.close();
+		return quejas;
+	}
+
+	@Override
+	public List<Queja> readLugar(String lugar) {
+		EntityManager em = EMFService.get().createEntityManager();
+		Query q = em.createQuery("select q from Queja q where q.lugar = :lugar");
+		q.setParameter("lugar", lugar);
+		List<Queja> quejas = q.getResultList();
+		em.close();
+		return quejas;
+	}
+
+	@Override
+	public List<Queja> readDescripcion(String descripcion) {
+		List<Queja> todas = read();
+		List<Queja> quejas = new ArrayList();
+		
+		for (Queja queja : todas) {
+			if(queja.getDescripcion().contains(descripcion))
+				quejas.add(queja);
+		}
+		
+		return quejas;
+	}
+
+	@Override
+	public List<Queja> readTipo(int tipo) {
+		EntityManager em = EMFService.get().createEntityManager();
+		Query q = em.createQuery("select q from Queja q where q.tipo = :tipo");
+		q.setParameter("tipo", tipo);
+		List<Queja> quejas = q.getResultList();
 		em.close();
 		return quejas;
 	}
