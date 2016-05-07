@@ -18,6 +18,7 @@
 		<h1 class="tarjetaTitle"><c:out value="${quejaAVer.lugar }"/></h1>
 
 		<hr class="hrBar">
+		
 
 		<p><c:out value="${quejaAVer.descripcion }"/></p>
 		<p>Matrícula: <c:out value="${quejaAVer.matricula }"/></p>
@@ -30,6 +31,13 @@
 				<img class="img img-responsive img-rounded imgTarjeta" src="/images/${rand}.jpg" alt=""></div>
 			</c:otherwise>
 		</c:choose>
+		<c:if test="${not empty user and not empty usuarioBD and  usuarioBD.tipo == 1 }">
+							<form method="post" action="/borrarQueja">
+								<input type="text" name="id" class="hidden" value="${queja.id }"/>
+								<input class ="btn btn-cancel" type="submit" value="Borrar queja"/>
+							
+							</form>
+							</c:if>
 		</div>
 		</div>
 		<div class="col-xs-12 col-sm-6">
@@ -49,6 +57,7 @@
 		</div>
 
 		</div>
+		
 		</div>
 
 		</div>

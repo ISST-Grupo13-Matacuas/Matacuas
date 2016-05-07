@@ -31,8 +31,15 @@ public class BorrarQuejaServlet extends HttpServlet{
 		if(user!=""){
 			dao.delete(queja);
 		}
+		ReclamacionDAO reclDao = ReclamacionDAOImpl.getInstance();
+		List<Reclamacion> reclamaciones = reclDao.read();
+		for(Reclamacion recl:reclamaciones){
+			if (recl.getIdQueja() == id){
+				reclDao.delete(recl);
+			}
+		}
 		
-		resp.sendRedirect("/notificaciones");
+		resp.sendRedirect("/matacuas");
 				
 		
 	}
