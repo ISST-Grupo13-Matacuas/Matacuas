@@ -4,32 +4,44 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <%@ include file="MenuSup.jsp" %>
- <div class="main col-md-10 col-md-offset-2">
+ <div class="main col-xs-12 col-md-10 col-md-offset-2 nopad">
             
             <!--aqui el contenido-->
               <div id="payLoadSP">
 	<c:if test="${not empty quejaAVer and quejaAVer!=null }">
 	
 		<div class="row historia">
-		<div class="col-xs-12 col-sm-6">
+		<div class="col-xs-12 nopad">
+		<div class="wrapper" >
+		
+		
+		<div id="mapa"></div>
+
+		</div>
+				</div>
+			<div class="col-xs-12 ">
 		<div class="row">
 		
-		<div class="col-xs-12 col-sm-offset-0  col-sm-11 col-md-9">
-		<h1 class="tarjetaTitle"><c:out value="${quejaAVer.lugar }"/></h1>
+		<div class="col-xs-12 col-md-6">
+		<h1 class="tarjetaTitle text-center"><c:out value="${quejaAVer.lugar }"/></h1>
 
-		<hr class="hrBar">
+		<hr class="hr">
 
 		<p><c:out value="${quejaAVer.descripcion }"/></p>
 		<p>Matrícula: <c:out value="${quejaAVer.matricula }"/></p>
+		</div>
+		<div class="col-xs-12 col-md-6">
 		<c:choose>
 			<c:when test="${quejaAVer.imagen != null}">
-				<img class="img img-responsive img-rounded imgTarjeta" src="/imagen?id=${quejaAVer.id}" alt=""></div>
+				<img class="img img-responsive img-rounded imgDetalle" src="/imagen?id=${quejaAVer.id}" alt=""></div>
 			</c:when>
 			<c:otherwise>
 				<c:set var="rand"><%= (int) java.lang.Math.ceil(java.lang.Math.random() * 5) %></c:set>
-				<img class="img img-responsive img-rounded imgTarjeta" src="/images/${rand}.jpg" alt=""></div>
+				<img class="img img-responsive img-rounded imgDetalle" src="/images/${rand}.jpg" alt=""></div>
 			</c:otherwise>
 		</c:choose>
+		</div>
+		
 		</div>
 		</div>
 		<div class="col-xs-12 col-sm-6">
@@ -41,12 +53,7 @@
 		<p id="latitudQueja" class="hidden"><c:out value="${quejaAVer.lat }"/></p>
 		<p id="longitudQueja" class="hidden"><c:out value="${quejaAVer.lng }"/></p>
 
-		<div class="wrapper" >
 		
-		
-		<div id="mapa"></div>
-
-		</div>
 
 		</div>
 		</div>
