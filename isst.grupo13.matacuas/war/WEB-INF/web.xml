@@ -129,6 +129,22 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 		<servlet-name>Busqueda</servlet-name>
 		<url-pattern>/busqueda</url-pattern>
 	</servlet-mapping>
+		<servlet>
+		<servlet-name>ListaUsuarios</servlet-name>
+		<servlet-class>isst.grupo13.matacuas.ListaUsuariosServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ListaUsuarios</servlet-name>
+		<url-pattern>/listaUsuarios</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>Banear</servlet-name>
+		<servlet-class>isst.grupo13.matacuas.BanearServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Banear</servlet-name>
+		<url-pattern>/banear</url-pattern>
+	</servlet-mapping>
 	
 	
 	<welcome-file-list>

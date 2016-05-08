@@ -2,9 +2,12 @@ package isst.grupo13.matacuas;
 
 import isst.grupo13.matacuas.dao.QuejaDAO;
 import isst.grupo13.matacuas.dao.QuejaDAOImpl;
+import isst.grupo13.matacuas.dao.ReclamacionDAO;
+import isst.grupo13.matacuas.dao.ReclamacionDAOImpl;
 import isst.grupo13.matacuas.dao.UsuarioDAO;
 import isst.grupo13.matacuas.dao.UsuarioDAOImp;
 import isst.grupo13.matacuas.model.Queja;
+import isst.grupo13.matacuas.model.Reclamacion;
 import isst.grupo13.matacuas.model.Usuario;
 
 import java.io.IOException;
@@ -40,7 +43,9 @@ public class Isst_grupo13_matacuasServlet extends HttpServlet {
 		
 		QuejaDAO dao = QuejaDAOImpl.getInstance();
 		UsuarioDAO daoUsuario = UsuarioDAOImp.getInstance();
+		ReclamacionDAO daoRecl = ReclamacionDAOImpl.getInstance();
 		List<Queja> quejas = dao.read();
+		List<Reclamacion > reclamaciones = daoRecl.read();
 		
 		req.getSession().setAttribute("user", user);
 		req.getSession().setAttribute("url", url);
@@ -64,6 +69,7 @@ public class Isst_grupo13_matacuasServlet extends HttpServlet {
 			req.getSession().setAttribute("quejasMatricula", new ArrayList<Queja>(quejasMatricula));
 			req.getSession().setAttribute("notificaciones", longitud);
 			req.getSession().setAttribute("tipoUsuario", tipo);
+			req.getSession().setAttribute("reclamacionesSistema", new ArrayList<Reclamacion>(reclamaciones));
 		}
 		
 		

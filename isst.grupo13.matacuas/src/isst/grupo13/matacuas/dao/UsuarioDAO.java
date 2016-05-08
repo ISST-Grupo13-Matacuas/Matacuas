@@ -16,7 +16,7 @@ public interface UsuarioDAO {
 	public Usuario readUnUsuario(String usuario);
 	
 	//Busca un usuario por su matricula
-	public List<Usuario> readMatricula(String matricula);
+	public Usuario readMatricula(String matricula);
 	
 	//Busca un usuario por su nick
 	public List<Usuario> nick(String nick);

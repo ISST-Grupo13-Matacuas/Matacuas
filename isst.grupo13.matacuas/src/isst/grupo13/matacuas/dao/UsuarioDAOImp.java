@@ -73,13 +73,20 @@ public class UsuarioDAOImp implements UsuarioDAO{
 	}
 
 	@Override
-	public List<Usuario> readMatricula(String matricula) {
+	public Usuario readMatricula(String matricula) {
 		EntityManager em = EMFService.get().createEntityManager();
 		Query q = em.createQuery("select q from Usuario q where q.matricula = :matricula");
 		q.setParameter("matricula", matricula);
-		List<Usuario> usuarios = q.getResultList();
-		em.close();
-		return usuarios;
+		//List<Usuario> usuarios = q.getResultList();
+		
+		Usuario unUsuario = null;
+		try{
+			unUsuario = (Usuario) q.getResultList().get(0);
+		}finally{		
+			em.close();
+		}
+		
+		return unUsuario;
 	}
 
 	@Override

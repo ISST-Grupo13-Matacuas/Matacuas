@@ -26,12 +26,14 @@
 						</c:if>
 				   			<div class="col-xs-4 col-sm-3">
 				  		 	<c:choose>
-								<c:when test="${queja.imagen != null}">
-									<img class="img img-responsive img-rounded imgTarjeta" src="/imagen?id=${queja.id}" alt=""></div>
-								</c:when>
+								<c:when test="${queja.imagen != null && queja.imagen != ''}">
+									<img class="img img-responsive img-rounded imgTarjeta"
+										src="/imagen?id=${queja.id} " alt="">
+								 </c:when>
 								<c:otherwise>
 									<c:set var="rand"><%= (int) java.lang.Math.ceil(java.lang.Math.random() * 5) %></c:set>
-									<img class="img img-responsive img-rounded imgTarjeta" src="/images/${rand}.jpg" alt=""></div>
+										<img class="img img-responsive img-rounded imgTarjeta"
+											src="/images/${rand}.jpg" alt="">
 								</c:otherwise>
 							</c:choose>
 				  		
@@ -41,7 +43,7 @@
 				
 				   		</div>  
 				   		<div class="col-xs-10  text-center">
-				   		<c:if test="${queja.tipo==1 and queja.estado==1 }" >
+				   		<c:if test="${queja.tipo==1 and queja.estado==1 and usuarioBD.baneado == false }" >
 				   		<div class="toolsCard"><a href="/reclamar?id=${queja.id }"><span class="glyphicon glyphicon-pencil"></span></div></a>
 				   		</c:if>
 				   		<c:if test="${queja.tipo==1 and queja.estado ==2 }">
