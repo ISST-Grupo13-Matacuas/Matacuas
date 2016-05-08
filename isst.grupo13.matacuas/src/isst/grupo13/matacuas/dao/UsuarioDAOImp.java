@@ -80,10 +80,8 @@ public class UsuarioDAOImp implements UsuarioDAO{
 		//List<Usuario> usuarios = q.getResultList();
 		
 		Usuario unUsuario = null;
-		try{
+		if(q.getResultList().size()> 0){
 			unUsuario = (Usuario) q.getResultList().get(0);
-		}finally{		
-			em.close();
 		}
 		
 		return unUsuario;
