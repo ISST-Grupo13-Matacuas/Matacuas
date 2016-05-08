@@ -129,6 +129,7 @@ font-size: 1.2em;"><c:out value="${user}"/></li>
               </c:if>
               <c:if test="${not empty user and user!= null and tipoUsuario == 1  }">
               	<li><a href="/moderar">Moderar</a></li>
+              	<li><a href="/listaUsuarios">Usuarios</a>
               	
               	
               </c:if>

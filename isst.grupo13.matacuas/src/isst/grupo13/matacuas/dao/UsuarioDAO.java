@@ -5,7 +5,7 @@ import java.util.List;
 import isst.grupo13.matacuas.model.Usuario;
 
 public interface UsuarioDAO {
-	public Usuario create(String usuario, String matricula, String nick, int tipo,String imagen);
+	public Usuario create(String usuario, String matricula, String nick, int tipo,String imagen,boolean baneado, int recl, int quej);
 	
 	//Saca todas los usuarios almacenados
 	public List<Usuario> read();

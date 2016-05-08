@@ -28,10 +28,10 @@ public class UsuarioDAOImp implements UsuarioDAO{
 		}
 
 	@Override
-	public Usuario create(String usuario, String matricula, String nick, int tipo,String imagen) {
+	public Usuario create(String usuario, String matricula, String nick, int tipo,String imagen,boolean baneado, int recl, int quej) {
 		Usuario usr = null;
 		EntityManager em = EMFService.get().createEntityManager();
-		usr = new Usuario(usuario, matricula, nick, tipo,imagen);
+		usr = new Usuario(usuario, matricula, nick, tipo,imagen,baneado,recl,quej);
 		em.persist(usr);
 		em.close();
 		
@@ -52,7 +52,7 @@ public class UsuarioDAOImp implements UsuarioDAO{
 		EntityManager em = EMFService.get().createEntityManager();
 		Query q = em.createQuery("select q from Usuario q where q.usuario = :usuario");
 		q.setParameter("usuario", usuario);
-		Usuario unUsuario = new Usuario("", "", "", 0, "");
+		Usuario unUsuario = new Usuario("", "", "", 0, "",false,0,0);
 		try{
 			unUsuario = (Usuario) q.getResultList().get(0);
 		}finally{		
