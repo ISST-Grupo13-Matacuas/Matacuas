@@ -14,10 +14,8 @@
 
 			<div class="row" style="min-height: 19vh">
 				<div id="CajaImagen"></div>
-
-				<div class="row nopad">
-					<div
-						class="col-xs-6 col-xs-offset-3 col-sm-4 col-sm-offset-4 col-md-3 col-md-offset-1 col-lg-2 col-lg-offset-1">
+				<div class="nopad">
+					<div class="col-xs-6 col-xs-offset-3 col-sm-4 col-sm-offset-4 col-md-3 col-md-offset-1 col-lg-2 col-lg-offset-1">
 						<c:choose>
 							<c:when test="${usuarioBD.imagen != '' }">
 								<img src="/imagenUsuario" alt=""
@@ -26,40 +24,28 @@
 							<c:otherwise>
 								<img src="https://randomuser.me/api/portraits/med/men/44.jpg"
 									alt=""
-									class="img img-responsive imgTarjeta img-circle img-perfil"
-									style="position: absolute;">
+									class="img img-responsive imgTarjeta img-circle img-perfil">
 							</c:otherwise>
 						</c:choose>
-
 					</div>
-					<div
-						class="col-xs-8 col-xs-offset-1 col-sm-9 col-sm-offset-1 col-md-6 col-md-offset-1 col-lg-8 col-lg-offset-0"
-						id="cajaInfoUser">
+					<div class="col-xs-8 col-xs-offset-1 col-sm-9 col-sm-offset-1 col-md-6 col-md-offset-1 col-lg-8 col-lg-offset-0" id="cajaInfoUser">
 						<c:if test="${ empty usuarioBD.nick }">
-							<h4 class="nombrePerfil text-center">
-								<c:out value="${usuarioBD.usuario }" />
-							</h4>
+							<h4 class="nombrePerfil text-center"> <c:out value="${usuarioBD.usuario }" /> </h4>
 							<a href="/ajustes">¡Elige un nickname!</a>
 						</c:if>
-						<h4 class="nombrePerfil">
-							<c:out value="${usuarioBD.nick }" />
-						</h4>
-
-						<hr style="height: 0.05vh; background-color: rgba(59, 65, 97, 1);">
+						<h4 class="nombrePerfil"> <c:out value="${usuarioBD.nick }" /> </h4>
+						<hr style="height: 0.05vh; background-color: rgba(59, 65, 97, 1);">						
 						<c:if test="${empty usuarioBD.matricula }">
 							<a href="/ajustes">¡Registra tu matrícula!</a>
-						</c:if>
-						<p>
-							<c:out value="${usuarioBD.matricula }" />
-						</p>
-
+						</c:if>						
+						<p> <c:out value="${usuarioBD.matricula }" /> </p>
 					</div>
 					<div class="col-xs-1" id="cajaAjustes">
-						<a href="/ajustes"><span
-							class="glyphicon glyphicon-cog cogGly"></span> </a>
+						<a href="/ajustes"><span class="glyphicon glyphicon-cog cogGly"></span> </a>
 					</div>
 				</div>
 			</div>
+
 			<div class="row nopad" id="botoneraPerfil">
 				<div class="col-xs-4 nopad">
 					<button class="btn btn-block" style="background-color: #AAC">Todos</button>
@@ -72,57 +58,45 @@
 				</div>
 			</div>
 
+
+
+
 			<div class="row listTarjetasPerf nopad" id="">
 				<div id="ProfileList">
 
 					<c:if test="${not empty quejasUsuario }">
 
 						<c:forEach items="${quejasUsuario}" var="queja">
-							<a class="tarjetaHtml" href="/verQueja?id=${queja.id }"> <c:if
-									test="${queja.tipo==1 }">
-									<div class=" row well   tarjeta"
-										style="border: solid 0.5vh #C55;">
-								</c:if> <c:if test="${queja.tipo==2 }">
-									<div class=" row well   tarjeta"
-										style="border: solid 0.5vh #5C5;">
-								</c:if>
-								<div class="col-xs-4 col-sm-3 col-md-2">
-									<c:choose>
-										<c:when test="${queja.imagen != null}">
-											<img class="img img-responsive img-rounded imgTarjeta"
-												src="/imagen?id=${queja.id }" alt="">
-								</div> </c:when> <c:otherwise>
-									<img class="img img-responsive img-rounded imgTarjeta"
-										src="/images/4.jpg" alt="">
+							<a class="tarjetaHtml" href="/verQueja?id=${queja.id }">
+								 <div class=" row well tarjeta" style="border: solid 0.5vh <c:if test="${queja.tipo==1 }">#C55</c:if><c:if test="${queja.tipo==2 }">#5C5</c:if>;">
+									<div class="col-xs-4 col-sm-3 col-md-2">
+										<c:choose>
+											<c:when test="${queja.imagen != null}">
+												<img class="img img-responsive img-rounded imgTarjeta" src="/imagen?id=${queja.id }" alt="">
+											</c:when>
+											<c:otherwise>
+												<img class="img img-responsive img-rounded imgTarjeta" src="/images/4.jpg" alt="">
+											</c:otherwise>
+										</c:choose>
+									</div>
+									<div class="col-xs-6 col-sm-7">
+										<h3 class="tarjetaTitle">
+											<c:out value="${queja.lugar }" />
+										</h3>
+										<p>
+											<small>Vehículo con matrícula <c:out
+													value="${queja.matricula }" /></small>
+										</p>
+										<p>
+											<small><c:out value="${queja.descripcion }" /></small>
+										</p>
+									</div>
+								</div>
+							</a>
+						</c:forEach>
+					</c:if>
 				</div>
-				</c:otherwise>
-				</c:choose>
-
-				<div class="col-xs-6 col-sm-7">
-					<h3 class="tarjetaTitle">
-						<c:out value="${queja.lugar }" />
-					</h3>
-					<p>
-						<small>Vehículo con matrícula <c:out
-								value="${queja.matricula }" /></small>
-					</p>
-					<p>
-						<small><c:out value="${queja.descripcion }" /></small>
-					</p>
-
-				</div>
-				</a>
-
 			</div>
-
-			</c:forEach>
-
-		</c:if>
-
-
-	</div>
-
-</div>
 
 </c:if>
 
