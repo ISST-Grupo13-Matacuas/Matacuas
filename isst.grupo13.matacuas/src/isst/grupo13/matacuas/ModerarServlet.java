@@ -3,8 +3,11 @@ import isst.grupo13.matacuas.dao.QuejaDAO;
 import isst.grupo13.matacuas.dao.QuejaDAOImpl;
 import isst.grupo13.matacuas.dao.ReclamacionDAO;
 import isst.grupo13.matacuas.dao.ReclamacionDAOImpl;
+import isst.grupo13.matacuas.dao.UsuarioDAO;
+import isst.grupo13.matacuas.dao.UsuarioDAOImp;
 import isst.grupo13.matacuas.model.Queja;
 import isst.grupo13.matacuas.model.Reclamacion;
+import isst.grupo13.matacuas.model.Usuario;
 
 import java.io.IOException;
 import java.util.List;
@@ -46,19 +49,29 @@ public class ModerarServlet extends HttpServlet {
 			ReclamacionDAO daoRecl = ReclamacionDAOImpl.getInstance();
 			Queja queja = dao.readQuejaId(id);
 			Reclamacion reclamacion = daoRecl.readQueja(id);
-			
+			UsuarioDAO daoUser = UsuarioDAOImp.getInstance();
 
 			queja.setEstado(result);
 			dao.update(queja);
 			daoRecl.delete(reclamacion);
+			
+			if(result == 3){
+				
+				String matricula = queja.getMatricula();
+				Usuario us = daoUser.readMatricula(matricula);
+				int recl = us.getReclamacionesRechazadas();
+				recl++;
+				us.setReclamacionesRechazadas(recl);
+				daoUser.update(us);
+			}
 			
 		
 			
 		}else{
 
 		}
-		
-		RequestDispatcher view = req.getRequestDispatcher("Moderar.jsp");
+		resp.sendRedirect("/matacuas");
+		/*RequestDispatcher view = req.getRequestDispatcher("Moderar.jsp");
 		
 		try {
 			view.forward(req, resp);
@@ -67,7 +80,7 @@ public class ModerarServlet extends HttpServlet {
 			e.printStackTrace();
 		
 		
-		}
+		}*/
 		
 		
 	}

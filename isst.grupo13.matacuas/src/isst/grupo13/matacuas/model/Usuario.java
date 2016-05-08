@@ -21,9 +21,12 @@ public class Usuario implements Serializable{
 	private String nick; //Apodo del usuario
 	private int tipo; //Moderador o no
 	private String imagen;
+	private boolean baneado;
+	private int reclamacionesRechazadas;
+	private int quejasBorradas;
 	
 		
-	public Usuario(String usuario, String matricula, String nick, int tipo,String imagen) {
+	public Usuario(String usuario, String matricula, String nick, int tipo,String imagen, boolean baneado, int recl, int quej) {
 		super();
 		
 		this.usuario = usuario;
@@ -31,10 +34,42 @@ public class Usuario implements Serializable{
 		this.nick = nick;
 		this.tipo=tipo;
 		this.imagen = imagen;
+		this.baneado = baneado;
+		this.reclamacionesRechazadas = recl;
+		this.quejasBorradas = quej;
 	}
 	
 	
 	
+	
+	public int getReclamacionesRechazadas() {
+		return reclamacionesRechazadas;
+	}
+
+
+
+
+	public void setReclamacionesRechazadas(int reclamacionesRechazadas) {
+		this.reclamacionesRechazadas = reclamacionesRechazadas;
+	}
+
+
+
+
+	public int getQuejasBorradas() {
+		return quejasBorradas;
+	}
+
+
+
+
+	public void setQuejasBorradas(int quejasBorradas) {
+		this.quejasBorradas = quejasBorradas;
+	}
+
+
+
+
 	public int getTipo() {
 		return tipo;
 	}
@@ -86,52 +121,37 @@ public class Usuario implements Serializable{
 
 
 
+
+	public boolean isBaneado() {
+		return baneado;
+	}
+
+
+
+
+	public void setBaneado(boolean baneado) {
+		this.baneado = baneado;
+	}
+
+
+
+
 	@Override
 	public String toString() {
 		return "Usuario [id=" + id + ", usuario=" + usuario + ", matricula="
 				+ matricula + ", nick=" + nick + ", tipo=" + tipo + ", imagen="
-				+ imagen + "]";
+				+ imagen + ", baneado=" + baneado
+				+ ", reclamacionesRechazadas=" + reclamacionesRechazadas
+				+ ", quejasBorradas=" + quejasBorradas + "]";
 	}
 
 
 
 
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Usuario other = (Usuario) obj;
-		if (imagen == null) {
-			if (other.imagen != null)
-				return false;
-		} else if (!imagen.equals(other.imagen))
-			return false;
-		if (matricula == null) {
-			if (other.matricula != null)
-				return false;
-		} else if (!matricula.equals(other.matricula))
-			return false;
-		if (nick == null) {
-			if (other.nick != null)
-				return false;
-		} else if (!nick.equals(other.nick))
-			return false;
-		if (tipo != other.tipo)
-			return false;
-		if (usuario == null) {
-			if (other.usuario != null)
-				return false;
-		} else if (!usuario.equals(other.usuario))
-			return false;
-		return true;
-	}
+	
 
 
-
+	
 	
 	
 	

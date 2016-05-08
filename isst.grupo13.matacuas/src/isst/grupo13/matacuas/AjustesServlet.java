@@ -52,8 +52,8 @@ public class AjustesServlet extends HttpServlet {
 		UsuarioDAO daoUser = UsuarioDAOImp.getInstance();
 		Usuario usuarioBD = (Usuario) req.getSession().getAttribute("usuarioBD");
 		Usuario usuario = daoUser.readUsuarioId(usuarioBD.getId());
-		List<Usuario> repetido = daoUser.readMatricula(matricula);
-		if(nick != ""  && matricula != "" && repetido.isEmpty() && imagen != ""){
+		Usuario repetido = daoUser.readMatricula(matricula);
+		if(nick != ""  && matricula != "" && repetido == null && imagen != ""){
 			usuario.setNick(nick);
 			usuario.setMatricula(matricula);
 			usuario.setImagen(imagen);

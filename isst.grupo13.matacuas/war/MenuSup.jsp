@@ -1,3 +1,5 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -44,7 +46,7 @@
 
     </div>
 
-<c:if test="${not empty user and user!=null}">
+<c:if test="${not empty user and user!=null and usuarioBD.baneado == false}">
     <div class="navbar navbar-inverse navbar-fixed-bottom menuB" >
 
       <div class="row">
@@ -111,6 +113,9 @@
                 		<li>
 						 <li style="color: #FFF;
 font-size: 1.2em;"><c:out value="${user}"/></li>
+					<c:if test="${usuarioBD.baneado }">
+					<h2>Estás baneado </h2>
+					</c:if>
 						</li> 
 					</c:if>
 					<li>
@@ -128,7 +133,14 @@ font-size: 1.2em;"><c:out value="${user}"/></li>
 	              </a></li>
               </c:if>
               <c:if test="${not empty user and user!= null and tipoUsuario == 1  }">
-              	<li><a href="/moderar">Moderar</a></li>
+              	<li><a href="/moderar">Moderar
+              	
+              	<c:if test="${fn:length(reclamacionesSistema) != 0}">
+              	<Span class="badge">
+	              		<c:out value="${fn:length(reclamacionesSistema) }" />
+	              		</Span>
+	              		</c:if></a></li>
+              	<li><a href="/listaUsuarios">Usuarios</a></li>
               	
               	
               </c:if>

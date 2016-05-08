@@ -179,7 +179,7 @@ hr {
 					<form action="/ConsultaAseguradora" method="get">
 						<h3>Matrícula:</h3>
 						<input type="matricula" class="form-control formMata"
-							id="matricula" name="matricula" placeholder="${matricula}"><br>
+							id="matricula" name="matricula" maxLength="7" placeholder="${matricula}" ><br>
 						<input type="submit" value="Consultar"
 							class="btn btn-block btnMat">
 					</form>
