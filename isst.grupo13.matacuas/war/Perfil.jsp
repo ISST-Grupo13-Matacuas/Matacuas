@@ -19,12 +19,12 @@
 						<c:choose>
 							<c:when test="${usuarioBD.imagen != '' }">
 								<img src="/imagenUsuario" alt=""
-									class="img img-responsive imgTarjeta img-circle img-perfil">
+									class="img img-responsive imgTarjeta img-circle img-perfil imgPerf">
 							</c:when>
 							<c:otherwise>
 								<img src="https://randomuser.me/api/portraits/med/men/44.jpg"
 									alt=""
-									class="img img-responsive imgTarjeta img-circle img-perfil">
+									class="img img-responsive imgTarjeta img-circle img-perfil imgPerf">
 							</c:otherwise>
 						</c:choose>
 					</div>

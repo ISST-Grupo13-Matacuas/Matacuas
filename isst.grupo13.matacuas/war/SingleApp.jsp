@@ -45,7 +45,7 @@
 					<c:forEach items="${quejas}" var="queja">
 
 						<a class="tarjetaHtml" href="/verQueja?id=${queja.id }">
-							<div class=" row well animated pulse tarjeta"
+							<div class=" row well tarjeta"
 								style="border: solid 0.5vh <c:if test="${queja.tipo==1 }">#C55</c:if><c:if test="${queja.tipo==2 }">#5C5</c:if>;">
 								<div class="col-xs-4 col-sm-3">
 									<c:choose>

@@ -38,9 +38,9 @@
      <script type='text/javascript' src="js/OpenLayers.js"></script>
         <script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
       <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.0/js/bootstrap-toggle.min.js"></script>
- <script src="js/mapa.js"></script>
+ <script src="js/mapa.js?v=3"></script>
 
-  <script src="js/main.js?v=38"></script>
+  <script src="js/main.js?v=39"></script>
   <script>
 		var latitudes = document.getElementsByClassName("latitudes");
 		var longitudes = document.getElementsByClassName("longitudes");

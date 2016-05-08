@@ -133,8 +133,9 @@ document.getElementById('locate').onclick = function() {
 
 var createMarker = function(position){
    //var position = map.getLonLatFromPixel(e.xy);
-   var size = new OpenLayers.Size(25,25);
+   var size = new OpenLayers.Size(50,50);
    var offset = new OpenLayers.Pixel(-(size.w/2), -size.h);
+   console.log("dsadasdsa");
    var icon = new OpenLayers.Icon('images/mark.png', size, offset);   
    var markerslayer = map.getLayer('Markers');
    markerslayer.clearMarkers();

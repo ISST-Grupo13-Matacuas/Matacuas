@@ -524,7 +524,7 @@ if (document.getElementById('locate')){
 var createMarker = function(position){
    //var position = map.getLonLatFromPixel(e.xy);
 	console.log("Creando marcador en: " + position);
-   var size = new OpenLayers.Size(25,25);
+   var size = new OpenLayers.Size(50,50);
    var offset = new OpenLayers.Pixel(-(size.w/2), -size.h);
    var icon = new OpenLayers.Icon('images/mark.png', size, offset);   
    var markerslayer = map.getLayer('Markers');
@@ -554,7 +554,7 @@ var createMarker = function(position){
  }
  if (coordenadas){
 	 //console.log("Ola ke ase " + coordenadas);
-	 var size = new OpenLayers.Size(25,25);
+	 var size = new OpenLayers.Size(50,50);
 	 var offset = new OpenLayers.Pixel(-(size.w/2), -size.h);
 	 var icon = new OpenLayers.Icon('images/mark.png', size, offset);   
 	 var markerslayer = map.getLayer('Markers');
