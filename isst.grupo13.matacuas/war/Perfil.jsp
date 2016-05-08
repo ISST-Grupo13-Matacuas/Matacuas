@@ -12,8 +12,10 @@
               
 <c:if test="${not empty  user && user!= null && not empty usuarioBD }" >
 
-<div class="row" style="height: 19vh">
+<div class="row" style="min-height: 19vh">
 <div id="CajaImagen"></div>
+
+<div class="row nopad">
 	<div class="col-xs-6 col-xs-offset-3 col-sm-4 col-sm-offset-4 col-md-3 col-md-offset-1 col-lg-2 col-lg-offset-1">
 	  <c:choose>
 			<c:when test="${usuarioBD.imagen != '' }">
@@ -25,7 +27,7 @@
 		</c:choose>
 	
 	</div>
-	<div class="col-xs-10 col-sm-11 col-md-6 col-md-offset-1 col-lg-8 col-lg-offset-0" id="cajaInfoUser">
+	<div class="col-xs-8 col-xs-offset-1 col-sm-9 col-sm-offset-1 col-md-6 col-md-offset-1 col-lg-8 col-lg-offset-0" id="cajaInfoUser">
 		<c:if test="${ empty usuarioBD.nick }">
 	   <h4 class="nombrePerfil text-center"><c:out value="${usuarioBD.usuario }"/></h4>
 	  		<a href="/ajustes">¡Elige un nickname!</a> 
@@ -44,11 +46,11 @@
 	<a href="/ajustes"><span class="glyphicon glyphicon-cog cogGly"></span> </a> 
 	</div>
 </div>
-<br>
+</div>
 <div class="row nopad" id="botoneraPerfil">
-	<div class="col-xs-4" ><button class="btn btn-block" style="background-color: #AAC">Todos</button></div>
-   <div class="col-xs-4" ><button class="btn btn-block" style="background-color: #5C5">Positivos</button></div>
-   <div class="col-xs-4" ><button class="btn btn-block" style="background-color: #C55">Negativos</button></div>
+	<div class="col-xs-4 nopad" ><button class="btn btn-block" style="background-color: #AAC">Todos</button></div>
+   <div class="col-xs-4 nopad" ><button class="btn btn-block" style="background-color: #5C5">Positivos</button></div>
+   <div class="col-xs-4 nopad" ><button class="btn btn-block" style="background-color: #C55">Negativos</button></div>
 </div>
 
 <div class="row listTarjetasPerf nopad" id="">

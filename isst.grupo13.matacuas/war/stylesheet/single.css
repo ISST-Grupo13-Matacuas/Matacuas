@@ -370,9 +370,12 @@ border-color: rgba(59,65,97,1);
 #cajaAjustes>a{
 	color:rgba(59,65,97,1);
 }
-#botoneraPerfil{
 
+#botoneraPerfil{
+		padding-top: 1vh; 
 }
+
+
 @media(max-width:1108px){
   .box-img-perfil{
     margin-left: 35%;
