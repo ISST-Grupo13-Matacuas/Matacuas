@@ -83,6 +83,7 @@ public class UsuarioDAOImp implements UsuarioDAO{
 		if(q.getResultList().size()> 0){
 			unUsuario = (Usuario) q.getResultList().get(0);
 		}
+		em.close();
 		
 		return unUsuario;
 	}
