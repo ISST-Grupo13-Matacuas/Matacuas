@@ -71,11 +71,12 @@
 								 <div class=" row well tarjeta" style="border: solid 0.5vh <c:if test="${queja.tipo==1 }">#C55</c:if><c:if test="${queja.tipo==2 }">#5C5</c:if>;">
 									<div class="col-xs-4 col-sm-3 col-md-2">
 										<c:choose>
-											<c:when test="${queja.imagen != null}">
-												<img class="img img-responsive img-rounded imgTarjeta" src="/imagen?id=${queja.id }" alt="">
+											<c:when test="${queja.imagen != null and queja.imagen != ''}">
+												<img class="img img-responsive img-rounded imgTarjeta" src="/imagen?id=${queja.id}" alt="">
 											</c:when>
 											<c:otherwise>
-												<img class="img img-responsive img-rounded imgTarjeta" src="/images/4.jpg" alt="">
+											<c:set var="rand"><%= (int) java.lang.Math.ceil(java.lang.Math.random() * 5) %></c:set>
+												<img class="img img-responsive img-rounded imgTarjeta" src="/images/${rand}.jpg" alt="">
 											</c:otherwise>
 										</c:choose>
 									</div>
