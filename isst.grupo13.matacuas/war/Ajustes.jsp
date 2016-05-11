@@ -28,20 +28,25 @@
 									<h3>Información</h3>
 								</div>
 								<div class="col-xs-12">
+								<div class="row">
 									<form role="form"
 										action="<%=blobstoreService.createUploadUrl("/ajustes")%>"
 										method="post" acceptcharset="utf-8"
 										enctype="multipart/form-data">
 										<div class="form-group">
+										<div class="col-xs-12 col-sm-3">
 											<label class="control-label " for="alias">Nickname:</label>
-											<div class="col-sm-10">
+											</div>
+											<div class="col-xs-12  col-sm-9">
 												<input type="text" autocomplete="off" class="form-control"
 													id="nick" name="nick" placeholder="${usuarioBD.nick }">
 											</div>
 										</div>
 										<div class="form-group">
+											<div class="col-xs-12 col-sm-3">
 											<label class="control-label " for="mail">Matrícula:</label>
-											<div class="col-sm-10">
+											</div>
+											<div class="col-xs-12  col-sm-9">
 												<input type="text" maxLength="7" autocomplete="off"
 													class="form-control" id="matricula" name="matricula"
 													placeholder="${usuarioBD.matricula }">
@@ -55,6 +60,7 @@
 											value="Guardar cambios" class="btn  btn-login pull-right">
 									</form>
 								</div>
+							</div>
 							</div>
 						</div>
 					</div>
