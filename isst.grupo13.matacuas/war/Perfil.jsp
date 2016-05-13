@@ -91,6 +91,12 @@
 										<p>
 											<small><c:out value="${queja.descripcion }" /></small>
 										</p>
+										<form method="post" action="/borrarQueja">
+											<input type="text" name="id" class="hidden"
+												value="${queja.id }" /> <input class="btn btn-cancel"
+												type="submit" value="Borrar queja" />
+
+										</form>
 									</div>
 								</div>
 							</a>
