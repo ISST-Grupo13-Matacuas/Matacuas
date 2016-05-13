@@ -39,6 +39,17 @@
           </button>
           <a class="navbar-brand" href="/matacuas">Matacuas</a>
           
+          <ul class="nav navbar-nav navbar-center">
+  <li><form class="navbar-form " action="/busqueda" method="get" acceptcharset="utf-8" role="form">
+        <div class="form-group">
+          <input type="text" class="form-control" name="busqueda" id="busqueda" placeholder="Buscar en Matacuás"> 
+          <input type="hidden" id="tipobusq" name="tipobusq" value="1">
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+      </form>
+  </li>
+</ul>
+          
           
         </div>
       </div>

@@ -19,23 +19,7 @@
 							id="felicitacionesBtn"
 							onclick="Document.getElementById(tipobusq).value(1)">Felicitaciones</div></a>
 					<div>
-						<form role="form" action="/busqueda" method="get"
-							acceptcharset="utf-8" enctype="multipart/form-data">
-							<div class="row">
-								<!-- SDASAD -->
-								<div class="col-xs-10 col-xs-offset-1">
-									<div class="row">
-										<div class="form-group">
-											<div class="input-group">
-												<input type="text" class="form-control" name="busqueda"
-													id="busqueda" placeholder="Buscar en Matacuás"> 
-												<input type="hidden" id="tipobusq" name="tipobusq" value="1"/>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</form>
+						
 					</div>
 				</div>
 			</div>
