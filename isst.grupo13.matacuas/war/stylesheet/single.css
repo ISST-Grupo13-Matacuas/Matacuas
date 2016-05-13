@@ -23,6 +23,12 @@ body {
 	background-color: rgba(245, 245, 245, 0.90);
 }
 
+.btn-twitter {
+    background: #00acee;
+    border-radius: 0;
+    color: #fff;
+}
+
 #loginBox {
 	padding-top: 10vh;
 	background-color: rgba(255, 255, 255, 0.8);

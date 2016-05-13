@@ -23,12 +23,13 @@
 		<div class="row">
 		
 		<div class="col-xs-12 col-md-6">
-		<h1 class="tarjetaTitle text-center"><c:out value="${quejaAVer.lugar }"/></h1>
+		<h1 class="tarjetaTitle text-center" id="lugar"><c:out value="${quejaAVer.lugar }"/></h1>
 
 		<hr class="hr">
 
-		<p><c:out value="${quejaAVer.descripcion }"/></p>
+		<p id="descripcion"><c:out value="${quejaAVer.descripcion }"/></p>
 		<p>Matrícula: <c:out value="${quejaAVer.matricula }"/></p>
+		<button class="btn btn-twitter" onclick="compartirTw('${quejaAVer.id }')"><i class = "fa fa-twitter"></i></button>
 		</div>
 		<div class="col-xs-12 col-md-6">
 		<c:choose>
@@ -75,6 +76,7 @@
   <!-- Bootstrap core JavaScript
   ================================================== -->
   <!-- Placed at the end of the document so the pages load faster -->
+ 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
   <script src="js/sidebar.js"></script>
@@ -85,7 +87,29 @@
 
   <script src="js/main.js?v=38"></script>
   <script>
+  
+  var lugar = document.getElementById("lugar").innerHTML;
+  var descripcion = '<c:out value="${quejaAVer.descripcion }"/>';//document.getElementById("descripcion").innerText;
+  var n = 120 - lugar.length;
+  descripcion = descripcion.substr(0, n);
+  var texto = "En "+lugar+": "+descripcion;
+  
+  function compartirTw(idQ) {	
+	  console.log(idQ);
+	  var via = "matacuas";
+	  var newUrl = "https://twitter.com/intent/tweet?url=http://1-dot-isst-grupo13-matacuas-1271.appspot.com/verQueja?id="+idQ+'&';
 
+	  var texMoc = texto + ' http://1-dot-isst-grupo13-matacuas-1271.appspot.com/verQueja?id='+idQ+' via '+via;
+
+	  var diff = texMoc.length-140;
+
+	  var newTexto = texto.slice(0,texto.length-diff);
+
+	  newUrl = newUrl+'text='+newTexto+'&via=matacuas';
+
+	  window.open(newUrl);
+	  }
+ 
   var lat = document.getElementById("latitudQueja").innerHTML;
   var lng = document.getElementById("longitudQueja").innerHTML;
   var position = {lon: lng, lat:lat};
