@@ -83,8 +83,6 @@
 							</div>
 						</a>
 
-
-
 					</c:forEach>
 				</c:if>
 			</div>
