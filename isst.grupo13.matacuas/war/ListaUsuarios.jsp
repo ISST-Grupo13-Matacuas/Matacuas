@@ -13,8 +13,8 @@
 							<div class=" row well animated pulse tarjeta" style="border: solid 0.5vh">
 						<div class="col-xs-4 col-sm-3">
 							 <c:choose>
-			<c:when test="${usuarioBD.imagen != '' }">
-				<img src="/imagenUsuario" alt="" class="img img-responsive imgTarjeta img-circle img-perfil">
+			<c:when test="${us.imagen != '' }">
+				<img src="/imagenAjena?email=${us.usuario }" alt="" class="img img-responsive imgTarjeta img-circle img-perfil">
 			 </c:when>
 			<c:otherwise>
 				<img src="https://randomuser.me/api/portraits/med/men/44.jpg" alt="" class="img img-responsive imgTarjeta img-circle img-perfil" style="position: absolute;" >
