@@ -103,7 +103,11 @@ public class UsuarioDAOImp implements UsuarioDAO{
 		EntityManager em = EMFService.get().createEntityManager();
 		Query q = em.createQuery("select q from Usuario q where q.nick = :nick");
 		q.setParameter("nick", nick);
-		Usuario usuario = (Usuario) q.getResultList().get(0);
+		Usuario usuario = null;
+		if (q.getResultList().size()>0){
+			usuario = (Usuario) q.getResultList().get(0);
+		}
+		
 		em.close();
 		return usuario;
 	}

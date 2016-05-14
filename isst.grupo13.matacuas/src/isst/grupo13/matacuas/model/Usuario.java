@@ -151,6 +151,61 @@ public class Usuario implements Serializable{
 	
 
 
+
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Usuario other = (Usuario) obj;
+		if (baneado != other.baneado)
+			return false;
+		if (id == null) {
+			if (other.id != null)
+				return false;
+		} else if (!id.equals(other.id))
+			return false;
+		if (imagen == null) {
+			if (other.imagen != null)
+				return false;
+		} else if (!imagen.equals(other.imagen))
+			return false;
+		if (matricula == null) {
+			if (other.matricula != null)
+				return false;
+		} else if (!matricula.equals(other.matricula))
+			return false;
+		if (nick == null) {
+			if (other.nick != null)
+				return false;
+		} else if (!nick.equals(other.nick))
+			return false;
+		if (quejasBorradas != other.quejasBorradas)
+			return false;
+		if (reclamacionesRechazadas != other.reclamacionesRechazadas)
+			return false;
+		if (tipo != other.tipo)
+			return false;
+		if (usuario == null) {
+			if (other.usuario != null)
+				return false;
+		} else if (!usuario.equals(other.usuario))
+			return false;
+		return true;
+	}
+
+
+
+
+
+
+	
+
+
 	
 	
 	
